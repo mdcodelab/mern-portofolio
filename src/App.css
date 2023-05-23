@@ -58,6 +58,10 @@ body {
     color: var(--clr-grey-1);
 }
 
+html, bofy {
+  scroll-behavior: smooth;
+}
+
 hr {
     border: none;
     border-top: 1.5px solid var(--clr-grey-8);
@@ -92,18 +96,19 @@ hr {
     font-size: 1.2rem;
   }
 
-div.container {
+div.app-container {
     width: 100%;
     height: 100%;
 }
 
 /* === GLOBAL CLASSES === */
-.page-100 {
+.page {
   min-height: calc(100vh - 5rem);
+  padding: 0 1.5rem;
 }
 
-.page {
-  min-height: 100vh;
+.page-100 {
+  height: calc(100vh - 5rem);
   padding: 0 1.5rem;
 }
 
@@ -114,6 +119,11 @@ div.container {
   width: 90vw;
   margin: 0 auto;
   max-width: var(--max-width);
+}
+
+.div.container {
+  width: 100%;
+  height: 100%;
 }
 
 .title {
@@ -173,5 +183,84 @@ div.container {
   color: var(--clr-primary-1);
 }
 
+.about-container {
+  background: lightblue;
+}
+
+.projects-container {
+  background: lightgray;
+}
+
+.contact-container {
+  background: lightgreen;
+}
+
 
 /* ============== NAVBAR ===========*/
+nav.navbar {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  position: sticky;
+  top: 0;
+  transition: top 0.5s ease-in-out;
+}
+
+.navbar.sticky {
+  top: 20px; 
+}
+
+div.logo {
+  flex: 1;
+}
+
+div.nav-links {
+  display: flex;
+  flex: 4;
+  align-items: center;
+  justify-content: end;
+}
+
+.nav-links ul {
+  display: flex;
+}
+
+.nav-links ul a {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+button {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .nav-links ul {
+    display: none;
+  }
+  button {
+    display: inline-block;
+  }
+}
+
+a.active {
+  color: red;
+}
+
+.icon-btn {
+  border: none; outline: none;
+  font-size: 1.8rem;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  transition: background 0.5se ease;
+}
+
+.icon-btn:hover {
+  background: var(--clr-grey-9);
+}

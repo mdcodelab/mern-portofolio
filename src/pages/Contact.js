@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="page-100 about-container" id="contact">
       <Footer></Footer>
     </div>
   );

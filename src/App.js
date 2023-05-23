@@ -1,22 +1,23 @@
-import React from 'react';
+// App.js
+import React from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Projects from './pages/Projects';
+import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="container">
-      <Home></Home>
-      <About></About>
-      <Projects></Projects>
-      <Contact></Contact>
-      
-      
-
+    <div className="app-container">
+      <Navbar />
+      <div className="container">
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

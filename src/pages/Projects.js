@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Projects = () => {
   return (
-    <div>
+    <div className="page-100 projects-container" id="projects">
       Projects
       
     </div>

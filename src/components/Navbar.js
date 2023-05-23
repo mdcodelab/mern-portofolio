@@ -1,12 +1,15 @@
-import React from 'react';
-import {IoCloseOutline} from "react-icons/io";
-import {HiMenuAlt3} from "react-icons/hi";
-
+import React from "react";
+import { IoCloseOutline } from "react-icons/io5";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { Link } from "react-scroll";
+import { useGlobalContext } from "../useContext";
 
 const Navbar = () => {
-  const[activeLink, setActiveLink]=React.useState("home");
-  
-  const[isNavbarVisible, setIsNavbarVisible] = React.useState(true);
+  let { isSidebar, setSidebar } = useGlobalContext();
+
+  const [activeLink, setActiveLink] = React.useState("home");
+
+  const [isNavbarVisible, setIsNavbarVisible] = React.useState(true);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +23,6 @@ const Navbar = () => {
     };
   }, []);
 
-  
-
   return (
     <nav className={`navbar section-center ${isNavbarVisible ? "" : "sticky"}`}>
       <div className="logo">
@@ -29,31 +30,52 @@ const Navbar = () => {
       </div>
       <div className="nav-links">
         <ul className="links">
-          <li><a href="/"
+          <li>
+            <Link to="/"
               onClick={() => setActiveLink("home")}
-              className={activeLink === "home" ? "active" : ""}>Home</a>
-          </li>
-          <li><a href="/#about"
-              onClick={() => setActiveLink("about")}
-              className={activeLink === "about" ? "active" : ""}>About</a>
-          </li>
-          <li><a href="/#projects"
-              onClick={() => setActiveLink("projects")}
-              className={activeLink === "projects" ? "active" : ""}> Projects</a>
+              className={activeLink === "home" ? "active" : ""}>
+              Home
+            </Link>
           </li>
           <li>
-            <a href="/#contact"
+            <Link to="about"
+              onClick={() => setActiveLink("about")}
+              smooth={true}
+              offset={-80}
+              className={activeLink === "about" ? "active" : ""}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="projects"
+              onClick={() => setActiveLink("projects")}
+              smooth={true}
+              offset={-80}
+              className={activeLink === "projects" ? "active" : ""}>
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link to="contact"
               onClick={() => setActiveLink("contact")}
-              className={activeLink === "contact" ? "active" : ""}>Contact</a>
+              smooth={true} offset={-80}
+              className={activeLink === "contact" ? "active" : ""}>
+              Contact
+            </Link>
           </li>
         </ul>
-        <button type="button" className="icon-btn">
-          <HiMenuAlt3></HiMenuAlt3>
+        <button type="button"
+          className="icon-btn"
+          onClick={() => setSidebar(!isSidebar)}>
+          {!isSidebar ? (
+            <HiMenuAlt3></HiMenuAlt3>
+          ) : (
+            <IoCloseOutline></IoCloseOutline>
+          )}
         </button>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
-

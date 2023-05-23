@@ -1,10 +1,12 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import styled from "styled-components";
+import { useGlobalContext } from '../useContext';
 
 const Home = () => {
+  const {isSidebar, setSidebar}=useGlobalContext();
   return (
-    <div className="page" id="home">
+    <div className={!isSidebar ? "page" : "hidden"} id="home">
       
     </div>
   );

@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -6,20 +5,26 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import { SidebarProvider} from "./useContext";
+import { useGlobalContext } from "./useContext";
 
 const App = () => {
 
+  //const { isSidebar, setSidebar } = useGlobalContext();
+
   return (
-    <div className="app-container">
-      <Navbar/>
-      <Sidebar></Sidebar>
-      <div className="container">
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
+    <SidebarProvider>
+      <div className="app-container">
+        <Navbar />
+        <Sidebar></Sidebar>
+        <div className="container">
+          <Home />
+          <About />
+          <Projects />
+          <Contact />
+        </div>
       </div>
-    </div>
+    </SidebarProvider>
   );
 };
 

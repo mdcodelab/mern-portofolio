@@ -1,38 +1,54 @@
-import React from 'react';
-
+import React from "react";
+import { useGlobalContext } from "../useContext";
+import { Link } from "react-scroll";
 
 const Sidebar = () => {
+  const { isSidebar, setSidebar } = useGlobalContext();
   const [activeLink, setActiveLink] = React.useState("home");
+
+  const handleClick = (value) => {
+    setSidebar(false);
+    setActiveLink(value);
+  };
+
   return (
-    <div className=" sidebar-container">
-        <ul className="links">
-          <li>
-            <a href="/"
-              onClick={() => setActiveLink("home")}
-              className={activeLink === "home" ? "active" : ""}
-            >Home</a>
-          </li>
-          <li>
-            <a href="/#about"
-              onClick={() => setActiveLink("about")}
-              className={activeLink === "about" ? "active" : ""}
-            >About</a>
-          </li>
-          <li>
-            <a href="/#projects"
-              onClick={() => setActiveLink("projects")}
-              className={activeLink === "projects" ? "active" : ""}
-            >Projects</a>
-          </li>
-          <li>
-            <a href="/#contact"
-              onClick={() => setActiveLink("contact")}
-              className={activeLink === "contact" ? "active" : ""}>
-              Contact</a>
-          </li>
-        </ul>
+    <div className={isSidebar ? "close" : "sidebar-container"}>
+      <ul className="links sidebar-links">
+        <li>
+          <Link to="/"
+            onClick={() => handleClick("home")}
+            className={activeLink === "home" ? "active" : ""}
+            smooth={true} offset={0}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="about"
+            onClick={() => handleClick("about")}
+            className={activeLink === "about" ? "active" : ""}
+            smooth={true} offset={-155}>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="projects"
+            onClick={() => handleClick("projects")}
+            className={activeLink === "projects" ? "active" : ""} 
+            smooth={true} offset={-155}>
+            Projects
+          </Link>
+        </li>
+        <li>
+          <Link to="contact"
+            onClick={() => handleClick("contact")}
+            className={activeLink === "contact" ? "active" : ""}
+            smooth={true} offset={0}>
+            Contact
+          </Link>
+        </li>
+      </ul>
     </div>
   );
-}
+};
 
 export default Sidebar;

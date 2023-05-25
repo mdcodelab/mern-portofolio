@@ -6,12 +6,9 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import { SidebarProvider} from "./useContext";
-import { useGlobalContext } from "./useContext";
+
 
 const App = () => {
-
-  //const { isSidebar, setSidebar } = useGlobalContext();
-
   return (
     <SidebarProvider>
       <div className="app-container">

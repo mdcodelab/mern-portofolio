@@ -36,7 +36,7 @@
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    --max-width: 1170px;
+    --max-width: 1200px;
     --fixed-width: 620px;
   }
 
@@ -56,6 +56,25 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     color: var(--clr-grey-1);
+}
+
+::-webkit-scrollbar {
+  width: 0.9rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: lightgrey;
+  border-radius: 35%;
+  border: 1px solid darkgrey;
+  transition: background 0.4s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black;
 }
 
 html {
@@ -108,7 +127,7 @@ div.app-container {
 }
 
 .page-100 {
-  min-height: calc(100vh - 5rem);
+  min-height: 100vh;
   padding: 0 1.5rem;
 }
 
@@ -119,6 +138,10 @@ div.app-container {
   width: 90vw;
   margin: 0 auto;
   max-width: var(--max-width);
+}
+
+.section-pad {
+  padding: 0 2rem;
 }
 
 .div.container {
@@ -200,6 +223,7 @@ div.app-container {
 nav.navbar {
   height: 5rem;
   width: 100%;
+  background: var(--clr-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -312,5 +336,32 @@ ul.sidebar-links li a {
 .hidden {
   height: 0;
   opacity: 1;
+}
+
+/* CONTACT*/
+.contact-container {
+  height: 100vh;
+}
+
+/* CSS */
+
+.page-container {
+  position: relative;
+  min-height: calc(100vh - 15rem);
+}
+
+
+.contact-container {
+  /* Stilurile pentru conținutul paginii */
+}
+
+.footer-container {
+  position: sticky;
+  bottom: 0;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 40% 40% 0 0;
+  height: 15rem;
+  background: black;
 }
 

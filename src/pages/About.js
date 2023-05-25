@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const About = () => {
   return (
-    <div className="page-100 about-container" id="about">
+    <div className="page-100 about-container section section-pad" id="about">
       About
     </div>
   );

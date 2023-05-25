@@ -31,42 +31,49 @@ const Navbar = () => {
       <div className="nav-links">
         <ul className="links">
           <li>
-            <Link to="/"
+            <Link
+              to="home"
               onClick={() => setActiveLink("home")}
+              smooth={true} offset={-80}
               className={activeLink === "home" ? "active" : ""}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="about"
+            <Link
+              to="about"
               onClick={() => setActiveLink("about")}
-              smooth={true}
-              offset={-80}
+              smooth={true} offset={-80}
               className={activeLink === "about" ? "active" : ""}>
               About
             </Link>
           </li>
           <li>
-            <Link to="projects"
+            <Link
+              to="projects"
               onClick={() => setActiveLink("projects")}
-              smooth={true}
-              offset={-80}
+              smooth={true} offset={-80}
               className={activeLink === "projects" ? "active" : ""}>
               Projects
             </Link>
           </li>
           <li>
-            <Link to="contact"
+            <Link
+              to="contact"
               onClick={() => setActiveLink("contact")}
-              smooth={true} offset={-80}
-              className={activeLink === "contact" ? "active" : ""}>
+              smooth={true}
+              offset={-80}
+              className={activeLink === "contact" ? "active" : ""}
+            >
               Contact
             </Link>
           </li>
         </ul>
-        <button type="button"
+        <button
+          type="button"
           className="icon-btn"
-          onClick={() => setSidebar(!isSidebar)}>
+          onClick={() => setSidebar(!isSidebar)}
+        >
           {!isSidebar ? (
             <HiMenuAlt3></HiMenuAlt3>
           ) : (

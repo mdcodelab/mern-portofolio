@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <div>
-      Footer
+    <div className="footer-container">
+      
     </div>
   );
 }
+
 
 export default Footer;

@@ -6,7 +6,7 @@ import { useGlobalContext } from '../useContext';
 const Home = () => {
   const {isSidebar, setSidebar}=useGlobalContext();
   return (
-    <div className={!isSidebar ? "page" : "hidden"} id="home">
+    <div className={!isSidebar ? "page section-center" : "hidden"} id="home">
       
     </div>
   );

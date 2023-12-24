@@ -12,7 +12,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={isSidebar ? "close" : "sidebar-container"}>
+    <div className={isSidebar ? "close section__center" : "sidebar-container section__center"}>
       <ul className="links sidebar-links">
         <li>
           <Link to="/"

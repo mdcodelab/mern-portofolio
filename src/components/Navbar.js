@@ -25,9 +25,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Wrapper className={`navbar section-center ${isNavbarVisible ? "" : "sticky"}`}>
+    <Wrapper className={`navbar section__center ${isNavbarVisible ? "navbar" : "navbar sticky"}`}>
       <div className="logo">
-        <h2>Logo</h2>
+        <h2>Mihaela</h2>
       </div>
       <div className="nav-links">
         <ul className="links">
@@ -89,6 +89,7 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   height: 5rem;
   width: 100%;
+  max-width: var(--max-width);
   background: var(--clr-white);
   display: flex;
   align-items: center;
@@ -117,11 +118,10 @@ const Wrapper = styled.nav`
 
   div.nav-links ul.links {
     display: flex;
-    border: 2px solid red;
   }
 
   div.nav-links ul.links a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: inline-block;
     margin-right: 1.5rem;
     cursor: pointer;
@@ -141,6 +141,13 @@ const Wrapper = styled.nav`
     }
   }
 
+  @media only screen and (max-width: 732px) {
+    div.nav-links ul.links a {
+      display: none;
+    }
+  }
+
+  //effects
   a.active {
     color: red;
   }
@@ -153,18 +160,18 @@ const Wrapper = styled.nav`
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 0.3rem;
-    transition: background 0.5se ease;
+    transition: background 0.5e ease;
   }
 
   .icon-btn:hover {
     background: var(--clr-grey-9);
   }
-///last
+  ///last
   ul.links li a {
     display: block;
     position: relative;
     padding: 5px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: sans-serif;
     color: #fff;
     text-transform: uppercase;
@@ -172,13 +179,13 @@ const Wrapper = styled.nav`
   }
 
   ul.links:hover li a {
-    transform: scale(1.5);
+    transform: scale(1.3);
     opacity: 0.2;
     filter: blur(5px);
   }
 
   ul.links li a:hover {
-    transform: scale(1.7);
+    transform: scale(1.3);
     opacity: 1;
     filter: blur(0);
     color: #fff;

@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <Wrapper className={`navbar section__center ${isNavbarVisible ? "navbar" : "navbar sticky"}`}>
       <div className="logo">
-        <h2>Mihaela</h2>
+        <h3 className="logo__name">Mihaela.dev</h3>
       </div>
       <div className="nav-links">
         <ul className="links">
@@ -87,10 +87,9 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
-  height: 5rem;
+  height: 6rem;
   width: 100%;
   max-width: var(--max-width);
-  background: var(--clr-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,7 +98,6 @@ const Wrapper = styled.nav`
   top: 0;
   z-index: 999;
   transition: top 0.5s ease-in-out;
-  border-bottom: 2px solid black;
 
   .sticky {
     top: 20px;
@@ -107,6 +105,12 @@ const Wrapper = styled.nav`
 
   div.logo {
     flex: 1;
+  }
+
+  .logo__name {
+    font-family: "Alice", serif;
+    font-size: 1.8rem;
+    color: var(--clr-green-light1);
   }
 
   div.nav-links {
@@ -149,7 +153,7 @@ const Wrapper = styled.nav`
 
   //effects
   a.active {
-    color: red;
+    color: var(--clr-green-light1) !important;
   }
 
   .icon-btn {
@@ -189,6 +193,7 @@ const Wrapper = styled.nav`
     opacity: 1;
     filter: blur(0);
     color: #fff;
+    border-radius: 0.3rem;
   }
 
   ul.links li a:before {
@@ -198,17 +203,19 @@ const Wrapper = styled.nav`
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ff497c;
+    background: var(--clr-grey-6);
     transition: 0.5s;
     transform-origin: right;
     transform: scaleX(0);
     z-index: -1;
+    border-radius: 0.3rem;
   }
 
   ul.links li a:hover:before {
     transition: transform 0.5s;
     transform-origin: left;
     transform: scaleX(1);
+    border-radius: 0.3rem;
   }
 `;
 

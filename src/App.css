@@ -5,6 +5,10 @@
     --clr-green-pakistan: #01411C;
     --clr-millenium-blue: #002244;
     /* light blue, green & grey - used for headings */
+    /*--clr-lightblue-1:
+    --clr-lightblue-2:
+    --clr-lightblue-3:*/
+
     --clr-grey-1: hsl(209, 61%, 16%);
     --clr-grey-2: hsl(211, 39%, 23%);
     --clr-grey-3: hsl(209, 34%, 30%);
@@ -30,7 +34,7 @@
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    --max-width: 1200px;
+    --max-width: 1400px;
     --fixed-width: 620px;
   }
 
@@ -45,12 +49,12 @@
 }
 
 body {
-    background-color: var(--clr-white);
+    background-color: var(--clr-green-pakistan);
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
     font-size: 1rem;
     text-decoration: none;
-    color: var(--clr-grey-1);
+    color: var(--clr-grey-8);
 }
 
 ::-webkit-scrollbar {
@@ -114,7 +118,7 @@ hr {
 
 /* === GLOBAL CLASSES === */
 .page {
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 6rem);
   padding: 0 1.5rem;
 }
 
@@ -190,18 +194,6 @@ hr {
   color: var(--clr-primary-1);
 }
 
-.about-container {
-  background: lightblue;
-}
-
-.projects-container {
-  background: lightgray;
-}
-
-.contact-container {
-  background: lightgreen;
-}
-
 /* SIDEBAR*/
 .sidebar-container {
   display: flex;
@@ -236,32 +228,5 @@ ul.sidebar-links li a {
 .hidden {
   height: 0;
   opacity: 1;
-}
-
-/* CONTACT*/
-.contact-container {
-  height: 100vh;
-}
-
-/* CSS */
-
-.page-container {
-  position: relative;
-  min-height: calc(100vh - 15rem);
-}
-
-
-.contact-container {
-  /* Stilurile pentru conținutul paginii */
-}
-
-.footer-container {
-  position: sticky;
-  bottom: 0;
-  width: 80%;
-  margin: 0 auto;
-  border-radius: 40% 40% 0 0;
-  height: 15rem;
-  background: black;
 }
 

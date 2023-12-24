@@ -41,7 +41,7 @@ const Projects = () => {
     : data;
 
   const selectOptions = [
-    { value: "", label: "Select a project type" }, // Adăugare opțiune implicită
+    { value: "", label: "Select a project type" },
     ...uniqueTypes.map((type) => ({
       value: type,
       label: type,
@@ -49,7 +49,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="page-100 projects-container section section-pad" id="projects">
+    <div className="page-100 projects-container section__center section-pad" id="projects">
       <h2>Some of my projects</h2>
       <div className="hr"></div>
       <div className="searchInput">

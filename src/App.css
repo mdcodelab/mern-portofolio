@@ -1,13 +1,19 @@
 :root {
     /* dark shades of primary color*/
-    --clr-navy1: #002D62;
+    --clr-navy-1: #002D62;
+    --clr-navy-2: #005;
+    --clr-navy-3: #13274F;
+    --clr-navy-4: #002244;
+    --clr-navy-5: #041E42;
+    --clr-navy-6: #1E2952; 
+    --clr-navy-7: #0C2340;
     --clr-white: #fff;
-    --clr-green-pakistan: #01411C;
     --clr-millenium-blue: #002244;
     /* light blue, green & grey - used for headings */
-    /*--clr-lightblue-1:
-    --clr-lightblue-2:
-    --clr-lightblue-3:*/
+    --clr-light-blue1: #87CEEB;
+    --clr-lightblue-2:#00CCFF;
+    --clr-lightblue-3: #1da1f2;
+    --clr-lightblue-4: #4169E1;
 
     --clr-grey-1: hsl(209, 61%, 16%);
     --clr-grey-2: hsl(211, 39%, 23%);
@@ -15,14 +21,15 @@
     --clr-grey-4: hsl(209, 28%, 39%);
     /* grey used for paragraphs */
     --clr-grey-5: hsl(210, 22%, 49%);
-    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-6: hsl(209, 23%, 60%); /* hover color*/
     --clr-grey-7: hsl(211, 27%, 70%);
-    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-8: hsl(210, 31%, 80%); /* body color*/
     --clr-grey-9: hsl(212, 33%, 89%);
     --clr-grey-10: hsl(210, 36%, 96%);
     --clr-white: #fff;
     --clr-red-dark: hsl(360, 67%, 44%);
-    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-red-light-1: hsl(360, 71%, 66%);
+    --clr-red-light-2: rgb(238, 75, 43);
     --clr-green-dark: hsl(125, 67%, 44%);
     --clr-green-light1: hsl(125, 71%, 66%);
     --clr-green-neon: #39FF14;
@@ -49,7 +56,7 @@
 }
 
 body {
-    background-color: var(--clr-green-pakistan);
+    background-color: var(--clr-navy-7);
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
     font-size: 1rem;
@@ -221,12 +228,21 @@ ul.sidebar-links {
 ul.sidebar-links li a {
   display: block;
   margin: 3.5rem 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   cursor: pointer;
+  color: var(--clr-grey-9);
 }
 
 .hidden {
   height: 0;
   opacity: 1;
 }
+
+
+@media (min-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}
+
 

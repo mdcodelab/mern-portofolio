@@ -25,9 +25,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Wrapper className={`navbar section__center ${isNavbarVisible ? "navbar" : "navbar sticky"}`}>
+    <Wrapper
+      className={`navbar section__center ${
+        isNavbarVisible ? "navbar" : "navbar sticky"
+      }`}
+    >
       <div className="logo">
-        <h3 className="logo__name">Mihaela.dev</h3>
+        <div className="logo__initial">M</div>
+        <div className="logo__name">
+          <h5 className="logo__full__name">MIHAELA DIACONU</h5>
+          <p>WEB DEVELOPER</p>
+        </div>
       </div>
       <div className="nav-links">
         <ul className="links">
@@ -35,8 +43,10 @@ const Navbar = () => {
             <Link
               to="home"
               onClick={() => setActiveLink("home")}
-              smooth={true} offset={-80}
-              className={activeLink === "home" ? "active" : ""}>
+              smooth={true}
+              offset={-80}
+              className={activeLink === "home" ? "active" : ""}
+            >
               Home
             </Link>
           </li>
@@ -44,8 +54,10 @@ const Navbar = () => {
             <Link
               to="about"
               onClick={() => setActiveLink("about")}
-              smooth={true} offset={-80}
-              className={activeLink === "about" ? "active" : ""}>
+              smooth={true}
+              offset={-80}
+              className={activeLink === "about" ? "active" : ""}
+            >
               About
             </Link>
           </li>
@@ -53,8 +65,10 @@ const Navbar = () => {
             <Link
               to="projects"
               onClick={() => setActiveLink("projects")}
-              smooth={true} offset={-80}
-              className={activeLink === "projects" ? "active" : ""}>
+              smooth={true}
+              offset={-80}
+              className={activeLink === "projects" ? "active" : ""}
+            >
               Projects
             </Link>
           </li>
@@ -72,13 +86,19 @@ const Navbar = () => {
         </ul>
         <button
           type="button"
-          className="icon-btn"
+          className="icon__btn"
           onClick={() => setSidebar(!isSidebar)}
         >
           {!isSidebar ? (
-            <HiMenuAlt3></HiMenuAlt3>
+            <HiMenuAlt3
+              style={{ color: "var(--clr-grey-8)" }}
+              className="icon__sidebar"
+            ></HiMenuAlt3>
           ) : (
-            <IoCloseOutline></IoCloseOutline>
+            <IoCloseOutline
+              style={{ color: "var(--clr-grey-8)" }}
+              className="icon__sidebar"
+            ></IoCloseOutline>
           )}
         </button>
       </div>
@@ -104,13 +124,43 @@ const Wrapper = styled.nav`
   }
 
   div.logo {
-    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    height: 100%;
+  }
+
+  div.logo .logo__initial {
+    border: 0.08px solid var(--clr-green-light1);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
   }
 
   .logo__name {
-    font-family: "Alice", serif;
-    font-size: 1.8rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.9rem;
     color: var(--clr-green-light1);
+    margin-top: 1rem;
+  }
+
+  .logo__full__name {
+    margin: 0;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.08rem;
+    font-size: 1.05rem;
+  }
+
+  .logo__name p {
+    color: var(--clr-grey-6);
+    font-size: 0.7rem;
+    letter-spacing: var(--spacing);
+    text-align: center;
   }
 
   div.nav-links {
@@ -125,11 +175,12 @@ const Wrapper = styled.nav`
   }
 
   div.nav-links ul.links a {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.06rem;
     display: inline-block;
     margin-right: 1.5rem;
     cursor: pointer;
-    color: var(--clr-primary-1);
+    color: var(--clr-grey-8);
   }
 
   button {
@@ -137,7 +188,7 @@ const Wrapper = styled.nav`
   }
 
   @media only screen and (max-width: 992px) {
-    .nav-links ul {
+    div.nav-links ul.links a {
       display: none;
     }
     button {
@@ -151,12 +202,19 @@ const Wrapper = styled.nav`
     }
   }
 
-  //effects
-  a.active {
-    color: var(--clr-green-light1) !important;
+  @media only screen and (max-width: 500px) {
+    .logo__name {
+      display: none;
+    }
+    }
   }
 
-  .icon-btn {
+  //effects
+  a.active {
+    color: var(--clr-red-light-1) !important;
+  }
+
+  .icon__btn {
     border: none;
     outline: none;
     font-size: 1.8rem;
@@ -164,25 +222,31 @@ const Wrapper = styled.nav`
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 0.3rem;
-    transition: background 0.5e ease;
   }
 
-  .icon-btn:hover {
-    background: var(--clr-grey-9);
+  .icon__sidebar {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .icon__btn:hover .icon__sidebar{
+    background: var(--clr-grey-8);
+    color: var(--clr-navy-7) !important;
+    padding: 0.3rem;
+    border-radius: 50%;
   }
   ///last
   ul.links li a {
     display: block;
     position: relative;
     padding: 5px;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: sans-serif;
     color: #fff;
     text-transform: uppercase;
     transition: 0.5s;
   }
 
-  ul.links:hover li a {
+  ul.links li a:hover {
     transform: scale(1.3);
     opacity: 0.2;
     filter: blur(5px);
@@ -217,6 +281,7 @@ const Wrapper = styled.nav`
     transform: scaleX(1);
     border-radius: 0.3rem;
   }
+
 `;
 
 export default Navbar;

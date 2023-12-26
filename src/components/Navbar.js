@@ -145,7 +145,7 @@ const Wrapper = styled.nav`
   .logo__name {
     font-family: "Open Sans", sans-serif;
     font-size: 1.9rem;
-    color: var(--clr-green-light1);
+    color: var(--clr-green-light-1);
     margin-top: 1rem;
   }
 

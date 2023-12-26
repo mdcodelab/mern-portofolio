@@ -110,10 +110,10 @@ const Wrapper = styled.nav`
   height: 6rem;
   width: 100%;
   max-width: var(--max-width);
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3rem;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -132,7 +132,7 @@ const Wrapper = styled.nav`
   }
 
   div.logo .logo__initial {
-    border: 0.08px solid var(--clr-green-light1);
+    border: 0.08px solid var(--clr-green-light-1);
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -167,7 +167,7 @@ const Wrapper = styled.nav`
     display: flex;
     flex: 4;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   div.nav-links ul.links {

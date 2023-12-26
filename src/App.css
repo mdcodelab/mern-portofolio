@@ -126,16 +126,16 @@ hr {
 /* === GLOBAL CLASSES === */
 .page {
   min-height: calc(100vh - 6rem);
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .page-100 {
   min-height: 100vh;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .section {
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 .section__center {

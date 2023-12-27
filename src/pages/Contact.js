@@ -1,6 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { BsFillEnvelopeOpenFill } from "react-icons/bs";
+import { IoMdClose } from "react-icons/io";
+import { FaHandPointDown } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaTelegram } from "react-icons/fa";
 
+//balls
 const getSize = (px) => window.innerWidth * px;
 
 const randomRangeExclusive = (min, max, excludeMin, excludeMax) => {
@@ -148,15 +155,184 @@ const Contact = () => {
     };
   }, []);
 
+  //form
+  const[isFormOpen, setFormOpen]=useState(false);
+  const[closeForm, setCloseForm]=useState(false);
+
+  function openForm() {
+
+  }
+
   return (
-    <Wrapper className="section__center">
-      <canvas ref={canvasRef} style={{ display: "block", width: "100%" }} />
+    <Wrapper className="section__center page-100" id="#contact">
+      <div className="hello">
+        <p className="hello__1">Don't be shy!</p>
+        <p className="hello__2">
+          <span>Hit me up! </span>
+          <FaHandPointDown className="hello__icon"></FaHandPointDown>
+        </p>
+      </div>
+      <canvas className="canvas" ref={canvasRef} />
+      <BsFillEnvelopeOpenFill
+        className="icon__envelope"
+        onClick={() => openForm()}
+      ></BsFillEnvelopeOpenFill>
+      <form className="form">
+        <div className="btn__close">
+          <IoMdClose className="btn__close__icon"></IoMdClose>
+        </div>
+        <div className="name">
+          <label>Name:</label>
+          <input type="text"></input>
+        </div>
+        <div className="rmail">
+          <label>E-mail:</label>
+          <input type="email"></input>
+        </div>
+        <div className="message">
+          <label>Your message:</label>
+          <textarea></textarea>
+        </div>
+        <button type="submit"></button>
+      </form>
+      <div className="copyright">
+        <div className="contact__icons">
+          <span>Email: d_mihaela@msn.com</span>
+            <a href="https://github.com/mdcodelab"><FaGithub></FaGithub></a>
+            <a href=""><FaLinkedin></FaLinkedin></a>
+            <a href=""><FaTelegram></FaTelegram></a>
+        </div>
+        <p style={{ color: "white" }}>
+          &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All
+          Rights Reserved.
+        </p>
+      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  border: 2px solid red;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  .canvas {
+    display: block;
+    width: 100%;
+    height: 70vh;
+  }
+
+  .hello {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: var(--spacing);
+  }
+
+  .hello__1,
+  .hello__2 {
+    margin: 0;
+    padding: 0;
+    color: var(--clr-grey-6);
+    font-weight: bold;
+    letter-spacing: 0.08rem;
+  }
+
+  .hello__2 {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .hello__icon {
+    display: block;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--clr-red-light-1);
+    transition: all 2s ease;
+  }
+
+  .hello__icon:hover {
+    transform: translateY(10px);
+    color: var(--clr-grey-6);
+  }
+
+  .icon__envelope {
+    display: flock;
+    font-size: 10rem;
+    position: absolute;
+    top: 9rem;
+    left: 43.5%;
+    z-index: 10;
+    color: var(--clr-red-light-1);
+    cursor: pointer;
+    transition: all 2.5s ease;
+    animation: expand 3s infinite;
+  }
+
+  @keyframes expand {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .icon__envelope:hover {
+    color: var(--clr-grey-6);
+  }
+
+  //form
+  .form {
+    width: 290px;
+    height: 300px;
+    border: 2px solid white;
+    position: absolute;
+    z-index: 2;
+    top: 198px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0.08px solid var(--clr-grey-6);
+    border-radius: 0.3rem;
+    box-shadow: var(--light-shadow-2);
+    display: none;
+  }
+
+  //icons
+  .contact__icons {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20rem;
+    border: 2px solid white;
+  }
+
+  //copyright
+  .copyright {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .copyright p {
+    font-size: 0.85rem;
+  }
+
+  .copyright p span {
+    font-family: "Open Sans", sans-serif;
+    color: var(--clr-green-light-1);
+    font-weight: bold;
+  }
 `;
 
 export default Contact;

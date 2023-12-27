@@ -38,8 +38,9 @@
     --transition: all 0.3s linear;
     --spacing: 0.1rem;
     --radius: 0.3rem;
-    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --light-shadow-1: 0 5px 15px rgba(255, 255, 255, 0.1);
+    --light-shadow-2: inset rgba(255, 255, 255, 0.35) 0px 2px 5px;
+    --dark-shadow-1: 0 5px 15px rgba(0, 0, 0, 0.2);
     --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     --max-width: 1400px;
     --fixed-width: 620px;

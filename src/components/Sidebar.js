@@ -42,7 +42,7 @@ const Sidebar = () => {
           <Link to="contact"
             onClick={() => handleClick("contact")}
             className={activeLink === "contact" ? "active" : ""}
-            smooth={true} offset={0}>
+            smooth={true} offset={-155}>
             Contact
           </Link>
         </li>

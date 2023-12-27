@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { BsFillEnvelopeOpenFill } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
+import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaHandPointDown } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -156,11 +157,25 @@ const Contact = () => {
   }, []);
 
   //form
-  const[isFormOpen, setFormOpen]=useState(false);
-  const[closeForm, setCloseForm]=useState(false);
+  const[closeEnvelope, setCloseEnvelope]=useState(false);
+  const[closeForm, setCloseForm]=useState(true);
+
+  const[name, setName]=useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleSubmit(e) {
+    email.preventDefault();
+  }
 
   function openForm() {
+    setCloseForm(!closeForm);
+    setCloseEnvelope(!closeEnvelope);
+  }
 
+  function openEnvelope () {
+    setCloseForm(!closeForm);
+    setCloseEnvelope(!closeEnvelope);
   }
 
   return (
@@ -172,28 +187,31 @@ const Contact = () => {
           <FaHandPointDown className="hello__icon"></FaHandPointDown>
         </p>
       </div>
+
       <canvas className="canvas" ref={canvasRef} />
+      
       <BsFillEnvelopeOpenFill
-        className="icon__envelope"
+        className={!closeEnvelope ? "icon__envelope" : "icon__envelope displayNone"}
         onClick={() => openForm()}
       ></BsFillEnvelopeOpenFill>
-      <form className="form">
+
+      <form className={ closeForm ? "form displayNone" : "form"}>
         <div className="btn__close">
-          <IoMdClose className="btn__close__icon"></IoMdClose>
+          <IoMdClose className="btn__close__icon" onClick={()=> openEnvelope()}></IoMdClose>
         </div>
         <div className="name">
-          <label>Name:</label>
-          <input type="text"></input>
+          <label>Name</label>
+          <input type="text" placeholder="Your name..." value={name} onChange={(e)=> setName(e.target.value)}></input>
         </div>
-        <div className="rmail">
-          <label>E-mail:</label>
-          <input type="email"></input>
+        <div className="email">
+          <label>E-mail</label>
+          <input type="email" placeholder="E-mail..." value={email} onChange={(e)=> setEmail(e.target.value)}></input>
         </div>
         <div className="message">
-          <label>Your message:</label>
-          <textarea></textarea>
+          <label>Message</label>
+          <textarea placeholder="Your message..." value={message} onChange={(e)=> setMessage(e.target.value)}></textarea>
         </div>
-        <button type="submit"></button>
+        <button type="submit"><span>Submit</span><IoIosArrowRoundForward></IoIosArrowRoundForward></button>
       </form>
       <div className="copyright">
         <div className="contact__icons">
@@ -263,9 +281,9 @@ const Wrapper = styled.div`
 
   .icon__envelope {
     display: flock;
-    font-size: 10rem;
+    font-size: 11rem;
     position: absolute;
-    top: 9rem;
+    top: 11rem;
     left: 43.5%;
     z-index: 10;
     color: var(--clr-red-light-1);
@@ -292,24 +310,40 @@ const Wrapper = styled.div`
 
   //form
   .form {
-    width: 290px;
+    width: 50%;
     height: 300px;
-    border: 2px solid white;
     position: absolute;
     z-index: 2;
-    top: 198px;
+    top: 8rem;
     left: 50%;
     transform: translateX(-50%);
     border: 0.08px solid var(--clr-grey-6);
     border-radius: 0.3rem;
     box-shadow: var(--light-shadow-2);
-    display: none;
   }
+
+  .btn__close__icon {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: var(--clr-red-light-1);
+    cursor: pointer;
+    transition: scale 3s ease-in-out;
+  }
+
+.btn__close__icon:hover {
+  transform: scale(1.2);
+}
+
+.displayNone {
+  display: none;
+}
 
   //icons
   .contact__icons {
     position: absolute;
-    bottom: 5rem;
+    bottom: 4rem;
     left: 50%;
     transform: translateX(-50%);
     width: 20rem;

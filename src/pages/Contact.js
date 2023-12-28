@@ -171,6 +171,7 @@ const Contact = () => {
   function openForm() {
     setCloseForm(!closeForm);
     setCloseEnvelope(!closeEnvelope);
+    console.log("openForm")
   }
 
   function openEnvelope () {
@@ -189,36 +190,66 @@ const Contact = () => {
       </div>
 
       <canvas className="canvas" ref={canvasRef} />
-      
+
       <BsFillEnvelopeOpenFill
-        className={!closeEnvelope ? "icon__envelope" : "icon__envelope displayNone"}
+        className={
+          !closeEnvelope ? "icon__envelope" : "icon__envelope displayNone"
+        }
         onClick={() => openForm()}
       ></BsFillEnvelopeOpenFill>
 
-      <form className={ closeForm ? "form displayNone" : "form"}>
+      <form className={closeForm ? "form displayNone" : "form"}>
         <div className="btn__close">
-          <IoMdClose className="btn__close__icon" onClick={()=> openEnvelope()}></IoMdClose>
+          <IoMdClose
+            className="btn__close__icon"
+            onClick={() => openEnvelope()}
+          ></IoMdClose>
         </div>
-        <div className="name">
-          <label>Name</label>
-          <input type="text" placeholder="Your name..." value={name} onChange={(e)=> setName(e.target.value)}></input>
-        </div>
-        <div className="email">
-          <label>E-mail</label>
-          <input type="email" placeholder="E-mail..." value={email} onChange={(e)=> setEmail(e.target.value)}></input>
+        <div className="personal__details">
+          <div className="name">
+            <label>Name</label>
+            <input
+              type="text"
+              placeholder="Your name..."
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            ></input>
+          </div>
+          <div className="email">
+            <label>E-mail</label>
+            <input
+              type="email"
+              placeholder="Your e-mail..."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+          </div>
         </div>
         <div className="message">
           <label>Message</label>
-          <textarea placeholder="Your message..." value={message} onChange={(e)=> setMessage(e.target.value)}></textarea>
+          <textarea
+            placeholder="Your message..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          ></textarea>
         </div>
-        <button type="submit"><span>Submit</span><IoIosArrowRoundForward></IoIosArrowRoundForward></button>
+        <button type="submit" className="btn__submit">
+          <span>Submit</span>
+          <IoIosArrowRoundForward></IoIosArrowRoundForward>
+        </button>
       </form>
       <div className="copyright">
         <div className="contact__icons">
           <span>Email: d_mihaela@msn.com</span>
-            <a href="https://github.com/mdcodelab"><FaGithub></FaGithub></a>
-            <a href=""><FaLinkedin></FaLinkedin></a>
-            <a href=""><FaTelegram></FaTelegram></a>
+          <a href="https://github.com/mdcodelab">
+            <FaGithub></FaGithub>
+          </a>
+          <a href="">
+            <FaLinkedin></FaLinkedin>
+          </a>
+          <a href="">
+            <FaTelegram></FaTelegram>
+          </a>
         </div>
         <p style={{ color: "white" }}>
           &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All
@@ -308,18 +339,23 @@ const Wrapper = styled.div`
     color: var(--clr-grey-6);
   }
 
+  .displayNone {
+    display: none;
+  }
+
   //form
   .form {
     width: 50%;
     height: 300px;
     position: absolute;
     z-index: 2;
-    top: 8rem;
+    top: 7rem;
     left: 50%;
+    padding: 0.5rem;
     transform: translateX(-50%);
     border: 0.08px solid var(--clr-grey-6);
     border-radius: 0.3rem;
-    box-shadow: var(--light-shadow-2);
+    box-shadow: 0 1px 3px rgba(225, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
   }
 
   .btn__close__icon {
@@ -332,13 +368,88 @@ const Wrapper = styled.div`
     transition: scale 3s ease-in-out;
   }
 
-.btn__close__icon:hover {
-  transform: scale(1.2);
-}
+  .btn__close__icon:hover {
+    transform: scale(1.2);
+  }
 
-.displayNone {
-  display: none;
-}
+  .personal__details {
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .name,
+  .email {
+    width: 47%;
+  }
+
+  .name input,
+  .email input {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .message {
+    width: 95%;
+    margin: 2rem auto !important;
+  }
+
+  .message textarea {
+    width: 100%;
+    height: 2rem;
+  }
+
+  .name input,
+  .email input,
+  .message textarea {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--clr-grey-8);
+    color: var(--clr-grey-8);
+    color: var(--clr-light-blue-2);
+    font-size: 1.1rem;
+    letter-spacing: none;
+    background: var(--clr-navy-7);
+    transition: color 3s ease-in-out;
+  }
+
+  .name input::placeholder,
+  .email input::placeholder,
+  .message textarea::placeholder {
+    transition: color 3s ease-in-out;
+  }
+
+  .name input:hover::placeholder,
+  .email input:hover::placeholder,
+  .message textarea:hover::placeholder {
+    color: transparent;
+  }
+
+  .btn__submit {
+    width: 8rem;
+    height: 2.2rem;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background: var(--clr-red-light-1);
+    color: var(--clr-navy-7);
+    letter-spacing: 0.08rem;
+    transition: all 1s ease-in-out;
+  }
+
+  .btn__submit:hover {
+    color: var(--clr-grey-8);
+    background: var(--clr-grey-1);
+    border: 0.08rem solid var(--clr-grey-8);
+  }
 
   //icons
   .contact__icons {

@@ -198,7 +198,11 @@ const Contact = () => {
         onClick={() => openForm()}
       ></BsFillEnvelopeOpenFill>
 
-      <form className={closeForm ? "form displayNone" : "form"}>
+      <form
+        className={closeForm ? "form displayNone" : "form"}
+        action="https://formspree.io/f/mbjvoylv"
+        method="POST"
+      >
         <div className="btn__close">
           <IoMdClose
             className="btn__close__icon"
@@ -211,14 +215,14 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your name..."
-              value={name}
+              value={name} name="name"
               onChange={(e) => setName(e.target.value)}
             ></input>
           </div>
           <div className="email">
             <label>E-mail</label>
             <input
-              type="email"
+              type="email" name="email"
               placeholder="Your e-mail..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -229,7 +233,7 @@ const Contact = () => {
           <label>Message</label>
           <textarea
             placeholder="Your message..."
-            value={message}
+            value={message} name="message"
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
         </div>
@@ -240,7 +244,7 @@ const Contact = () => {
       </form>
       <div className="copyright">
         <div className="contact__icons">
-          <span>Email: d_mihaela@msn.com</span>
+          <span>E-mail: d_mihaela@msn.com</span>
           <a href="https://github.com/mdcodelab">
             <FaGithub></FaGithub>
           </a>
@@ -261,7 +265,6 @@ const Contact = () => {
 };
 
 const Wrapper = styled.div`
-  border: 2px solid red;
   position: relative;
   display: flex;
   align-items: center;
@@ -382,7 +385,7 @@ const Wrapper = styled.div`
 
   .name,
   .email {
-    width: 47%;
+    width: 40%;
   }
 
   .name input,
@@ -392,7 +395,7 @@ const Wrapper = styled.div`
   }
 
   .message {
-    width: 95%;
+    width: 90%;
     margin: 2rem auto !important;
   }
 
@@ -452,25 +455,49 @@ const Wrapper = styled.div`
   }
 
   //icons
-  .contact__icons {
+  div.contact__icons {
     position: absolute;
-    bottom: 4rem;
+    bottom: 3.5rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 20rem;
-    border: 2px solid white;
+    width: 24rem;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact__icons span, .contact__icons a {
+    display: block;
+    color: var(--clr-grey-6);
+  }
+
+  .contact__icons span {
+    color: var(--clr-green-light-1);
+    cursor: pointer;
+  }
+
+  .contact__icons a {
+    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--clr-green-light-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   //copyright
   .copyright {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.85rem;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .copyright p {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
   .copyright p span {

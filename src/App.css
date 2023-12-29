@@ -93,7 +93,7 @@ hr {
   h1, h2, h3, h4, h5 {
     letter-spacing: var(--spacing);
     line-height: 1.25;
-    margin-bottom: 0.75rem;
+    margin-bottom: 2rem;
   }
   h1 {
     font-size: 2.5rem;

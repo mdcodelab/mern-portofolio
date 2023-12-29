@@ -1,16 +1,13 @@
-import React from 'react';
+// Project.js
 
-const Project = ({filteredResults}) => {
-    console.log(filteredResults);
+import React from "react";
 
-
+const Project = ({ project }) => {
   return (
     <div className="">
-      {filteredResults.map((project) => {
-        return <div>{project.title}</div>
-      })}
+      <h3>{project.title}</h3>
     </div>
   );
-}
+};
 
 export default Project;

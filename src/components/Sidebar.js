@@ -9,6 +9,7 @@ const Sidebar = () => {
   const handleClick = (value) => {
     setSidebar(!isSidebar);
     setActiveLink(value);
+    console.log("contact")
   };
 
   return (
@@ -26,7 +27,7 @@ const Sidebar = () => {
           <Link to="about"
             onClick={() => handleClick("about")}
             className={activeLink === "about" ? "active" : ""}
-            smooth={true} offset={-155}>
+            smooth={true} offset={-455}>
             About
           </Link>
         </li>
@@ -42,7 +43,7 @@ const Sidebar = () => {
           <Link to="contact"
             onClick={() => handleClick("contact")}
             className={activeLink === "contact" ? "active" : ""}
-            smooth={true} offset={-355}>
+            smooth={true} offset={-155}>
             Contact
           </Link>
         </li>

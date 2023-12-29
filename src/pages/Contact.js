@@ -179,7 +179,7 @@ const Contact = () => {
   }
 
   return (
-    <Wrapper className="section__center section page-100" id="#contact">
+    <Wrapper className="section__center section page-100" id="contact">
       <div className="hello">
         <p className="hello__1">Don't be shy!</p>
         <p className="hello__2">
@@ -255,7 +255,7 @@ const Contact = () => {
         </div>
         <hr></hr>
         <div className="copyright">
-          <p classNAme="copyright__footer">
+          <p className="copyright__footer">
             &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All Rights Reserved.</p>
         </div>
       </div>
@@ -306,7 +306,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     font-size: 1.3rem;
     color: var(--clr-red-light-1);
-    transition: all 2s ease;
+    transition: all 0.7s ease-in-out;
   }
 
   .hello__icon:hover {
@@ -324,7 +324,7 @@ const Wrapper = styled.div`
     z-index: 100;
     color: var(--clr-red-light-1);
     cursor: pointer;
-    transition: all 2.5s ease;
+    transition: all 0.7s ease-in-out;
     animation: expand 3s infinite;
   }
 
@@ -372,7 +372,7 @@ const Wrapper = styled.div`
     right: 0.5rem;
     color: var(--clr-red-light-1);
     cursor: pointer;
-    transition: scale 3s ease-in-out;
+    transition: scale 0.8s ease-in-out;
   }
 
   .btn__close__icon:hover {
@@ -419,13 +419,13 @@ const Wrapper = styled.div`
     font-size: 1.1rem;
     letter-spacing: none;
     background: var(--clr-navy-7);
-    transition: color 3s ease-in-out;
+    transition: color 0.7s ease-in-out;
   }
 
   .name input::placeholder,
   .email input::placeholder,
   .message textarea::placeholder {
-    transition: color 3s ease-in-out;
+    transition: color 0.7s ease-in-out;
   }
 
   .name input:hover::placeholder,
@@ -449,7 +449,7 @@ const Wrapper = styled.div`
     background: var(--clr-red-light-1);
     color: var(--clr-navy-7);
     letter-spacing: 0.08rem;
-    transition: all 1s ease-in-out;
+    transition: all 0.7s ease-in-out;
   }
 
   .btn__submit:hover {
@@ -512,7 +512,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.5s; ease-in-out;
+    transition: all 0.7s ease-in-out;
   }
 
   a.linkedin {
@@ -523,7 +523,7 @@ const Wrapper = styled.div`
     background: var(--clr-grey-8);
     font-size: 1.5rem;
     font-weight: bold;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.7s ease-in-out;
   }
 
   .contact__icons__container a:hover {

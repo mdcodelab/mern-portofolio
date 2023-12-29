@@ -4,8 +4,7 @@ import { BsFillEnvelopeOpenFill } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaHandPointDown } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa"
 import { FaTelegram } from "react-icons/fa";
 
 //balls
@@ -180,7 +179,7 @@ const Contact = () => {
   }
 
   return (
-    <Wrapper className="section__center page-100" id="#contact">
+    <Wrapper className="section__center section page-100" id="#contact">
       <div className="hello">
         <p className="hello__1">Don't be shy!</p>
         <p className="hello__2">
@@ -215,14 +214,16 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your name..."
-              value={name} name="name"
+              value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)}
             ></input>
           </div>
           <div className="email">
             <label>E-mail</label>
             <input
-              type="email" name="email"
+              type="email"
+              name="email"
               placeholder="Your e-mail..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -233,7 +234,8 @@ const Contact = () => {
           <label>Message</label>
           <textarea
             placeholder="Your message..."
-            value={message} name="message"
+            value={message}
+            name="message"
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
         </div>
@@ -242,23 +244,20 @@ const Contact = () => {
           <IoIosArrowRoundForward></IoIosArrowRoundForward>
         </button>
       </form>
-      <div className="copyright">
-        <div className="contact__icons">
+
+      <div className="footer">
+        <div className="contact__icons__container">
           <span>E-mail: d_mihaela@msn.com</span>
-          <a href="https://github.com/mdcodelab">
-            <FaGithub></FaGithub>
-          </a>
-          <a href="">
-            <FaLinkedin></FaLinkedin>
-          </a>
-          <a href="">
-            <FaTelegram></FaTelegram>
-          </a>
+                <a href="https://github.com/mdcodelab" className="git"><FaGithub></FaGithub></a>
+                <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/" className="linkedin">in</a>
+                <a href=""><FaTelegram></FaTelegram></a>
+          
         </div>
-        <p style={{ color: "white" }}>
-          &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All
-          Rights Reserved.
-        </p>
+        <hr></hr>
+        <div className="copyright">
+          <p classNAme="copyright__footer">
+            &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All Rights Reserved.</p>
+        </div>
       </div>
     </Wrapper>
   );
@@ -272,8 +271,10 @@ const Wrapper = styled.div`
 
   .canvas {
     display: block;
+    position: absolute;
     width: 100%;
     height: 70vh;
+    z-index: 2;
   }
 
   .hello {
@@ -318,8 +319,9 @@ const Wrapper = styled.div`
     font-size: 11rem;
     position: absolute;
     top: 11rem;
-    left: 43.5%;
-    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
     color: var(--clr-red-light-1);
     cursor: pointer;
     transition: all 2.5s ease;
@@ -328,13 +330,13 @@ const Wrapper = styled.div`
 
   @keyframes expand {
     0% {
-      transform: scale(1);
+      transform: translateX(-50%) scale(1);
     }
     50% {
-      transform: scale(1.2);
+      transform: translateX(-50%) scale(1.2);
     }
     100% {
-      transform: scale(1);
+      transform: translateX(-50%) scale(1);
     }
   }
 
@@ -351,14 +353,16 @@ const Wrapper = styled.div`
     width: 50%;
     height: 300px;
     position: absolute;
-    z-index: 2;
+    z-index: 100;
     top: 7rem;
     left: 50%;
     padding: 0.5rem;
     transform: translateX(-50%);
     border: 0.08px solid var(--clr-grey-6);
     border-radius: 0.3rem;
-    box-shadow: 0 1px 3px rgba(225, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+    box-shadow: 0 1px 3px rgba(225, 255, 255, 0.12),
+      0 1px 2px rgba(255, 255, 255, 0.24);
+    background: var(--clr-navy-7);
   }
 
   .btn__close__icon {
@@ -432,7 +436,7 @@ const Wrapper = styled.div`
 
   .btn__submit {
     width: 8rem;
-    height: 2.2rem;
+    height: 2rem;
     border: none;
     display: block;
     margin: 0 auto;
@@ -441,7 +445,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background: var(--clr-red-light-1);
     color: var(--clr-navy-7);
     letter-spacing: 0.08rem;
@@ -454,56 +458,116 @@ const Wrapper = styled.div`
     border: 0.08rem solid var(--clr-grey-8);
   }
 
-  //icons
-  div.contact__icons {
+  @media (max-width: 700px) {
+    label {
+      font-size: 0.85rem;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      font-size: 0.65rem;
+    }
+    .btn__submit {
+      font-size: 0.85rem;
+    }
+  }
+
+  //footer
+  .footer {
+    width: 100%;
+    height: 7rem;
+    background: #222;
     position: absolute;
-    bottom: 3.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 0;
+    left: 0;
+    margin-top: 2rem;
+  }
+  div.contact__icons__container {
     width: 24rem;
     height: max-content;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 1rem auto;
   }
 
-  .contact__icons span, .contact__icons a {
+  .contact__icons__container span,
+  .contact__icons__container a {
     display: block;
     color: var(--clr-grey-6);
   }
 
-  .contact__icons span {
+  .contact__icons__container span {
     color: var(--clr-green-light-1);
     cursor: pointer;
+    font-size: 1rem;
   }
 
-  .contact__icons a {
+  .contact__icons__container a {
+    display: block;
     font-size: 2rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 45%;
+    color: var(--clr-grey-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s; ease-in-out;
+  }
+
+  a.linkedin {
     border-radius: 50%;
-    background: var(--clr-green-light-1);
+    width: 2.2rem;
+    height: 2.2rem;
+    color: #222;
+    background: var(--clr-grey-8);
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .contact__icons__container a:hover {
+    color: black;
+    background: var(--clr-grey-8);
+  }
+
+  a.linkedin:hover {
+    color: var(--clr-grey-8);
+    background: #222;
+    border: 0.08px solid var(--clr-grey-8);
+  }
+
+  //copyright
+  .copyright {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  //copyright
-  .copyright {
-    position: absolute;
-    bottom: 0.85rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .copyright p {
     font-size: 0.75rem;
+    margin: 1rem auto;
+    padding: 0;
+    color: var(--clr-grey-8);
   }
 
   .copyright p span {
     font-family: "Open Sans", sans-serif;
     color: var(--clr-green-light-1);
     font-weight: bold;
+  }
+
+  @media (max-width: 700px) {
+    div.contact__icons__container {
+      width: 290px;
+    }
+    .contact__icons__container span {
+      font-size: 0.85rem;
+    }
+
+    .contact__icons__container a {
+      font-size: 1.5rem;
+    }
   }
 `;
 

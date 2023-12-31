@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-import { data } from "../data";
+import { data1 } from "../data1";
 import Project from "../components/Project";
 import styled from "styled-components";
 
@@ -12,13 +12,13 @@ const customStyles = {
     border: "0.5px solid #ccc",
     outline: "none",
     borderRadius: "4px",
-    width: "20rem",
+    width: "290px",
     textAlign: "center",
     cursor: "pointer",
   }),
   menu: (provided) => ({
     ...provided,
-    width: "20rem",
+    width: "290px",
     marginTop: "1.5mm",
   }),
   option: (provided, state) => ({
@@ -49,12 +49,12 @@ const Projects = () => {
 
   const filteredProjects =
     selectedType === "all"
-      ? data
-      : data.filter((project) => project.type === selectedType);
+      ? data1
+      : data1.filter((project) => project.type === selectedType);
 
   return (
     <Wrapper
-      className="page-100 projects-container section__center section-pad"
+      className="page-100 projects__container section__center section-pad"
       id="projects"
     >
       <h2 className="title">Some of my projects</h2>
@@ -78,10 +78,19 @@ const Projects = () => {
 };
 
 const Wrapper = styled.div`
-div.searchInput {
-  margin: 0 auto;
-  width: 20rem;
-}
+  border: 3px solid red;
+  padding: 3rem;
+
+  div.searchInput {
+    margin: 0 auto;
+    width: max-content;
+  }
+
+  @media (max-width: 700px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export default Projects;

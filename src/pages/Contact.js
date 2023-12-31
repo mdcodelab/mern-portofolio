@@ -181,11 +181,8 @@ const Contact = () => {
   return (
     <Wrapper className="section__center section page-100" id="contact">
       <div className="hello">
-        <p className="hello__1">Don't be shy!</p>
-        <p className="hello__2">
-          <span>Hit me up! </span>
-          <FaHandPointDown className="hello__icon"></FaHandPointDown>
-        </p>
+      <h2 className="title">Contact</h2>
+        <p className="hello__1">Don't be shy! Hit me up!</p>
       </div>
 
       <canvas className="canvas" ref={canvasRef} />
@@ -253,7 +250,7 @@ const Contact = () => {
                 <a href=""><FaTelegram></FaTelegram></a>
           
         </div>
-        <hr></hr>
+        <hr className="hr"></hr>
         <div className="copyright">
           <p className="copyright__footer">
             &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All Rights Reserved.</p>
@@ -266,8 +263,11 @@ const Contact = () => {
 const Wrapper = styled.div`
   position: relative;
   display: flex;
+  height: 100%;
   align-items: center;
   justify-content: center;
+  padding: 3rem;
+  border: 3px solid red;
 
   .canvas {
     display: block;
@@ -279,7 +279,7 @@ const Wrapper = styled.div`
 
   .hello {
     position: absolute;
-    top: 2rem;
+    top: 2.1rem;
     left: 50%;
     transform: translateX(-50%);
     letter-spacing: var(--spacing);
@@ -469,6 +469,13 @@ const Wrapper = styled.div`
     .btn__submit {
       font-size: 0.85rem;
     }
+    .hello__1 {
+      font-size: 0.7rem;
+      letter-spacing: none;
+    }
+    .title {
+      font-size: 1.5rem;
+    }
   }
 
   //footer
@@ -555,6 +562,11 @@ const Wrapper = styled.div`
     font-family: "Open Sans", sans-serif;
     color: var(--clr-green-light-1);
     font-weight: bold;
+  }
+
+  .hr {
+    width: 50%;
+    margin: 0 auto;
   }
 
   @media (max-width: 700px) {

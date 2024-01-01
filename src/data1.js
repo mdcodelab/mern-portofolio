@@ -21,7 +21,7 @@ export const data1 = [
     urlDemo: "https://winter-beauties.netlify.app/",
     urlGit: "https://github.com/mdcodelab/winterscape-landingpage",
     description:
-      "Winterscape - a virtual snowfall experience with audio and animations.User can buy products, read recipes and news, all for the winter season!",
+      "Winterscape - a virtual snowfall experience with audio and animations. Users can buy products, read recipes and news, all for the winter season!",
     tech: ["JavaScript", "CSS3", "HTML5"],
     icon_1: <FaGithub></FaGithub>,
     icon_2: <AiFillEye></AiFillEye>,

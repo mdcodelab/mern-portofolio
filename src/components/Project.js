@@ -1,45 +1,42 @@
-import React from "react";
+import React from 'react';
 import styled from "styled-components";
-import laptop from "../assets/laptop.png";
 import ReactPlayer from "react-player";
 
-const Project = ({ project, index }) => {
-  const {
-    title,
-    icon,
-    video,
-    urlDemo,
-    urlGit,
-    description,
-    tech,
-    icon_1,
-    icon_2,
-  } = project;
+function Project({project, index}) {
+    const {
+      title,
+      icon,
+      video,
+      urlDemo,
+      urlGit,
+      description,
+      tech,
+      icon_1,
+      icon_2,
+    } = project;
 
   return (
     <Wrapper>
-      <div
-        className={`project__container project ${
-          index % 2 === 0 ? "even" : "odd"
-        }`}
-      >
-        <div className="left__side">
-          <div className="project__video">
+      <div className="container">
+        <div className="left">
+          <div className="video">
             <ReactPlayer className="video"
               playing
+              controls
               loop
               style={{
                 maxWidth: "100%",
+                width: "100%",
                 height: "auto",
                 borderRadius: "1rem",
+                margin: "0 auto",
                 objectFit: "cover",
               }}
-              url="assets/videos_projects/winter_2.mp4"
+              url={video}
             />
           </div>
         </div>
-
-        <div className="right__side">
+        <div className="right">
           <div className="project__content">
             <div className="project__title">
               <h3>{title}</h3>
@@ -58,7 +55,7 @@ const Project = ({ project, index }) => {
                 Code <span>{icon_1}</span>
               </a>
               <a href={urlDemo}>
-                Live Demo <span>{icon_2}</span>
+                Demo <span>{icon_2}</span>
               </a>
             </div>
           </div>
@@ -66,36 +63,26 @@ const Project = ({ project, index }) => {
       </div>
     </Wrapper>
   );
-};
+}
+
 const Wrapper = styled.div`
-  .project__container {
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 3rem;
-    box-shadow: inset 0 1px 3px var(--clr-grey-6),
-      0 1px 3px rgba(255, 255, 255, 0.5);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-  }
-
-  .left__side, .right__side {
-    flex: 1;
-  }
-
-  .project__video {
+  .container {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    text-align: center;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    box-shadow: inset 0px 0px 4px var(--clr-grey-6);
+    border-radius: 0.5rem;
   }
 
-  .project__content {
-    width: 100%;
+  .left,
+  .right {
+    width: 50%;
+  }
+
+  .right {
+    padding: 0 2rem;
   }
 
   //right side
@@ -104,7 +91,7 @@ const Wrapper = styled.div`
     align-items: center;
     height: max-content;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     letter-spacing: 0.5rem;
   }
 
@@ -116,12 +103,13 @@ const Wrapper = styled.div`
   .project__title__icon {
     margin-left: 1rem;
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     padding: 0.3rem !important;
     color: var(--clr-grey-8);
+    background: var(--clr-navy-7);
     border: 0.07rem solid lightgrey;
     display: flex;
     align-items: center;
@@ -130,48 +118,49 @@ const Wrapper = styled.div`
   }
 
   .project__title__icon:hover {
-    color: black;
+    color: var(--clr-navy-7);
     background: var(--clr-grey-8);
   }
 
   .project__description {
     color: var(--clr-grey-6);
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: justify;
-    padding-right: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   .project__technologies {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .project__technologies span {
     color: var(--clr-grey-10);
     display: block;
     margin-right: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .project__watch {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 15rem;
+    width: 13rem;
   }
 
   .project__watch a {
     display: flex;
     align-items: center;
+    font-size: 1rem !important;
   }
 
   .project__watch span {
     display: block;
     margin-left: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -185,7 +174,7 @@ const Wrapper = styled.div`
   }
 
   .project__watch span:hover {
-    color: black;
+    color: var(--clr-navy-7);
     background: var(--clr-grey-8);
   }
 
@@ -195,56 +184,95 @@ const Wrapper = styled.div`
     color: var(--clr-grey-6);
   }
 
-  @media (max-width: 1103px) {
-    .project__container {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-    .project__video {
-      margin: 0 auto;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .project__content {
-      margin-top: 2rem;
-      margin-left: 0;
-    }
-    .project__content {
-      width: 100%;
-      padding: 0 5rem;
-    }
-    .project__description {
-      padding: 0;
-    }
-  }
 
-  @media (max-width: 608px) {
-    .project__video {
-      width: 70%;
-      margin: 0 auto;
-      border: 2px solid white;
+  @media only screen and (max-width: 1100px) {
+    .container {
+      flex-direction: column;
+      height: 100%;
     }
-    .video {
+    .left,
+    .right {
       width: 100%;
       height: auto;
     }
-    .project__content {
-      width: 60%;
-      border: 2px solid red;
+
+    .left {
+      padding: 0 1rem;
     }
-    .project__title h3 {
-      font-size: 1.2rem;
+    .right {
+        padding: 1rem;
     }
-    .project__description {
-      font-size: 0.8rem;
-      width: 50%;
+    .video {
+      margin: 0 auto;
+    }
+    .project__title {
+        width: max-content;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+    .project__technologies {
+        margin: 0 auto;
+        width: max-content;
+    }
+    .project__watch {
+        margin: 0 auto;
+        width: 13rem;
+    }
+}
+
+    @media only screen and (max-width: 681px) {
+        .video {
+          margin: -50px auto;
+        }
     }
 
-    
-  }
+    @media only screen and (max-width: 454px) {
+        .container {
+            width: 100%;
+            padding: 0.5rem;
+        }
+        .video {
+          margin: -100px auto;
+        }
+        .project__title {
+            flex: none;
+        }
+        .project__title h3 {
+            font-size: 1rem;
+            letter-spacing: none;
+             margin: 0 auto;
+        }
+        .project__title__icon {
+            display: none;
+        }
+        .project__description {
+            font-size: 1rem;
+        }
+        .project__technologies {
+            display: flex;
+            flex-direction: column;
+        }
+        .project__technologies span {
+            font-size: 0.9rem;
+        }
+        .project__watch {
+            width: 10rem;
+        }
+        .project__watch a {
+            font-size: 1rem;
+        }
+        .project__watch a span {
+            width: 1.5rem; height: 1.5rem;
+        }
+
+    }
+
+    @media only screen and (max-width: 341px) {
+      .video {
+        margin: -120px auto;
+      }
+    }
+
 `;
 
-export default Project
-
+export default Project;

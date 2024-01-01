@@ -7,7 +7,7 @@
     --clr-navy-5: #041E42;
     --clr-navy-6: #1E2952;
     --clr-navy-7: #0C2340;
-    --clr-navy-7-rgba: (12,35,64, 0.3);
+    --clr-navy-7-rgba: rgba(12,35,64, 0.3);
     --clr-white: #fff;
     --clr-millenium-blue: #002244;
     /* light blue, green & grey - used for headings */
@@ -245,11 +245,8 @@ ul.sidebar-links li a {
   opacity: 1;
 }
 
-
 @media (min-width: 992px) {
   .sidebar {
     display: none;
   }
 }
-
-

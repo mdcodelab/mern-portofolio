@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { BsFillEnvelopeOpenFill } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { FaHandPointDown } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa"
 import { FaTelegram } from "react-icons/fa";
 
@@ -164,7 +163,7 @@ const Contact = () => {
   const [message, setMessage] = useState("");
 
   function handleSubmit(e) {
-    email.preventDefault();
+    e.preventDefault();
   }
 
   function openForm() {
@@ -198,7 +197,7 @@ const Contact = () => {
         className={closeForm ? "form displayNone" : "form"}
         action="https://formspree.io/f/mbjvoylv"
         method="POST"
-      >
+      onClick={()=>handleSubmit()}>
         <div className="btn__close">
           <IoMdClose
             className="btn__close__icon"
@@ -526,7 +525,7 @@ const Wrapper = styled.div`
     border-radius: 50%;
     width: 2.2rem;
     height: 2.2rem;
-    color: #222;
+    color: var(--clr-navy-7);
     background: var(--clr-grey-8);
     font-size: 1.5rem;
     font-weight: bold;
@@ -534,13 +533,14 @@ const Wrapper = styled.div`
   }
 
   .contact__icons__container a:hover {
-    color: black;
+    color: var(--clr-navy-7);
     background: var(--clr-grey-8);
+    
   }
 
   a.linkedin:hover {
     color: var(--clr-grey-8);
-    background: #222;
+    background:var(--navy-7);
     border: 0.08px solid var(--clr-grey-8);
   }
 

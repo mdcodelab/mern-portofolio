@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-import { data1 } from "../data1";
+import { data } from "../data";
 import Project from "../components/Project";
 import styled from "styled-components";
 
@@ -9,14 +9,16 @@ const customStyles = {
     ...provided,
     padding: "0 60px",
     margin: "0 auto",
-    fontSize: "1.1rem",
+    fontSize: "1.05rem",
+    letterSpacing: "0.08rem",
     border: "0.5px solid #ccc",
     outline: "none",
-    borderRadius: "4px",
+    borderRadius: "5px",
     width: "100%",
     textAlign: "center",
-    backgroundColor: "var(--clr-grey-10)",
+    backgroundColor: "var(--clr-grey-8)",
     cursor: "pointer",
+    boxShadow: "inset 0px 0px 9px var(--clr-grey-10)"
   }),
   menu: (provided) => ({
     ...provided,
@@ -25,9 +27,9 @@ const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    backgroundColor: state.isFocused ? "var(--clr-grey-10)" : "transparent",
+    backgroundColor: state.isFocused ? "var(--clr-grey-8)" : "transparent",
     color: state.isFocused ? "var(--clr-navy-7)" : "#777777",
-    fontSize: "1.1rem",
+    fontSize: "1.05rem",
     cursor: "pointer",
     textTransform: "capitalize",
     textAlign: "center",
@@ -51,16 +53,17 @@ const Projects = () => {
 
   const filteredProjects =
     selectedType === "all"
-      ? data1
-      : data1.filter((project) => project.type === selectedType);
+      ? data
+      : data.filter((project) => project.type === selectedType);
 
   return (
     <Wrapper
       className="page-100 projects__container section__center section-pad"
       id="projects"
     >
-      <h2 className="title">Some of my projects</h2>
-      <div className="hr"></div>
+      <h2 className="title">Projects</h2>
+      <hr style={{width: "100px", margin: "0rem auto"}}></hr>
+      <h4 className="subtitle">Some of my work</h4>
       <div className="searchInput">
         <Select
           value={options.find((option) => option.value === selectedType)}
@@ -75,11 +78,6 @@ const Projects = () => {
           <Project key={project.id} project={project} />
         ))}
       </div>
-      <br></br>
-      <select>
-        <option></option>
-        <option></option>
-      </select>
     </Wrapper>
   );
 };
@@ -93,7 +91,16 @@ const Wrapper = styled.div`
     width: max-content;
   }
 
-  @media (max-width: 700px) {
+  .title {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  @media screen and (max-width: 700px) {
     .title {
       font-size: 1.5rem;
     }

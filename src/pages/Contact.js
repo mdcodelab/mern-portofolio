@@ -181,7 +181,8 @@ const Contact = () => {
     <Wrapper className="section__center section page-100" id="contact">
       <div className="hello">
         <h2 className="title">Contact</h2>
-        <p className="hello__1">Don't be shy! Hit me up!</p>
+        <hr style={{ width: "100px", margin: "0rem auto" }}></hr>
+        <h4 className="subtitle">Don't be shy! Hit me up!</h4>
       </div>
 
       <canvas className="canvas" ref={canvasRef} />
@@ -197,7 +198,6 @@ const Contact = () => {
         className={closeForm ? "form displayNone" : "form"}
         action="https://formspree.io/f/mbjvoylv"
         method="POST"
-        onClick={() => handleSubmit()}
       >
         <div className="btn__close">
           <IoMdClose
@@ -236,7 +236,11 @@ const Contact = () => {
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
         </div>
-        <button type="submit" className="btn__submit">
+        <button
+          type="submit"
+          className="btn__submit"
+          onClick={() => handleSubmit()}
+        >
           <span>Submit</span>
           <IoIosArrowRoundForward></IoIosArrowRoundForward>
         </button>
@@ -277,7 +281,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  border: 3px solid red;
 
   .canvas {
     display: block;
@@ -295,19 +298,13 @@ const Wrapper = styled.div`
     letter-spacing: var(--spacing);
   }
 
-  .hello__1,
-  .hello__2 {
+  .subtitle {
     margin: 0;
+    text-align: center;
+    margin-top: 2rem;
     padding: 0;
     color: var(--clr-grey-6);
-    font-weight: bold;
     letter-spacing: 0.08rem;
-  }
-
-  .hello__2 {
-    margin-top: 0.5rem;
-    display: flex;
-    align-items: center;
   }
 
   .hello__icon {
@@ -468,7 +465,7 @@ const Wrapper = styled.div`
     border: 0.08rem solid var(--clr-grey-8);
   }
 
-  @media (max-width: 700px) {
+  @media screen and (max-width: 700px) {
     label {
       font-size: 0.85rem;
     }
@@ -479,7 +476,7 @@ const Wrapper = styled.div`
     .btn__submit {
       font-size: 0.85rem;
     }
-    .hello__1 {
+    .subtitle {
       font-size: 0.7rem;
       letter-spacing: none;
     }
@@ -546,12 +543,11 @@ const Wrapper = styled.div`
   .contact__icons__container a:hover {
     color: var(--clr-navy-7);
     background: var(--clr-grey-8);
-    
   }
 
   a.linkedin:hover {
     color: var(--clr-grey-8);
-    background:var(--navy-7);
+    background: var(--navy-7);
     border: 0.08px solid var(--clr-grey-8);
   }
 
@@ -580,7 +576,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
   }
 
-  @media (max-width: 700px) {
+  @media screen and (max-width: 700px) {
     div.contact__icons__container {
       width: 290px;
     }

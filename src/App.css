@@ -154,6 +154,13 @@ hr {
 
 .title {
   text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .title {
+    font-size: 1.5rem;
+  }
 }
 
 .underline {
@@ -246,7 +253,7 @@ ul.sidebar-links li a {
   opacity: 1;
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
   .sidebar {
     display: none;
   }

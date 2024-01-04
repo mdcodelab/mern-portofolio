@@ -231,6 +231,15 @@ const Wrapper = styled.div`
       padding: 0 1rem;
       order: 2;
     }
+    .left.even,
+    .right.odd {
+      order: unset;
+    }
+
+    .left.odd,
+    .right.even {
+      order: unset;
+    }
     .video {
       margin: 0 auto;
     }

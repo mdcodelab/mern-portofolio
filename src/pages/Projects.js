@@ -75,6 +75,11 @@ const Projects = () => {
           <Project key={project.id} project={project} />
         ))}
       </div>
+      <br></br>
+      <select>
+        <option></option>
+        <option></option>
+      </select>
     </Wrapper>
   );
 };

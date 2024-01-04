@@ -118,6 +118,7 @@ const Wrapper = styled.nav`
   top: 0;
   z-index: 999;
   transition: top 0.5s ease-in-out;
+  background: #192A4C;
 
   .sticky {
     top: 20px;

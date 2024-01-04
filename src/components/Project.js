@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
 import ReactPlayer from "react-player";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function Project({project, index}) {
     const {
+      id,
       title,
       icon,
       video,
@@ -15,28 +19,41 @@ function Project({project, index}) {
       icon_2,
     } = project;
 
+    React.useEffect (() => {
+      AOS.init();
+    }, []);
+
   return (
     <Wrapper>
       <div className="container">
-        <div className="left">
-          <div className="video">
-            <ReactPlayer className="video"
+        <div
+          className={`left ${id % 2 === 0 ? "even" : "odd"}`}
+          data-aos="fade-left"
+          data-aos-duration={1500}
+        >
+          <div className="video" style={{ borderRadius: "0.5rem" }}>
+            <ReactPlayer
+              className="video"
               playing
-              controls
-              loop
+              loop={true}
+              controls={true}
               style={{
                 maxWidth: "100%",
+                padding: "1rem 1rem",
                 width: "100%",
                 height: "auto",
                 borderRadius: "1rem",
                 margin: "0 auto",
-                objectFit: "cover",
               }}
               url={video}
             />
           </div>
         </div>
-        <div className="right">
+        <div
+          className={`right ${id % 2 === 0 ? "even" : "odd"}`}
+          data-aos="fade-right"
+          data-aos-duration={1500}
+        >
           <div className="project__content">
             <div className="project__title">
               <h3>{title}</h3>
@@ -74,6 +91,7 @@ const Wrapper = styled.div`
     margin-top: 3rem;
     box-shadow: inset 0px 0px 4px var(--clr-grey-6);
     border-radius: 0.5rem;
+    background: #192a4c;
   }
 
   .left,
@@ -83,6 +101,16 @@ const Wrapper = styled.div`
 
   .right {
     padding: 0 2rem;
+  }
+
+  .left.even,
+  .right.odd {
+    order: 2;
+  }
+
+  .left.odd,
+  .right.even {
+    order: 1;
   }
 
   //right side
@@ -184,7 +212,6 @@ const Wrapper = styled.div`
     color: var(--clr-grey-6);
   }
 
-
   @media only screen and (max-width: 1100px) {
     .container {
       flex-direction: column;
@@ -198,81 +225,87 @@ const Wrapper = styled.div`
 
     .left {
       padding: 0 1rem;
+      order: 1;
     }
     .right {
-        padding: 1rem;
+      padding: 0 1rem;
+      order: 2;
     }
     .video {
       margin: 0 auto;
     }
     .project__title {
-        width: max-content;
-        margin: 0 auto;
-        margin-bottom: 1rem;
+      width: max-content;
+      margin: 0 auto;
+      margin-bottom: 1rem;
     }
     .project__technologies {
-        margin: 0 auto;
-        width: max-content;
+      margin: 0 auto;
+      width: max-content;
     }
     .project__watch {
-        margin: 0 auto;
-        width: 13rem;
+      margin: 0 auto;
+      width: 13rem;
     }
-}
+  }
 
-    @media only screen and (max-width: 681px) {
-        .video {
-          margin: -50px auto;
-        }
+  @media only screen and (max-width: 681px) {
+    .video {
+      margin: -50px auto;
     }
+  }
 
-    @media only screen and (max-width: 454px) {
-        .container {
-            width: 100%;
-            padding: 0.5rem;
-        }
-        .video {
-          margin: -100px auto;
-        }
-        .project__title {
-            flex: none;
-        }
-        .project__title h3 {
-            font-size: 1rem;
-            letter-spacing: none;
-             margin: 0 auto;
-        }
-        .project__title__icon {
-            display: none;
-        }
-        .project__description {
-            font-size: 1rem;
-        }
-        .project__technologies {
-            display: flex;
-            flex-direction: column;
-        }
-        .project__technologies span {
-            font-size: 0.9rem;
-        }
-        .project__watch {
-            width: 10rem;
-        }
-        .project__watch a {
-            font-size: 1rem;
-        }
-        .project__watch a span {
-            width: 1.5rem; height: 1.5rem;
-        }
-
+  @media only screen and (max-width: 454px) {
+    .container {
+      width: 100%;
+      padding: 0.5rem;
     }
-
-    @media only screen and (max-width: 341px) {
-      .video {
-        margin: -120px auto;
-      }
+    .video {
+      margin: -100px auto;
     }
+    .project__title {
+      flex: none;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+    .project__title h3 {
+      font-size: 1rem;
+      letter-spacing: none;
+      margin: 0 auto;
+    }
+    .project__title__icon {
+      display: none;
+    }
+    .project__description {
+      font-size: 0.85rem;
+    }
+    .project__technologies {
+      display: flex;
+      flex-direction: column;
+    }
+    .project__technologies span {
+      font-size: 0.85rem;
+    }
+    .project__watch {
+      width: 10rem;
+    }
+    .project__watch a {
+      font-size: 1rem;
+    }
+    .project__watch a span {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 
+  @media only screen and (max-width: 350px) {
+    .video {
+      margin: -120px auto;
+    }
+  }
 `;
 
 export default Project;
+

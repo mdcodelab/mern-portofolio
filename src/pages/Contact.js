@@ -180,7 +180,7 @@ const Contact = () => {
   return (
     <Wrapper className="section__center section page-100" id="contact">
       <div className="hello">
-      <h2 className="title">Contact</h2>
+        <h2 className="title">Contact</h2>
         <p className="hello__1">Don't be shy! Hit me up!</p>
       </div>
 
@@ -197,7 +197,8 @@ const Contact = () => {
         className={closeForm ? "form displayNone" : "form"}
         action="https://formspree.io/f/mbjvoylv"
         method="POST"
-      onClick={()=>handleSubmit()}>
+        onClick={() => handleSubmit()}
+      >
         <div className="btn__close">
           <IoMdClose
             className="btn__close__icon"
@@ -244,15 +245,25 @@ const Contact = () => {
       <div className="footer">
         <div className="contact__icons__container">
           <span>E-mail: d_mihaela@msn.com</span>
-                <a href="https://github.com/mdcodelab" className="git"><FaGithub></FaGithub></a>
-                <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/" className="linkedin">in</a>
-                <a href=""><FaTelegram></FaTelegram></a>
-          
+          <a href="https://github.com/mdcodelab" className="git">
+            <FaGithub></FaGithub>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/"
+            className="linkedin"
+          >
+            in
+          </a>
+          <a href="https://t.me/mihaela112">
+            <FaTelegram></FaTelegram>
+          </a>
         </div>
         <hr className="hr"></hr>
         <div className="copyright">
           <p className="copyright__footer">
-            &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All Rights Reserved.</p>
+            &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All
+            Rights Reserved.
+          </p>
         </div>
       </div>
     </Wrapper>

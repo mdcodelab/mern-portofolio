@@ -34,7 +34,8 @@ export const data = [
     icon: <BsFillHouseGearFill></BsFillHouseGearFill>,
     urlDemo: "https://interior-design-com.netlify.app/",
     urlGit: "https://github.com/mdcodelab/design-interior-website",
-    description: "Responsive website with animations, including titlt.js.",
+    description:
+      "Responsive website with animations, including titlt.js. Users can benefit from consultation regarding the desired architecture of their living space.",
     tech: ["JavaScript", "CSS3", "Tilt.js", "HTML5"],
     icon_1: <FaGithub></FaGithub>,
     icon_2: <AiFillEye></AiFillEye>,
@@ -45,8 +46,8 @@ export const data = [
     type: "w",
     video: "",
     icon: <BsGithub></BsGithub>,
-    urlDemo: "https://github-finder-mdcodelab.netlify.app/",
-    urlGit: "",
+    urlDemo: "https://github-finder-react-eqfqo63wv-mdcodelab.vercel.app/",
+    urlGit: "https://github.com/mdcodelab/github-finder-react-app",
     description:
       "This app utilizes the GitHub APIs to retrieve and display relevant information about a user's profile and repositories.",
     tech: ["REACT", "CSS3"],
@@ -59,8 +60,8 @@ export const data = [
     type: "w",
     video: "",
     icon: <GiReceiveMoney></GiReceiveMoney>,
-    urlDemo: "https://effervescent-gnome-896083.netlify.app/",
-    urlGit: "https://github.com/mdcodelab/github-finder-react-app",
+    urlDemon: "https://npv-monte-carlo-risk-simulation-app.vercel.app/",
+    urlGit: "https://github.com/mdcodelab/npv-monte-carlo-risk-simulation-app",
     description:
       "This app evaluates the net present value (NPV) of an investment project and assesses its risk based on Monte Carlo simulation. It displays the NPV under the most likely scenario based on data from the user, associated with the investment, but also evaluates the investment risk by estimating the mean NPV and the probability of the NPV > 0.",
     tech: ["JavaScript", "CSS3", "HTML5"],

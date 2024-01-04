@@ -26,4 +26,18 @@ export const data1 = [
     icon_1: <FaGithub></FaGithub>,
     icon_2: <AiFillEye></AiFillEye>,
   },
+  {
+    id: 2,
+    title: "Architect Design",
+    type: "l",
+    video: "/assets/videos_projects/designer.mp4",
+    icon: <BsFillHouseGearFill></BsFillHouseGearFill>,
+    urlDemo: "https://interior-design-com.netlify.app/",
+    urlGit: "https://github.com/mdcodelab/design-interior-website",
+    description:
+      "Responsive website with animations, including titlt.js. Users can benefit from consultation regarding the desired architecture of their living space.",
+    tech: ["JavaScript", "CSS3", "Tilt.js", "HTML5"],
+    icon_1: <FaGithub></FaGithub>,
+    icon_2: <AiFillEye></AiFillEye>,
+  },
 ];

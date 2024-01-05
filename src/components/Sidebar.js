@@ -24,11 +24,11 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="about"
-            onClick={() => handleClick("about")}
-            className={activeLink === "about" ? "active" : ""}
+          <Link to="experience"
+            onClick={() => handleClick("experience")}
+            className={activeLink === "experience" ? "active" : ""}
             smooth={true} offset={-455}>
-            About
+            Experience
           </Link>
         </li>
         <li>

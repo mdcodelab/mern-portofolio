@@ -1,27 +1,25 @@
 import React from 'react';
 import styled from "styled-components";
-import ReactPlayer from "react-player";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
+function New({project}) {
+  const {
+    id,
+    title,
+    icon,
+    video,
+    urlDemo,
+    urlGit,
+    description,
+    tech,
+    icon_1,
+    icon_2,
+  } = project;
 
-function Project({project, index}) {
-    const {
-      id,
-      title,
-      icon,
-      video,
-      urlDemo,
-      urlGit,
-      description,
-      tech,
-      icon_1,
-      icon_2,
-    } = project;
-
-    React.useEffect (() => {
-      AOS.init();
-    }, []);
+  React.useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <Wrapper>
@@ -31,23 +29,16 @@ function Project({project, index}) {
           data-aos="fade-left"
           data-aos-duration={1500}
         >
-          <div className="video" style={{ borderRadius: "0.5rem" }}>
-            <ReactPlayer
-              className="video"
-              playing
-              loop={true}
-              controls={true}
-              style={{
-                maxWidth: "100%",
-                padding: "1rem 1rem",
-                width: "100%",
-                height: "auto",
-                borderRadius: "1rem",
-                margin: "0 auto",
-              }}
-              url={video}
-            />
-          </div>
+          <video
+            className="video"
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="auto"
+          >
+            <source src={video} type="video/mp4"></source>
+          </video>
         </div>
         <div
           className={`right ${id % 2 === 0 ? "even" : "odd"}`}
@@ -57,9 +48,9 @@ function Project({project, index}) {
           <div className="project__content">
             <div className="project__title">
               <h3>{title}</h3>
-              <a href="#" className="project__title__icon">
+              <span className="project__title__icon">
                 {icon}
-              </a>
+              </span>
             </div>
             <p className="project__description">{description}</p>
             <div className="project__technologies">
@@ -84,23 +75,31 @@ function Project({project, index}) {
 
 const Wrapper = styled.div`
   .container {
-    width: 100%;
     height: 100%;
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 3rem;
     box-shadow: inset 0px 0px 4px var(--clr-grey-6);
-    border-radius: 0.5rem;
     background: #192a4c;
+    border-radius: 1rem;
   }
 
   .left,
   .right {
     width: 50%;
+    height: 100%;
+    padding: 1rem;
   }
 
-  .right {
-    padding: 0 2rem;
+  .video {
+    width: 100%;
+    height: auto;
+    border-radius: 0.35rem;
+    display: block;
+    margin: 0 auto;
   }
 
   .left.even,
@@ -117,6 +116,7 @@ const Wrapper = styled.div`
   .project__title {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: max-content;
     width: 100%;
     margin-bottom: 1.5rem;
@@ -134,7 +134,7 @@ const Wrapper = styled.div`
     font-size: 1.2rem;
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
+    border-radius: 5px;
     padding: 0.3rem !important;
     color: var(--clr-grey-8);
     background: var(--clr-navy-7);
@@ -155,11 +155,13 @@ const Wrapper = styled.div`
     font-size: 1rem;
     text-align: justify;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
 
   .project__technologies {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
   }
 
@@ -176,6 +178,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
     width: 13rem;
   }
 
@@ -224,11 +227,10 @@ const Wrapper = styled.div`
     }
 
     .left {
-      padding: 0 1rem;
       order: 1;
     }
     .right {
-      padding: 0 1rem;
+      padding-bottom: 1rem;
       order: 2;
     }
     .left.even,
@@ -249,7 +251,7 @@ const Wrapper = styled.div`
       margin-bottom: 1rem;
     }
     .project__technologies {
-      margin: 0 auto;
+      margin: 1rem auto;
       width: max-content;
     }
     .project__watch {
@@ -258,41 +260,27 @@ const Wrapper = styled.div`
     }
   }
 
-  @media only screen and (max-width: 681px) {
-    .video {
-      margin: -50px auto;
-    }
-  }
-
-  @media only screen and (max-width: 454px) {
-    .container {
-      width: 100%;
-      padding: 0.5rem;
-    }
-    .video {
-      margin: -100px auto;
-    }
+  @media only screen and (max-width: 660px) {
     .project__title {
+      width: 100%;
       flex: none;
       margin: 0 auto;
       margin-bottom: 1rem;
-      width: 100%;
       text-align: center;
     }
     .project__title h3 {
-      font-size: 1rem;
+      font-size: 1.5rem;
       letter-spacing: none;
       margin: 0 auto;
     }
     .project__title__icon {
       display: none;
     }
+    .project__technologies {
+      flex-direction: column;
+    }
     .project__description {
       font-size: 0.85rem;
-    }
-    .project__technologies {
-      display: flex;
-      flex-direction: column;
     }
     .project__technologies span {
       font-size: 0.85rem;
@@ -309,12 +297,12 @@ const Wrapper = styled.div`
     }
   }
 
-  @media only screen and (max-width: 350px) {
-    .video {
-      margin: -120px auto;
+  @media only screen and (max-width: 368px) {
+    .project__title h3 {
+      font-size: 1.2rem;
     }
   }
 `;
 
-export default Project;
 
+export default New;

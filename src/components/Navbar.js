@@ -52,13 +52,13 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="about"
-              onClick={() => setActiveLink("about")}
+              to="experience"
+              onClick={() => setActiveLink("experience")}
               smooth={true}
               offset={-80}
-              className={activeLink === "about" ? "active" : ""}
+              className={activeLink === "experience" ? "active" : ""}
             >
-              About
+              Experience
             </Link>
           </li>
           <li>

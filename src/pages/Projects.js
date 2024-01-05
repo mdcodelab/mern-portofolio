@@ -58,7 +58,7 @@ const Projects = () => {
 
   return (
     <Wrapper
-      className="page-100 projects__container section__center section-pad"
+      className="page-100 projects__container section__center"
       id="projects"
     >
       <h2 className="title">Projects</h2>

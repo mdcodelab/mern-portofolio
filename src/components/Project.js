@@ -81,7 +81,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 4rem;
     box-shadow: inset 0px 0px 4px var(--clr-grey-6);
     background: #192a4c;
     border-radius: 1rem;

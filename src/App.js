@@ -1,6 +1,7 @@
 import React from "react";
+import ScrollIcon from "./components/ScrollIcon"
 import Home from "./pages/Home";
-import About from "./pages/Experience";
+import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
@@ -16,9 +17,10 @@ const App = () => {
         <Sidebar></Sidebar>
         <div className="container">
           <Home />
-          <About />
+          <Experience />
           <Projects />
           <Contact/>
+          <ScrollIcon></ScrollIcon>
         </div>
       </div>
     </SidebarProvider>

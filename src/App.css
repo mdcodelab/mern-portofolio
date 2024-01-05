@@ -11,6 +11,7 @@
     --cl-nav: #774177;
     --clr-white: #fff;
     --clr-millenium-blue: #002244;
+    --clr-new-blue: rgba(0, 31, 84);
     /* light blue, green & grey - used for headings */
     --clr-light-blue-1: #87CEEB;
     --clr-light-blue-2:#00CCFF;
@@ -35,6 +36,7 @@
     --clr-green-dark: hsl(125, 67%, 44%);
     --clr-green-light-1: hsl(125, 71%, 66%);
     --clr-green-neon: #39FF14;
+  
 
     --clr-black: #222;
     --transition: all 0.7s ease-in-out;

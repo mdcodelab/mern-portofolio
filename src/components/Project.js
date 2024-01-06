@@ -63,7 +63,7 @@ function New({project}) {
                 Code <span>{icon_1}</span>
               </a>
               <a href={urlDemo}>
-                Demo <span>{icon_2}</span>
+                View project<span className="view">{icon_2}</span>
               </a>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Wrapper = styled.div`
     height: 2rem;
     border-radius: 5px;
     padding: 0.3rem !important;
-    color: var(--clr-grey-8);
+    color: var(--clr-red-light-1);
     background: var(--clr-navy-7);
     border: 0.07rem solid lightgrey;
     display: flex;
@@ -179,7 +179,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    width: 13rem;
+    width: 14rem !important;
   }
 
   .project__watch a {
@@ -213,6 +213,10 @@ const Wrapper = styled.div`
   .project__watch span {
     font-size: 1.2rem;
     color: var(--clr-grey-6);
+  }
+
+  .project__watch a .view:hover {
+    transform: translateX(10px);
   }
 
   @media only screen and (max-width: 1100px) {
@@ -300,6 +304,12 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 368px) {
     .project__title h3 {
       font-size: 1.2rem;
+    }
+    .project__watch {
+      flex-direction: column;
+      height: 4rem;
+      margin: 0 auto;
+      width: max-content !important;
     }
   }
 `;

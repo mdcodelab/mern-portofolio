@@ -21,14 +21,14 @@ const Wrapper = styled.a`
   left: 20px;
   font-size: 24px;
   cursor: pointer;
-  color: var(--clr-grey-6);
+  color: var(--clr-red-light-2);
   text-decoration: none;
   font-size: 2rem;
-  opacity: 0.5;
+  opacity: 0.8;
   transition: all 0.7s ease;
 
   &:hover {
-    color: var(--clr-red-light-2);
+    color: var(--clr-red-light-1);
     transform: scale(1.1);
     opacity: 1;
   }

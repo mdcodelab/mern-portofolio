@@ -277,7 +277,7 @@ const Contact = () => {
 const Wrapper = styled.div`
   position: relative;
   display: flex;
-  height: 100%;
+  height: 130vh;
   align-items: center;
   justify-content: center;
   padding: 3rem;
@@ -286,7 +286,7 @@ const Wrapper = styled.div`
     display: block;
     position: absolute;
     width: 100%;
-    height: 70vh;
+    height: 85vh;
     z-index: 2;
   }
 
@@ -307,25 +307,11 @@ const Wrapper = styled.div`
     letter-spacing: 0.08rem;
   }
 
-  .hello__icon {
-    display: block;
-    margin-left: 0.5rem;
-    cursor: pointer;
-    font-size: 1.3rem;
-    color: var(--clr-red-light-1);
-    transition: all 0.7s ease-in-out;
-  }
-
-  .hello__icon:hover {
-    transform: translateY(10px);
-    color: var(--clr-grey-6);
-  }
-
   .icon__envelope {
     display: flock;
     font-size: 11rem;
     position: absolute;
-    top: 11rem;
+    top: 13rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -361,7 +347,7 @@ const Wrapper = styled.div`
     height: 300px;
     position: absolute;
     z-index: 100;
-    top: 7rem;
+    top: 10rem;
     left: 50%;
     padding: 0.5rem;
     transform: translateX(-50%);

@@ -120,7 +120,7 @@ export const data = [
     urlGit: "https://github.com/mdcodelab/gatsby-recipes-app",
     description:
       "This website aims to provide users with a user-friendly platform for discovering, and managing culinary recipes. Key features include: intuitive interface, efficient categorization, detailed ingredients and cooking instructions, responsiveness and mobile support.",
-    tech: ["GATSBY", "REACT", "GRAPHQL", "STYLED-COMPONENTS", "CONTENTFUL"],
+    tech: ["GATSBY", "GRAPHQL", "STYLED-COMPONENTS", "CONTENTFUL"],
     icon_1: <FaGithub></FaGithub>,
     icon_2: <AiFillEye></AiFillEye>,
   },

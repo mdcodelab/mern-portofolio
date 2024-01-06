@@ -91,7 +91,7 @@ const Wrapper = styled.div`
   .right {
     width: 50%;
     height: 100%;
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .video {

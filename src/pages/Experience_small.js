@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Exp() {
+function Experience_small() {
   const [activeIndex, setActiveIndex] = React.useState(1);
 
   function handleClick(index) {
@@ -9,13 +9,7 @@ function Exp() {
   }
 
   return (
-    <Wrapper
-      className="page-100 about-container section__center"
-      id="experience"
-    >
-      <h2 className="title">Experience</h2>
-      <hr style={{ width: "100px", margin: "1rem auto" }}></hr>
-      <div className="experience__container">
+    <Wrapper className="experience__container_small">
         <div className="container container__1" onClick={() => handleClick(1)}>
           <p className="heading__1">About me</p>
           <div className={`content__1 ${activeIndex === 1 ? "" : "none"}`}>
@@ -41,17 +35,11 @@ function Exp() {
             Exp4
           </div>
         </div>
-      </div>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  margin: 0 auto;
-  padding: 3rem;
-  border: 2px solid red;
-
-  .experience__container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -70,4 +58,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Exp;
+export default Experience_small;

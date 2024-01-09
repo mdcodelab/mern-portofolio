@@ -281,6 +281,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 3rem;
+  border: 3px solid red;
 
   .canvas {
     display: block;

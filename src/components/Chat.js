@@ -1,12 +1,12 @@
 import React from "react";
-import Chat_cover from "./Chat_cover";
-import Chat_body from "./Chat_body";
+import ChatLauncher from "./ChatLauncher";
+import ChatRoom from "./ChatRoom";
 import styled from "styled-components";
 
 function Chat() {
   const [showChat, setShowChat] = React.useState(false);
 
-  return <Wrapper className="chat_container">{showChat ? <Chat_body /> : <Chat_cover/>}</Wrapper>;
+  return <Wrapper className="chat_container">{showChat ? <ChatRoom /> : <ChatLauncher/>}</Wrapper>;
 }
 
 const Wrapper = styled.div`

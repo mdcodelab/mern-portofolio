@@ -3,8 +3,8 @@ import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Experience = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
+const Experience_small = () => {
+  const [activeIndex, setActiveIndex] = React.useState(1);
 
   function handleClick(index) {
     setActiveIndex(index === activeIndex ? -1 : index);
@@ -24,26 +24,26 @@ const Experience = () => {
       <div className="experience__container">
         <div className="items" data-aos="fade-up" data-aos-duration={2000}>
           <div
-            className={`item ${activeIndex === 0 ? "active" : ""}`}
-            onClick={() => handleClick(0)}
-          >
-            <p>About me</p>
-          </div>
-          <div
             className={`item ${activeIndex === 1 ? "active" : ""}`}
             onClick={() => handleClick(1)}
           >
-            <p>Working experience</p>
+            <p>About me</p>
           </div>
           <div
             className={`item ${activeIndex === 2 ? "active" : ""}`}
             onClick={() => handleClick(2)}
           >
-            <p>My Projects</p>
+            <p>Working experience</p>
           </div>
           <div
             className={`item ${activeIndex === 3 ? "active" : ""}`}
             onClick={() => handleClick(3)}
+          >
+            <p>My Projects</p>
+          </div>
+          <div
+            className={`item ${activeIndex === 4 ? "active" : ""}`}
+            onClick={() => handleClick(4)}
           >
             <p>Other</p>
           </div>
@@ -55,28 +55,28 @@ const Experience = () => {
         >
           <div
             className={`explanation ${
-              activeIndex === 0 ? "active" : "inactive"
+              activeIndex === 1 ? "active" : "inactive"
             }`}
           >
             <p>Exp1</p>
           </div>
           <div
             className={`explanation ${
-              activeIndex === 1 ? "active" : "inactive"
+              activeIndex === 2 ? "active" : "inactive"
             }`}
           >
             <p>Exp2</p>
           </div>
           <div
             className={`explanation ${
-              activeIndex === 2 ? "active" : "inactive"
+              activeIndex === 3 ? "active" : "inactive"
             }`}
           >
             <p>Exp3</p>
           </div>
           <div
             className={`explanation ${
-              activeIndex === 3 ? "active" : "inactive"
+              activeIndex === 4 ? "active" : "inactive"
             }`}
           >
             <p>Exp4</p>
@@ -170,4 +170,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Experience;
+export default Experience_small;

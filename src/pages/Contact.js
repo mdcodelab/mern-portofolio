@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BsFillEnvelopeOpenFill } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { FaGithub } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 
 //balls
@@ -72,7 +72,7 @@ class Ball {
       if (this.bombTimer < 60) {
         this.radius += getSize(0.05) / 60;
       } else if (this.bombTimer < 240) {
-        // 
+        //
       } else if (this.bombTimer < 300) {
         this.radius -= 100 / 60;
       } else {
@@ -155,10 +155,10 @@ const Contact = () => {
   }, []);
 
   //form
-  const[closeEnvelope, setCloseEnvelope]=useState(false);
-  const[closeForm, setCloseForm]=useState(true);
+  const [closeEnvelope, setCloseEnvelope] = useState(false);
+  const [closeForm, setCloseForm] = useState(true);
 
-  const[name, setName]=useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -169,10 +169,10 @@ const Contact = () => {
   function openForm() {
     setCloseForm(!closeForm);
     setCloseEnvelope(!closeEnvelope);
-    console.log("openForm")
+    console.log("openForm");
   }
 
-  function openEnvelope () {
+  function openEnvelope() {
     setCloseForm(!closeForm);
     setCloseEnvelope(!closeEnvelope);
   }

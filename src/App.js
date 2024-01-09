@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import Chat from "./components/Chat";
 import { SidebarProvider} from "./useContext";
 
 
@@ -21,6 +22,7 @@ const App = () => {
           <Projects />
           <Contact/>
           <ScrollIcon></ScrollIcon>
+          <Chat></Chat>
         </div>
       </div>
     </SidebarProvider>

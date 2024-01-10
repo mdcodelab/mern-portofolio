@@ -22,9 +22,6 @@ const Wrapper = styled.div`
     color: var(--clr-red-light-1);
     font-size: 2.5rem;
   }
-
-
-  
 `;
 
 export default ChatLauncher;

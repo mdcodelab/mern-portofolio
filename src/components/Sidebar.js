@@ -9,11 +9,10 @@ const Sidebar = () => {
   const handleClick = (value) => {
     setSidebar(!isSidebar);
     setActiveLink(value);
-    console.log("contact")
   };
 
   return (
-    <div className={isSidebar ? "close section__center sidebar" : "sidebar-container section__center sidebar"}>
+    <div className={isSidebar ? "close section__center" : "sidebar__container section__center sidebar"}>
       <ul className="links sidebar-links">
         <li>
           <Link to="/"

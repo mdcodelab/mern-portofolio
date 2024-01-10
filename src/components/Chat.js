@@ -4,9 +4,14 @@ import ChatRoom from "./ChatRoom";
 import styled from "styled-components";
 
 function Chat() {
-  const [showChat, setShowChat] = React.useState(false);
+  const [showChat, setShowChat] = React.useState(true);
 
-  return <Wrapper className="chat_container">{showChat ? <ChatRoom /> : <ChatLauncher/>}</Wrapper>;
+  return (
+    <Wrapper className="chat__container">
+      {showChat && <ChatRoom setShowChat={setShowChat} showChat={showChat} />}
+      {!showChat && <ChatLauncher setShowChat={setShowChat} showChat={showChat}/>}
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.div`
@@ -14,7 +19,7 @@ const Wrapper = styled.div`
   bottom: 20px;
   right: 20px;
   cursor: pointer;
-  transition: all 0.7s ease;
+  transition: all 2s ease;
 `;
 
 export default Chat;

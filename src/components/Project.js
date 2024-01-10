@@ -84,7 +84,7 @@ const Wrapper = styled.div`
     margin-top: 4rem;
     box-shadow: inset 0px 0px 4px var(--clr-grey-6);
     background: #192a4c;
-    border-radius: 1rem;
+    border-radius: 0.4rem;
   }
 
   .left,
@@ -97,7 +97,7 @@ const Wrapper = styled.div`
   .video {
     width: 100%;
     height: auto;
-    border-radius: 0.35rem;
+    border-radius: 0.4rem;
     display: block;
     margin: 0 auto;
   }

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { IoChatbubbleOutline } from "react-icons/io5";
 
 
-function ChatLauncher() {
-  return <Wrapper>
+function ChatLauncher({showChat, setShowChat}) {
+  return <Wrapper onClick={()=> setShowChat(!showChat)}>
     <IoChatbubbleOutline className="icon__launcher"></IoChatbubbleOutline>
   </Wrapper>;
 }
@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   justify-content: center;
   background: black;
   border-radius: 40%;
+  transition: all 2s ease;
 
   .icon__launcher {
     color: var(--clr-red-light-1);

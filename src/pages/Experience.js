@@ -32,7 +32,7 @@ console.log(window.innerWidth);
 
   return (
     <Wrapper
-      className="page-100 about-container section__center" id="experience">
+      className="page-100 section__center" id="experience">
       <h2 className="title">Experience</h2>
       <hr style={{ width: "100px", margin: "1rem auto" }}></hr>
       {window.innerWidth > 1100 && (
@@ -79,8 +79,6 @@ console.log(window.innerWidth);
 };
 
 const Wrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 3rem;
   border: 2px solid red;
 

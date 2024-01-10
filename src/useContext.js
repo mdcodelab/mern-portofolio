@@ -7,8 +7,13 @@ export const SidebarContext=createContext();
 export const SidebarProvider = ({children}) => {
     const[isSidebar, setSidebar]=React.useState(false);
 
-    return <SidebarContext.Provider value={{isSidebar, setSidebar}}>
-        {children}
+    return <SidebarContext.Provider 
+    value={{
+        isSidebar, 
+        setSidebar}}>
+        {children
+        }
+        
     </SidebarContext.Provider>
 }
 

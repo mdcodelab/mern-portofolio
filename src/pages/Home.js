@@ -8,13 +8,14 @@ import { useGlobalContext } from '../useContext';
 const Home = () => {
   const {isSidebar}=useGlobalContext();
   return (
-    <Wrapper className={!isSidebar ? "page section__center" : "hidden"} id="home">
+    <Wrapper className={!isSidebar ? "page-100 home__container section__center" : "hidden"} id="home">
       
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
+padding: 3rem;
 border: 3px solid red;
 `;
 

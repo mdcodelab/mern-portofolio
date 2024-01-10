@@ -315,7 +315,6 @@ const Wrapper = styled.div`
     top: 13rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100;
     color: var(--clr-red-light-1);
     cursor: pointer;
     transition: all 0.7s ease-in-out;

@@ -85,7 +85,7 @@ export const data = [
     id: 6,
     title: "Jobster",
     type: "full-stack",
-    video: "",
+    video: "/assets/videos_projects/roses.mp4",
     icon: <IoIosPeople></IoIosPeople>,
     urlDemo: "",
     urlGit: "",

@@ -7,26 +7,26 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-import { SidebarProvider} from "./useContext";
+import { AppProvider} from "./useContext";
 import ChatEntrancer from "./components/ChatEntrancer";
 
 
 const App = () => {
   return (
-    <SidebarProvider>
+    <AppProvider>
       <div className="app-container">
         <Navbar />
         <Sidebar></Sidebar>
+        <ScrollIcon></ScrollIcon>
+        <Chat></Chat>
         <div className="container">
           <Home />
           <Experience />
           <Projects />
-          <Contact/>
-          <ScrollIcon></ScrollIcon>
-          <Chat></Chat>
+          <Contact />
         </div>
       </div>
-    </SidebarProvider>
+    </AppProvider>
   );
 };
 

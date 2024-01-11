@@ -1,54 +1,91 @@
 import React from "react";
-import { useGlobalContext } from "../useContext";
 import { Link } from "react-scroll";
+import styled from "styled-components";
+import { useGlobalContext } from "../useContext";
 
-const Sidebar = () => {
+function Sidebar() {
   const { isSidebar, setSidebar } = useGlobalContext();
-  const [activeLink, setActiveLink] = React.useState("home");
+  // const [currentScrollPos, setCurrentScrollPos] = React.useState(0);
 
-  const handleClick = (value) => {
-    setSidebar(!isSidebar);
-    setActiveLink(value);
-  };
+  // React.useEffect(() => {
+  //   const handleScroll = () => {
+  //     setCurrentScrollPos(window.scrollY);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     //window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+const [scroll, setScroll] = React.useState(0);
+
+React.useEffect(() => {
+  document.addEventListener("scroll", () => {
+    const scrollCheck = window.scrollY >0;
+    if (scrollCheck !== scroll) {
+      setScroll(scrollCheck);
+    }
+  });
+});
 
   return (
-    <div className={isSidebar ? "close section__center" : "sidebar__container section__center sidebar"}>
-      <ul className="links sidebar-links">
-        <li>
-          <Link to="/"
-            onClick={() => handleClick("home")}
-            className={activeLink === "home" ? "active" : ""}
-            smooth={true} offset={0}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="experience"
-            onClick={() => handleClick("experience")}
-            className={activeLink === "experience" ? "active" : ""}
-            smooth={true} offset={-455}>
-            Experience
-          </Link>
-        </li>
-        <li>
-          <Link to="projects"
-            onClick={() => handleClick("projects")}
-            className={activeLink === "projects" ? "active" : ""} 
-            smooth={true} offset={-155}>
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link to="contact"
-            onClick={() => handleClick("contact")}
-            className={activeLink === "contact" ? "active" : ""}
-            smooth={true} offset={-155}>
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <Wrapper
+      className={`
+        ${!isSidebar
+          ? "close section__center"
+          : "open section__center"}`}
+    >
+      <Link to="home" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
+        Home
+      </Link>
+      <Link to="experience" smooth={true} offset={-100} onClick={()=>setSidebar(!isSidebar)}>
+        Experience
+      </Link>
+      <Link to="projects" smooth={true} offset={-50} onClick={()=>setSidebar(!isSidebar)}>
+        Projects
+      </Link>
+      <Link to="contact" smooth={true} offset={-50} onClick={()=>setSidebar(!isSidebar)}>
+        Contact
+      </Link>
+    </Wrapper>
   );
-};
+}
+
+const Wrapper = styled.div`
+  width: 100vw;
+  height: calc(100vh - 5rem);
+  padding: 3rem;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  transition: all 0.5s ease;
+
+  &.open {
+    background: var(--clr-sidebar);
+    transform: translateX(0%);
+    transition: all 0.5s ease;
+  }
+
+  &.close {
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 3.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.08rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  a:hover {
+    letter-spacing: 0.2rem;
+  }
+`;
 
 export default Sidebar;

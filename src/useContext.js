@@ -1,23 +1,23 @@
 import React from 'react';
 import { createContext } from 'react';
 
-export const SidebarContext=createContext();
+export const AppContext=createContext();
 
 
-export const SidebarProvider = ({children}) => {
+export const AppProvider = ({children}) => {
     const[isSidebar, setSidebar]=React.useState(false);
 
-    return <SidebarContext.Provider 
+    return <AppContext.Provider 
     value={{
         isSidebar, 
         setSidebar}}>
         {children
         }
         
-    </SidebarContext.Provider>
+    </AppContext.Provider>
 }
 
 
 export const useGlobalContext = ()=> {
-    return React.useContext(SidebarContext);
+    return React.useContext(AppContext);
 }

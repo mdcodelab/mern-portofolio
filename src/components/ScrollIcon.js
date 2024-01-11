@@ -25,6 +25,7 @@ const Wrapper = styled.a`
   text-decoration: none;
   font-size: 2rem;
   opacity: 0.8;
+  z-index: 10;
   transition: all 0.7s ease;
 
   &:hover {

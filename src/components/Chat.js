@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   bottom: 20px;
   right: 20px;
   cursor: pointer;
+  z-index: 10;
   transition: all 2s ease;
 `;
 

@@ -7,28 +7,22 @@ import styled from "styled-components";
 
 const Navbar = () => {
   let { isSidebar, setSidebar } = useGlobalContext();
-
+  
   const [activeLink, setActiveLink] = React.useState("home");
 
-  const [isNavbarVisible, setIsNavbarVisible] = React.useState(true);
+  const [scroll, setScroll] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      setIsNavbarVisible(currentScrollPos > 0);
+      setScroll(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   return (
     <Wrapper
-      className={`navbar section__center ${
-        isNavbarVisible ? "navbar" : "navbar sticky"
-      }`}
+      className={scroll > 0 ? "navbar section__center colorNav" : "navbar section__center"}
     >
       <div className="logo">
         <div className="logo__initial">M</div>
@@ -107,7 +101,7 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
-  height: 6rem;
+  height: 5rem;
   width: 100%;
   max-width: var(--max-width);
   padding: 0 2rem;
@@ -117,12 +111,24 @@ const Wrapper = styled.nav`
   position: sticky;
   top: 0;
   z-index: 999;
-  transition: top 0.5s ease-in-out;
-  background: #192A4C;
+  transition: all 2s linear;
 
-  .sticky {
-    top: 20px;
-  }
+
+&.colorNav {
+  background: linear-gradient(to right, #0C2340 50%, rgb(75,0,130) 50%);
+      background-size: 200% 100%;
+      animation: gradientAnimation 0.5s linear reverse forwards;
+}
+
+@keyframes gradientAnimation {
+      0% {
+        background-position: 100% 0%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+    }
+
 
   div.logo {
     display: flex;
@@ -282,7 +288,9 @@ const Wrapper = styled.nav`
     transform: scaleX(1);
     border-radius: 0.3rem;
   }
-
 `;
 
 export default Navbar;
+
+
+

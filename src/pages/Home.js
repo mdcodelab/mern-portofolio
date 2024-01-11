@@ -15,8 +15,8 @@ const Home = () => {
 }
 
 const Wrapper = styled.div`
-height: 100vh;
 padding: 3rem;
+height: 100vh;
 border: 3px solid red;
 `;
 

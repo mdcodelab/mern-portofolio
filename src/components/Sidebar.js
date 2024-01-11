@@ -35,7 +35,7 @@ React.useEffect(() => {
       className={`
         ${!isSidebar
           ? "close section__center"
-          : "open section__center"}`}
+          : "open section__center sidebar"}`}
     >
       <Link to="home" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
         Home
@@ -54,12 +54,11 @@ React.useEffect(() => {
 }
 
 const Wrapper = styled.div`
-  width: 100vw;
   height: calc(100vh - 5rem);
   padding: 3rem;
   position: fixed;
   right: 0;
-  bottom: 0;
+  top: 0;
   z-index: 8;
   transition: all 0.5s ease;
 
@@ -85,6 +84,12 @@ const Wrapper = styled.div`
 
   a:hover {
     letter-spacing: 0.2rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    .sidebar {
+      display: none;
+    }
   }
 `;
 

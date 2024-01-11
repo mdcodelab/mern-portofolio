@@ -14,7 +14,7 @@ import ChatEntrancer from "./components/ChatEntrancer";
 const App = () => {
   return (
     <AppProvider>
-      <div className="app-container">
+      <div className="app-container section__center">
         <Navbar />
         <Sidebar></Sidebar>
         <ScrollIcon></ScrollIcon>

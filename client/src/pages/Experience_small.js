@@ -40,6 +40,7 @@ function Experience_small() {
 }
 
 const Wrapper = styled.div`
+  background: var(--clr-navy-7);
     display: flex;
     flex-direction: column;
     width: 100%;

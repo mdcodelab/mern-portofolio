@@ -103,7 +103,6 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   height: 5rem;
   width: 100%;
-  max-width: var(--max-width);
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -111,6 +110,7 @@ const Wrapper = styled.nav`
   position: sticky;
   top: 0;
   z-index: 999;
+  background-color: var(--clr-navy-7);
   transition: all 2s linear;
 
 

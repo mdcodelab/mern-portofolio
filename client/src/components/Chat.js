@@ -2,6 +2,7 @@ import React from "react";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { IoSendOutline } from "react-icons/io5";
+import { PiChatsCircleLight } from "react-icons/pi";
 import axios from "axios";
 
 
@@ -35,6 +36,12 @@ function Chat() {
     }
   }
 
+  //button
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      createMessage();
+    }
+  };
 
   return isChat ? (
     <div className="room__container">
@@ -43,17 +50,22 @@ function Chat() {
         <IoMdClose style={{fontSize: "1.3rem"}} onClick={()=> setIsChat(!isChat)}></IoMdClose>
       </div>
       <div className="chat__body">
-        {allMessages.map((message) => {
+        {allMessages.length > 0 ? (
+          allMessages.map((message) => {
           const {id, content, time}=message;
           return <div key={id} className="chat__message">
             <p className="chat__content">{content}</p>
             <p className="chat__time">{time}</p>
           </div>
-        })}
-
+        })
+        ) : (<div className="body__empty">
+          <PiChatsCircleLight style={{fontSize: "2rem", display: "block", margin: "0 auto", color: "var(--clr-grey-5)"}}></PiChatsCircleLight>
+          <p>Send a message, I'm usually able to get back to you in a few moments.</p>
+        </div>)}
       </div>
       <div className="chat__submit">
-        <input type="text" placeholder="Message..." value={message} onChange={(e)=>setMessage(e.target.value)}></input>
+        <input type="text" placeholder="Message..." value={message} 
+        onChange={(e)=>setMessage(e.target.value)} onKeyPress={handleKeyPress}></input>
         <button type="submit" onClick={()=> createMessage()}>
         <IoSendOutline></IoSendOutline>
         </button>

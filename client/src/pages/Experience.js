@@ -79,6 +79,7 @@ console.log(window.innerWidth);
 };
 
 const Wrapper = styled.div`
+background: var(--clr-navy-7);
   height: 100vh;
   padding: 3rem;
   border: 2px solid red;

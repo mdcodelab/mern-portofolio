@@ -83,6 +83,7 @@ const Projects = () => {
 };
 
 const Wrapper = styled.div`
+  background: var(--clr-navy-7);
   padding: 3rem;
 
   div.searchInput {

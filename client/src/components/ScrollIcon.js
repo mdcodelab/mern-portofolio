@@ -18,7 +18,7 @@ const ScrollToTopButton = () => {
 const Wrapper = styled.a`
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  left: 2rem;
   font-size: 24px;
   cursor: pointer;
   color: var(--clr-red-light-2);

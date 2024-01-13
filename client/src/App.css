@@ -248,7 +248,7 @@ hr {
   bottom: 1.1rem;
   cursor: pointer;
   z-index: 100;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
   /* chat room*/
@@ -263,7 +263,7 @@ hr {
     border-radius: 0.5rem;
     background: black;
     border: 1px solid var(--clr-grey-6);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   
   @media only screen and (max-width: 500px) {
@@ -305,6 +305,28 @@ hr {
     background: #fff;
     overflow-y: scroll;
     border-bottom: 1px solid var(--clr-grey-6);
+    padding: 0.5rem;
+  }
+
+  .chat__message {
+    margin-bottom: 0.75rem;
+    background: var(--clr-grey-8);
+    border-radius: 0.4rem;
+    padding: 0.25rem;
+  }
+
+  .chat__content {
+    color: black;
+    padding: 0; margin: 0;
+    font-size: 1rem;
+  }
+
+  .chat__time {
+    padding: 0; margin: 0;
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--clr-navy-7);
+
   }
 
   /*submit*/
@@ -342,31 +364,4 @@ hr {
     font-size: 1.6rem;
   }
 
-  /* */
-  .c__container {
-    max-width: 300px;
-    max-height: 70vh;
-    position: fixed;
-    right: 4rem;
-    bottom: 20px;
-    z-index: 100;
-    transition: all 1s ease;
-  }
-
-  .cl__container {
-    width: 3rem;
-    height: 3rem;
-    background: white;
-    position: fixed;
-    right: 4rem;
-    bottom: 20px;
-    z-index: 100;
-    cursor: pointer;
-    transition: all 1s ease;
-
-  }
-
-
-
-
-
+  

@@ -6,12 +6,24 @@ const messageSchema = new mongoose.Schema({
     required: [true, "content is required"],
   },
   time: {
-    type: Date,
-    default: Date.now(),
+    type: String,
+    default: new Date().toLocaleString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric'})
   },
 });
 
 const Message = mongoose.model("Message", messageSchema);
 
 module.exports = Message;
+
+
+
+
+
+
+
 

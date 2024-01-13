@@ -17,9 +17,14 @@ router.post("/", async (req, res) => {
   try {
     const message = await Message.create({
       content,
-      time: Date.now(),
+      time: new Date().toLocaleString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric'})
     });
-    res.status(201).json({ content, time: message.time });
+    res.status(201).json({message});
   } catch (error) {
     res.status(400).send(error.message);
   }

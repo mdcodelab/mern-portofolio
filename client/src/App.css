@@ -63,8 +63,7 @@ html {
 }
 
 body {
-    background-color: var(--clr-navy-7);
-    background: white;
+  color: var(--clr-navy-7);
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
     font-size: 1rem;
@@ -272,11 +271,10 @@ hr {
       width: 100%;
       left: 50%;
       transform: translateX(-50%);
-      right: unset; /* Remove right property */
+      right: unset;
     }
   }
   
-
   /*header*/
   .chat__header {
     padding: 0.5rem;
@@ -380,5 +378,16 @@ hr {
     color: black;
     font-size: 1.6rem;
   }
+
+  @media only screen and (max-width: 500px) {
+    .chat__entrancer {
+      width: 100%;
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+      right: unset;
+    }
+  }
+ 
 
   

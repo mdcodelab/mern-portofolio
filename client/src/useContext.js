@@ -6,11 +6,14 @@ export const AppContext=createContext();
 
 export const AppProvider = ({children}) => {
     const[isSidebar, setSidebar]=React.useState(false);
+    const [isChat, setIsChat] = React.useState(false);
 
     return <AppContext.Provider 
     value={{
         isSidebar, 
-        setSidebar}}>
+        setSidebar,
+        isChat,
+        setIsChat}}>
         {children
         }
         

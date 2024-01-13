@@ -4,10 +4,11 @@ import { IoMdClose } from "react-icons/io";
 import { IoSendOutline } from "react-icons/io5";
 import { PiChatsCircleLight } from "react-icons/pi";
 import axios from "axios";
+import { useGlobalContext } from "../useContext";
 
 
 function Chat() {
-  const [isChat, setIsChat] = React.useState(false);
+  const{isChat, setIsChat} = useGlobalContext();
   const [message, setMessage] = React.useState("");
   const[allMessages, setAllMessages]=React.useState([]);
 

@@ -111,7 +111,6 @@ const Wrapper = styled.nav`
   top: 0;
   z-index: 999;
   background-color: var(--clr-navy-7);
-  transition: all 2s linear;
 
 
 &.colorNav {

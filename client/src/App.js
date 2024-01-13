@@ -1,17 +1,29 @@
 import React from "react";
-import ScrollIcon from "./components/ScrollIcon"
+//pages
 import Home from "./pages/Home";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+//components
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-import { AppProvider} from "./useContext";
+import ScrollIcon from "./components/ScrollIcon";
+import { AppProvider, useGlobalContext } from "./useContext";
 import ChatEntrancer from "./components/ChatEntrancer";
-
+import ChEn from "./components/ChatEntrancer";
 
 const App = () => {
+  const [showEn, setShowEn] = React.useState(false);
+
+  React.useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowEn(true);
+    }, 6000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <AppProvider>
       <div className="app-container section__center">
@@ -19,6 +31,7 @@ const App = () => {
         <Sidebar></Sidebar>
         <ScrollIcon></ScrollIcon>
         <Chat></Chat>
+        {showEn && <ChatEntrancer shoeEn={showEn} setShowEn={setShowEn}></ChatEntrancer>}
         <div className="container">
           <Home />
           <Experience />

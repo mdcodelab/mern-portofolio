@@ -29,7 +29,6 @@ const App = () => {
       <div className="app-container section__center">
         <Navbar />
         <Sidebar></Sidebar>
-        <ScrollIcon></ScrollIcon>
         <Chat></Chat>
         {showEn && <ChatEntrancer shoeEn={showEn} setShowEn={setShowEn}></ChatEntrancer>}
         <div className="container">

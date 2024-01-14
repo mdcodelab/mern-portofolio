@@ -39,7 +39,7 @@ function ChatEntrancer({showEn, setShowEn}) {
 
 const Wrapper = styled.div`
   width: 300px;
-  height: 13.5rem;
+  height: 12rem;
   background: black;
   position: fixed;
   z-index: 200;
@@ -91,19 +91,19 @@ const Wrapper = styled.div`
     color: #fff;
     text-align: justify;
     font-size: 1rem;
-    line-height: 1.3rem;
+    line-height: 1.7rem;
     margin-left: 0.6rem;
   }
 
   .chat__entrancer__content {
     width: 100%;
-    height: auto;
+    height: 3.5rem;
     border-radius: 0rem 0rem 0.5rem 0.5rem;
   }
 
   .chat__entrancer__content div {
     width: 100%;
-    height: 3.5rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     border-radius: 0 0 0.3rem 0.3rem;
@@ -112,7 +112,7 @@ const Wrapper = styled.div`
   .chat__entrancer__content input {
     display: block;
     width: 240px;
-    padding: 1rem 0.5rem;
+    padding: 0.9rem 0.5rem;
     margin: 0;
     font-size: 1.1rem;
     border: none;

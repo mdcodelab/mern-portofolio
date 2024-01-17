@@ -1,6 +1,7 @@
 import React from "react";
 //pages
 import Home from "./pages/Home";
+import Inc from "./pages/Inc";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
@@ -32,7 +33,7 @@ const App = () => {
         <Chat></Chat>
         {showEn && <ChatEntrancer shoeEn={showEn} setShowEn={setShowEn}></ChatEntrancer>}
         <div className="container">
-          <Home />
+          <Inc />
           <Experience />
           <Projects />
           <Contact />

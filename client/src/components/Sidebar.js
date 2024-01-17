@@ -5,19 +5,7 @@ import { useGlobalContext } from "../useContext";
 
 function Sidebar() {
   const { isSidebar, setSidebar } = useGlobalContext();
-  // const [currentScrollPos, setCurrentScrollPos] = React.useState(0);
-
-  // React.useEffect(() => {
-  //   const handleScroll = () => {
-  //     setCurrentScrollPos(window.scrollY);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     //window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+  
 
 const [scroll, setScroll] = React.useState(0);
 
@@ -55,11 +43,11 @@ React.useEffect(() => {
 
 const Wrapper = styled.div`
   height: calc(100vh - 5rem);
-  padding: 3rem;
-  position: fixed;
+  padding: 8rem 3rem;
   right: 0;
   top: 0;
   z-index: 8;
+  position: fixed;
   transition: all 0.5s ease;
 
   &.open {
@@ -79,7 +67,7 @@ const Wrapper = styled.div`
     font-size: 1.2rem;
     letter-spacing: 0.08rem;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   a:hover {

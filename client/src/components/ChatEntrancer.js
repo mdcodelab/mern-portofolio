@@ -14,7 +14,7 @@ function ChatEntrancer({showEn, setShowEn}) {
 
   return (
     <Wrapper
-      className={`ch__entrancer ${!isChat ? "ch__entrancer" : ""}`}
+      className={`chat__entrancer ${!isChat ? "chat__entrancer" : ""}`}
       onClick={() => displayEntrancer()}
     >
       <IoMdClose className="close__entrancer"></IoMdClose>
@@ -55,7 +55,7 @@ const Wrapper = styled.div`
       right: -200px;
     }
     to {
-      right: 2rem;
+      right: 3rem;
     }
   }
 

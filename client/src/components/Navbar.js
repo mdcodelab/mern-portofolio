@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const Navbar = () => {
   let { isSidebar, setSidebar } = useGlobalContext();
-  
+
   const [activeLink, setActiveLink] = React.useState("home");
 
   const [scroll, setScroll] = React.useState(false);
@@ -22,7 +22,11 @@ const Navbar = () => {
 
   return (
     <Wrapper
-      className={scroll > 0 ? "navbar section__center colorNav" : "navbar section__center"}
+      className={
+        scroll > 0
+          ? "navbar section__center colorNav"
+          : "navbar section__center"
+      }
     >
       <div className="logo">
         <div className="logo__initial">M</div>
@@ -78,9 +82,10 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+        </div>
         <button
           type="button"
-          className="icon__btn"
+          className="icon__btn button"
           onClick={() => setSidebar(!isSidebar)}
         >
           {!isSidebar ? (
@@ -95,7 +100,6 @@ const Navbar = () => {
             ></IoCloseOutline>
           )}
         </button>
-      </div>
     </Wrapper>
   );
 };
@@ -199,6 +203,8 @@ const Wrapper = styled.nav`
     }
     button {
       display: inline-block;
+      position: absolute;
+      right: 0;
     }
   }
 
@@ -290,6 +296,3 @@ const Wrapper = styled.nav`
 `;
 
 export default Navbar;
-
-
-

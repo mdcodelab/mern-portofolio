@@ -9,6 +9,7 @@
     --clr-navy-7: #0C2340;
     --clr-navy-7-rgba: rgba(12,35,64, 0.3);
     --cl-nav: #774177;
+    --clr-title: #847dff;
     --clr-white: #fff;
     --clr-millenium-blue: #002244;
     --clr-new-blue: rgba(0, 31, 84);
@@ -37,6 +38,7 @@
     --clr-green-light-1: hsl(125, 71%, 66%);
     --clr-green-neon: #39FF14;
     --clr-sidebar: rgb(75,0,130);
+    --clr-new: #1b1f39;
   
 
     --clr-black: #222;
@@ -63,7 +65,7 @@ html {
 }
 
 body {
-  color: var(--clr-navy-7);
+  
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
     font-size: 1rem;
@@ -157,8 +159,8 @@ hr {
 }
 
 .title {
-  text-align: center;
   margin-bottom: 0.5rem;
+  color: var(--clr-title);
 }
 
 @media only screen and (max-width: 700px) {

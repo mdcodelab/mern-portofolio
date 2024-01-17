@@ -74,7 +74,7 @@ function Chat() {
     </div>
   ) : (
     <div className="launcher__container" onClick={() => setIsChat(!isChat)}>
-      <IoChatbubbleOutline className="icon__launcher" style={{fontSize: "2.5rem", color: "var(--clr-red-light-1"}}></IoChatbubbleOutline></div>
+      <IoChatbubbleOutline className="icon__launcher" style={{fontSize: "2.5rem", color: "var(--clr-grey-8)"}}></IoChatbubbleOutline></div>
   );
 }
 

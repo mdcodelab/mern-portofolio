@@ -9,7 +9,7 @@ function ChatEntrancer({showEn, setShowEn}) {
     
     function displayEntrancer () {
         setShowEn(false);
-        setIsChat(true);
+        //setIsChat(true);
     }
 
   return (

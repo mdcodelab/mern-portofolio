@@ -28,13 +28,13 @@ React.useEffect(() => {
       <Link to="home" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
         Home
       </Link>
-      <Link to="experience" smooth={true} offset={-100} onClick={()=>setSidebar(!isSidebar)}>
+      <Link to="experience" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
         Experience
       </Link>
-      <Link to="projects" smooth={true} offset={-50} onClick={()=>setSidebar(!isSidebar)}>
+      <Link to="projects" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
         Projects
       </Link>
-      <Link to="contact" smooth={true} offset={-50} onClick={()=>setSidebar(!isSidebar)}>
+      <Link to="contact" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
         Contact
       </Link>
     </Wrapper>
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   transition: all 0.5s ease;
 
   &.open {
-    background: var(--clr-sidebar);
+    background: var(--clr-sidebar-2);
     transform: translateX(0%);
     transition: all 0.5s ease;
   }

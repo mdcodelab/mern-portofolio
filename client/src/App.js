@@ -1,10 +1,9 @@
 import React from "react";
 //pages
 import Home from "./pages/Home";
-import Inc from "./pages/Inc";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import Contact_bis from "./pages/Contact_bis";
 //components
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
@@ -33,10 +32,10 @@ const App = () => {
         <Chat></Chat>
         {showEn && <ChatEntrancer shoeEn={showEn} setShowEn={setShowEn}></ChatEntrancer>}
         <div className="container">
-          <Inc />
+          <Home />
           <Experience />
           <Projects />
-          <Contact />
+          <Contact_bis />
         </div>
       </div>
     </AppProvider>

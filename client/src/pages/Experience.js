@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Experience_small from "./Experience_small";
+import ExperienceSmall from "./ExperienceSmall";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -33,7 +33,7 @@ console.log(window.innerWidth);
   return (
     <Wrapper
       className="page-100 section__center" id="experience">
-      <h2 className="title">Experience</h2>
+      <h1 className="title">Experience</h1>
       <hr style={{ width: "100px", margin: "1rem auto" }}></hr>
       {window.innerWidth > 1100 && (
         <div className="experience__container">
@@ -73,14 +73,14 @@ console.log(window.innerWidth);
         </div>
       </div>
       )}
-      {window.innerWidth <= 1100 && (<Experience_small></Experience_small>)}
+      {window.innerWidth <= 1100 && (<ExperienceSmall></ExperienceSmall>)}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
 background: var(--clr-navy-7);
-  height: 100%;
+  height: 100vh;
   padding: 3rem;
   border: 2px solid red;
 

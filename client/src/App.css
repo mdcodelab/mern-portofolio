@@ -37,7 +37,10 @@
     --clr-green-dark: hsl(125, 67%, 44%);
     --clr-green-light-1: hsl(125, 71%, 66%);
     --clr-green-neon: #39FF14;
+
     --clr-sidebar: rgb(75,0,130);
+    --clr-sidebar-2: #4D0F28;
+    --clr-sidebar-3: #290916;
     --clr-new: #1b1f39;
   
 
@@ -230,6 +233,11 @@ button {
   @media only screen and (max-width: 500px) {
     .room__container {
       width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      right: unset;
+    }
+    .launcher__container {
       left: 50%;
       transform: translateX(-50%);
       right: unset;

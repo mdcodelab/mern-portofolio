@@ -55,7 +55,7 @@ const Wrapper = styled.div`
       right: -200px;
     }
     to {
-      right: 3rem;
+      right: 2rem;
     }
   }
 

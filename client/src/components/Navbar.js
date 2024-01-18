@@ -107,7 +107,7 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   height: 5rem;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -118,7 +118,7 @@ const Wrapper = styled.nav`
 
 
 &.colorNav {
-  background: linear-gradient(to right, #0C2340 50%, rgb(75,0,130) 50%);
+  background: linear-gradient(to right, #0C2340 50%,  #290916 50%);
       background-size: 200% 100%;
       animation: gradientAnimation 0.5s linear reverse forwards;
 }
@@ -131,7 +131,6 @@ const Wrapper = styled.nav`
         background-position: 0% 100%;
       }
     }
-
 
   div.logo {
     display: flex;
@@ -185,7 +184,7 @@ const Wrapper = styled.nav`
   }
 
   div.nav-links ul.links a {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     letter-spacing: 0.06rem;
     display: inline-block;
     margin-right: 1.5rem;
@@ -204,7 +203,7 @@ const Wrapper = styled.nav`
     button {
       display: inline-block;
       position: absolute;
-      right: 0;
+      right: 1rem;
     }
   }
 
@@ -223,7 +222,7 @@ const Wrapper = styled.nav`
 
   //effects
   a.active {
-    color: var(--clr-red-light-1) !important;
+    color: var(--clr-red-new) !important;
   }
 
   .icon__btn {
@@ -259,13 +258,13 @@ const Wrapper = styled.nav`
   }
 
   ul.links li a:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
     opacity: 0.2;
     filter: blur(5px);
   }
 
   ul.links li a:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
     opacity: 1;
     filter: blur(0);
     color: #fff;

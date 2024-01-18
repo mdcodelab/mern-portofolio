@@ -275,7 +275,7 @@ const Contact = () => {
 };
 
 const Wrapper = styled.div`
-background-color: var(--clr-navy-7);
+  background-color: var(--clr-navy-7);
   position: relative;
   display: flex;
   height: 130vh;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Experience_small() {
+function ExperienceSmall() {
   const [activeIndex, setActiveIndex] = React.useState(1);
 
   function handleClick(index) {
@@ -46,7 +46,6 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     padding: 2rem;
-  }
 
   .container {
     height: 10rem;
@@ -59,4 +58,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Experience_small;
+export default ExperienceSmall;

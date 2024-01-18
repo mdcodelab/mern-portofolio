@@ -26,7 +26,7 @@ e.preventDefault();
 
   return (
     <Wrapper className="section__center" id="contact">
-      <h1 className="title">Contact</h1>
+      <h2 className="title">Contact</h2>
       <hr></hr>
       <div className="contact__container">
         <div className="contact__left">
@@ -110,24 +110,18 @@ e.preventDefault();
         </div>
         <div className="contact__right">
           <h5>
-            + <a href="https://github.com/mdcodelab"></a>GITHUB
+            +
+            <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">
+              GITHUB
+            </a>
           </h5>
           <h5>
-            +{" "}
-            <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">
-              LINKEDIN
-            </a>
+            + <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">LINKEDIN</a>
           </h5>
           <h5>
             + <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
           </h5>
         </div>
-      </div>
-      <div className="footer">
-        <p>
-          &copy; {new Date().getFullYear()} <span>Mihaela Diaconu</span>. All
-          Rights Reserved.
-        </p>
       </div>
     </Wrapper>
   );
@@ -151,27 +145,73 @@ const Wrapper = styled.div`
 
   .contact__left {
     flex: 2;
-    border: 2px solid white;
   }
 
   .contact__right {
     flex: 1;
-    border: 2px solid white;
   }
 
   .contact__right h5 {
     text-align: center;
     cursor: pointer;
     font-size: 1.2rem;
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
   }
 
   .contact__right h5 a {
     color: var(--clr-grey-8);
+    display: block;
+    position: relative;
+    padding: 5px;
+    transition: 0.5s;
+    letter-spacing: 0.09rem;
+    text-decoration:underline;
+  }
+
+  .contact__right h5 a:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: blur(0);
+    color: #fff;
+    border-radius: 0.3rem;
+  }
+
+  .contact__right h5 a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-grey-6);
+    transition: 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+    border-radius: 0.3rem;
+  }
+
+  .contact__right h5 a:hover:before {
+    transition: transform 0.5s;
+    transform-origin: left;
+    transform: scaleX(1);
+    border-radius: 0.3rem;
   }
 
   .icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    color: var(--clr-grey-8);
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .icon:hover {
+    transform: scale(1.1);
+    color: var(--clr-title);
   }
 
   //form
@@ -292,12 +332,6 @@ const Wrapper = styled.div`
     border: 0.08rem solid var(--clr-grey-1);
   }
 
-  .footer {
-    position: absolute;
-    bottom: 0; left: 0;
-    height: 5rem;
-  }
-
   @media only screen and (max-width: 500px) {
     .contact__container {
       flex-direction: column;
@@ -306,19 +340,22 @@ const Wrapper = styled.div`
     .contact__right {
       width: 100%;
     }
+    .icon {
+    display: block;
+    margin: 0 auto;
+    }
     .contact__right {
       margin-top: 2rem;
     }
     label {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
     input::placeholder {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
     .contact__right h5 {
-        font-size: 1rem;
+      font-size: 1rem;
     }
-
   }
 `;
 

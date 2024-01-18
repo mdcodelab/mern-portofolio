@@ -33,7 +33,7 @@ console.log(window.innerWidth);
   return (
     <Wrapper
       className="page-100 section__center" id="experience">
-      <h1 className="title">Experience</h1>
+      <h2 className="title">Experience</h2>
       <hr style={{ width: "100px", margin: "1rem auto" }}></hr>
       {window.innerWidth > 1100 && (
         <div className="experience__container">

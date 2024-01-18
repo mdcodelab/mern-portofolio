@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact_bis from "./pages/Contact_bis";
+import Footer from "./pages/Footer";
 //components
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
@@ -36,6 +37,7 @@ const App = () => {
           <Experience />
           <Projects />
           <Contact_bis />
+          <Footer></Footer>
         </div>
       </div>
     </AppProvider>

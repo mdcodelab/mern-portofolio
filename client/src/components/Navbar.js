@@ -259,12 +259,6 @@ const Wrapper = styled.nav`
 
   ul.links li a:hover {
     transform: scale(1.1);
-    opacity: 0.2;
-    filter: blur(5px);
-  }
-
-  ul.links li a:hover {
-    transform: scale(1.1);
     opacity: 1;
     filter: blur(0);
     color: #fff;

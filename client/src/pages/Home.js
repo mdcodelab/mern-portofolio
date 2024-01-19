@@ -35,7 +35,7 @@ const Home = () => {
         </div>
         <div className="tech__icons__container">
           <div className="icons__intro">
-            <p>Tech Stack</p>
+            <p style={{fontSize: "1rem"}}>Tech Stack</p>
             <p className="display" style={{color: "var(--clr-grey-8", marginLeft: "0.2rem"}}>|</p>
             <hr className="none"></hr>
           </div>
@@ -66,13 +66,12 @@ const Home = () => {
 const Wrapper = styled.div`
   padding: 3rem;
   height: calc(100vh - 5rem);
-  background-color: var(--clr-new);
+  background-color: var(--clr-navy-7);
   background-image: url("assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
-  border: 2px solid red;
 
   .title {
     margin: 0;
@@ -81,6 +80,20 @@ const Wrapper = styled.div`
     letter-spacing: 0.15rem;
     margin-bottom: 0.5rem;
     color: var(--clr-title);
+    transform: translateY(300px);
+    opacity: 0;
+    animation: moveTitle 0.5s linear forwards;
+  }
+
+  @keyframes moveTitle {
+    0% {
+      transform: translateY(300px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
 
   p {
@@ -88,6 +101,20 @@ const Wrapper = styled.div`
     padding: 0;
     color: var(--clr-grey-8);
     letter-spacing: 0.06rem;
+    transform: translateY(300px);
+    opacity: 0;
+    animation: moveParagraph 0.7s linear forwards;
+  }
+
+  @keyframes moveParagraph {
+    0% {
+      opacity: 0;
+      transform: translateY(300px);
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
 
   .name {
@@ -126,18 +153,18 @@ const Wrapper = styled.div`
 
   .icons__intro {
     display: flex;
-    width: 120px;
+    width: 110px;
     align-items: center;
     justify-content: space-between;
   }
 
   .icons__intro p {
     color: var(--clr-gey-8);
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .display {
-    
   }
 
   .tech__icons {
@@ -188,14 +215,14 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 500px) {
     .title {
-        text-align: center;
+      text-align: center;
     }
     p {
-        text-align: center;
-        font-size: 1rem;
+      text-align: center;
+      font-size: 1rem;
     }
     .contact__icons {
-        margin: 0 auto;
+      margin: 0 auto;
     }
     .tech__icons__container {
       width: 100%;
@@ -219,23 +246,23 @@ const Wrapper = styled.div`
       display: none;
     }
     .tech__icons {
-        width: 100%;
-        height: 100%;
+      width: 100%;
+      height: 100%;
     }
   }
 
   @media (max-width: 350px) {
     .home__container {
-        height: 100%;
+      height: 100%;
     }
     p {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
     .contact__icons {
-        width: 4rem;
+      width: 4rem;
     }
     .tech__icons__container {
-        width: 100%;
+      width: 100%;
       height: 8rem;
     }
     .icons {

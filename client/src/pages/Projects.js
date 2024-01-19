@@ -59,10 +59,11 @@ const Projects = () => {
   return (
     <Wrapper
       className="page-100 projects__container section__center"
-      id="projects"
-    >
-      <h2 className="title">Projects</h2>
-      <hr style={{width: "100px", margin: "0rem auto"}}></hr>
+      id="projects">
+      <div className="section__header">
+         <h2 className="title">Projects</h2>
+         <hr></hr>
+      </div>
       <h4 className="subtitle">Some of my work</h4>
       <div className="searchInput">
         <Select

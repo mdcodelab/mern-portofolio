@@ -1,7 +1,7 @@
 //icons title
 import {GiWinterHat} from "react-icons/gi";
 import {BsFillHouseGearFill} from "react-icons/bs";
-import { FaGithubAlt } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
 import {GiReceiveMoney} from "react-icons/gi";
 import {GiWoodCabin} from "react-icons/gi";
 import {IoIosPeople} from "react-icons/io";
@@ -22,7 +22,7 @@ export const data = [
     description:
       "Winterscape - a virtual snowfall experience with audio and animations. Users can buy products, read recipes and news, all for the winter season!",
     tech: ["JavaScript", "CSS3", "HTML5"],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon__2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
   {
@@ -36,7 +36,7 @@ export const data = [
     description:
       "Responsive website with animations, including titlt.js. Users can benefit from consultation regarding the desired architecture of their living space.",
     tech: ["JavaScript", "CSS3", "Tilt.js", "HTML5"],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon_2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
   {
@@ -44,13 +44,13 @@ export const data = [
     title: "GitHub Finder",
     type: "w",
     video: "/assets/videos_projects/git.mp4",
-    icon: <FaGithubAlt></FaGithubAlt>,
+    icon: <FiGithub></FiGithub>,
     urlDemo: "https://github-finder-react-eqfqo63wv-mdcodelab.vercel.app/",
     urlGit: "https://github.com/mdcodelab/github-finder-react-app",
     description:
       "This app utilizes the GitHub APIs to retrieve and display relevant information about a user's profile and repositories.",
     tech: ["REACT", "CSS3"],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon_2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
   {
@@ -64,7 +64,7 @@ export const data = [
     description:
       "This app evaluates the net present value (NPV) of an investment project and assesses its risk based on Monte Carlo simulation. It displays the NPV under the most likely scenario based on data from the user, associated with the investment, but also evaluates the investment risk by estimating the mean NPV and the probability of the NPV > 0.",
     tech: ["JavaScript", "CSS3", "HTML5"],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon_2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
   {
@@ -78,7 +78,7 @@ export const data = [
     description:
       "This is e-commerce front-end app built with React, Stripe for payment processing, and Netlify functions as a serverless backend. The app provides a simple and intuitive user interface for searching and purchasing products online.",
     tech: ["REACT", "CSS3", "AOS", "AUTH0", "STRIPE"],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon_2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
   {
@@ -91,7 +91,7 @@ export const data = [
     urlGit: "",
     description: "",
     tech: [],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon_2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
   {
@@ -105,7 +105,7 @@ export const data = [
     description:
       "LoveRoses is a dedicated online platform specializing in the sale of luxury roses and related accessories. he website provides an interface for searching and purchasing products.",
     tech: ["REACT", "CSS3", "STYLED-COMPONENTS", "AOS", "Tilt.js"],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon_2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
 
@@ -120,7 +120,7 @@ export const data = [
     description:
       "This website aims to provide users with a user-friendly platform for discovering, and managing culinary recipes. Key features include: intuitive interface, efficient categorization, detailed ingredients and cooking instructions, responsiveness and mobile support.",
     tech: ["GATSBY", "GRAPHQL", "STYLED-COMPONENTS", "CONTENTFUL"],
-    icon_1: <FaGithubAlt></FaGithubAlt>,
+    icon_1: <FiGithub></FiGithub>,
     icon_2: <MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight>,
   },
 ];

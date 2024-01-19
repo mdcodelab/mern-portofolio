@@ -26,8 +26,10 @@ e.preventDefault();
 
   return (
     <Wrapper className="section__center" id="contact">
-      <h2 className="title">Contact</h2>
-      <hr></hr>
+      <div className="section__header">
+            <h2 className="title">Contact</h2>
+            <hr></hr>
+      </div>
       <div className="contact__container">
         <div className="contact__left">
           <SlEnvelopeOpen
@@ -37,7 +39,7 @@ e.preventDefault();
           <form
             className={closeForm ? "form displayNone" : "form"}
             action="https://formspree.io/f/mbjvoylv"
-            method="POST"
+            method="POST" onSubmit={()=>handleSubmit()}
           >
             <div className="btn__close">
               <IoMdClose
@@ -79,7 +81,7 @@ e.preventDefault();
                 ></input>
               </div>
               <div className="subject">
-                <label>E-mail</label>
+                <label>Subject</label>
                 <input
                   type="text"
                   name="subject"
@@ -101,7 +103,6 @@ e.preventDefault();
             <button
               type="submit"
               className="btn__submit"
-              onClick={() => handleSubmit()}
             >
               <span>Submit</span>
               <IoIosArrowRoundForward></IoIosArrowRoundForward>
@@ -116,7 +117,10 @@ e.preventDefault();
             </a>
           </h5>
           <h5>
-            + <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">LINKEDIN</a>
+            +{" "}
+            <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">
+              LINKEDIN
+            </a>
           </h5>
           <h5>
             + <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
@@ -130,7 +134,6 @@ e.preventDefault();
 const Wrapper = styled.div`
   background: var(--clr-navy-7);
   padding: 3rem;
-  border: 2px solid red;
 
   .displayNone {
     display: none;
@@ -139,7 +142,6 @@ const Wrapper = styled.div`
   .contact__container {
     margin-top: 3rem;
     display: flex;
-    align-items: center;
     height: 100%;
   }
 
@@ -167,6 +169,7 @@ const Wrapper = styled.div`
     display: block;
     position: relative;
     padding: 5px;
+    letter-spacing: 0.09rem;
     transition: 0.5s;
     letter-spacing: 0.09rem;
     text-decoration:underline;

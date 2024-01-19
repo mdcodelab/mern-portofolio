@@ -17,7 +17,7 @@ function Footer() {
     <Wrapper>
       <p className="footer">
             &copy; {new Date().getFullYear()} 
-            <Link to="home" id="home" smooth={true} offset={-60}>Mihaela Diaconu</Link>. All
+            <Link to="home" id="home" smooth={true} offset={-60}> Mihaela Diaconu</Link>. All
             Rights Reserved.</p>
     </Wrapper>
   );

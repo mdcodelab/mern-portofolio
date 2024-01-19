@@ -25,7 +25,7 @@ React.useEffect(() => {
           ? "close section__center"
           : "open section__center sidebar"}`}
     >
-      <Link to="home" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
+      <Link to="home" smooth={true} offset={-50} onClick={()=>setSidebar(!isSidebar)}>
         Home
       </Link>
       <Link to="experience" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>

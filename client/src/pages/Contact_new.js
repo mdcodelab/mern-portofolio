@@ -14,15 +14,33 @@ const [formElements, setFormElements]=React.useState({
    message: "" 
 });
 
-const onChange = () => {
-
+const onChange = (e) => {
+const {name, value}=e.target;
+setFormElements(prevState => {
+    return {...prevState, [name]: e.target.value}
+})
 }
 
-const onSubmit = () => {
-
+const onSubmit = (e) => {
+e.preventDefault();
+console.log("submitted");
 }
 
-const[closeForm, setCloseForm]=React.useState(false)
+const[showForm, setShowForm]=
+React.useState(localStorage.getItem("showForm") === "true" ? true : false)
+
+const handleClick=() => {
+    setShowForm(true);
+    localStorage.setItem("showForm", "true");
+}
+
+React.useEffect(() => {
+    if(showForm) {
+        localStorage.setItem("showForm", "true");
+    } else {
+        localStorage.removeItem("showForm");
+    }
+}, [showForm]);
 
   return (
     <Wrapper className="section__center" id="contact">
@@ -31,17 +49,17 @@ const[closeForm, setCloseForm]=React.useState(false)
         <div className="hr" style={{ background: "#BA55D3" }}></div>
       </div>
       <FormComponent formElements={formElements} onSubmit={onSubmit} onChange={onChange}
-        closeForm={closeForm}
+        showForm={showForm}
       ></FormComponent>
+
       <div className="contact__container">
         <div className="contact__left">
           <p style={{ color: "#BA55D3" }}>Need a web developer?</p>
           <p style={{ color: "#BA55D3" }}>Let's build something.</p>
           <button type="button"
-            className="btn__contact" onClick={() => setCloseForm(true)}>
+            className="btn__contact" onClick={() => handleClick()}>
             Get In Touch
           </button>
-          {/* formn */}
         </div>
         <div className="contact__right">
           <h5>
@@ -65,10 +83,6 @@ const[closeForm, setCloseForm]=React.useState(false)
 const Wrapper = styled.div`
   background: var(--clr-navy-7);
   padding: 3rem;
-
-  .displayNone {
-    display: none;
-  }
 
   .contact__container {
     margin-top: 3rem;

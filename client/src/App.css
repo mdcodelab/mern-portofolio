@@ -380,6 +380,14 @@ button {
       right: unset;
     }
   }
+
+  .displayNone {
+    display: none;
+  }
+
+
+
+
  
 
   

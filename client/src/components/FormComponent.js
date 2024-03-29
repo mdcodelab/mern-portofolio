@@ -1,22 +1,17 @@
 import React from 'react'
 import styled from "styled-components";
-import { IoMdClose } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-function FormComponent({formElements, onChange, onSubmit, closeForm}) {
+function FormComponent({formElements, onChange, onSubmit, showForm}) {
+
   return (
-    <div lassName={closeForm ? "form displayNone" : ""}>
+    <Wrapper className={!showForm ? "displayNone" : ""}>
       <p>Let's build a thing.</p>
-      <Wrapper className="form"
+      <form className="form"
         action="https://formspree.io/f/mbjvoylv"
         method="POST"
-        onSubmit={onSubmit}>
-        <div className="btn__close">
-          <IoMdClose
-            className="btn__close__icon"
-            onClick={() => closeForm()}
-          ></IoMdClose>
-        </div>
+        onSubmit={()=>onSubmit()}>
+
         <div className="personal__details">
           <div className="name">
             <label>Name</label>
@@ -34,7 +29,7 @@ function FormComponent({formElements, onChange, onSubmit, closeForm}) {
             <input
               type="text"
               name="surname"
-              laceholder="Surname..."
+              placeholder="Surname..."
               value={formElements.surname}
               required
               onChange={onChange}
@@ -60,7 +55,6 @@ function FormComponent({formElements, onChange, onSubmit, closeForm}) {
               name="subject"
               placeholder="Subject..."
               value={formElements.subject}
-              required
               onChange={onChange}
             ></input>
           </div>
@@ -79,37 +73,26 @@ function FormComponent({formElements, onChange, onSubmit, closeForm}) {
           <span>Send it</span>
           <IoIosArrowRoundForward></IoIosArrowRoundForward>
         </button>
-      </Wrapper>
-    </div>
+      </form>
+    </Wrapper>
   );
 }
 
-const Wrapper = styled.form`
-  //form
+const Wrapper = styled.div`
+.displayNone {
+    display: none;
+}
+
   .form {
     width: 100%;
     height: max-content;
     padding: 0.5rem;
-    border: 0.08px solid var(--clr-grey-6);
+    border: 0.08px solid var(--clr-grey-6) !important;
     border-radius: 0.3rem;
     box-shadow: 0 1px 3px rgba(225, 255, 255, 0.12),
       0 1px 2px rgba(255, 255, 255, 0.24);
     background: var(--clr-navy-7);
     position: relative;
-  }
-
-  .btn__close__icon {
-    font-size: 1.5rem;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    color: var(--clr-red-light-1);
-    cursor: pointer;
-    transition: scale 0.8s ease-in-out;
-  }
-
-  .btn__close__icon:hover {
-    transform: scale(1.2);
   }
 
   .personal__details {
@@ -177,6 +160,7 @@ const Wrapper = styled.form`
   .message textarea:hover::placeholder {
     color: transparent;
   }
+
 
   .btn__submit {
     width: 10rem;

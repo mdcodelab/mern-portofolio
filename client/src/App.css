@@ -101,16 +101,23 @@ html {
 
 .section__header {
   width: max-content;
-  height: 100%;
+  height: max-content;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hr {
-  margin: 1rem 0;
   margin-left: 1rem;
   width: 75px;
   height: 1.5px;
+}
+
+.section__name {
+  color: var(--clr-grey-8);
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 
@@ -121,17 +128,35 @@ html {
     }
 
     .hr {
-      margin: 1rem 0;
-      margin-left: 1rem;
-      width: 75px;
-      height: 1.5px;
+      width: 80px;
+      margin: 0 auto;
+    }
+  }
+
+  .text__title {
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .text__title {
+      font-size: 2rem;
+      width: 100%;
+      line-height: 2rem;
+    }
+
+  }
+  
+  @media only screen and (max-width: 506px) {
+    .text__title {
+      font-size: 1.5rem;
     }
   }
 
   h1, h2, h3, h4, h5 {
     letter-spacing: var(--spacing);
     line-height: 1.25;
-    margin-bottom: 2rem;
   }
   h1 {
     font-size: 2.5rem;
@@ -149,7 +174,6 @@ html {
     font-size: 0.875rem;
   }
   p {
-    margin-bottom: 1.25rem;
     color: var(--clr-grey-3);
     font-size: 1.2rem;
   }
@@ -183,16 +207,6 @@ html {
   margin: 0 auto;
 }
 
-.title {
-  margin-bottom: 0.5rem;
-  color: var(--clr--grey-6);
-}
-
-@media only screen and (max-width: 500px) {
-  .title {
-    font-size: 1.8rem;
-  }
-}
 
 .underline {
   width: 8.5rem;

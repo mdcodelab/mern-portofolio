@@ -185,6 +185,8 @@ const Wrapper = styled.div`
     background: var(--clr-red-light-1);
     border: 0.08rem solid var(--clr-grey-1);
   }
+
+  
 `;
 
 export default FormComponent

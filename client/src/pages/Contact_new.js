@@ -45,7 +45,7 @@ React.useEffect(() => {
   return (
     <Wrapper className="section__center" id="contact">
       <div className="section__header">
-        <h4 className="title">Contact</h4>
+        <p className="section__name">Contact</p>
         <div className="hr" style={{ background: "#BA55D3" }}></div>
       </div>
       <FormComponent formElements={formElements} onSubmit={onSubmit} onChange={onChange}
@@ -54,8 +54,8 @@ React.useEffect(() => {
 
       <div className="contact__container">
         <div className="contact__left">
-          <p style={{ color: "#BA55D3" }}>Need a web developer?</p>
-          <p style={{ color: "#BA55D3" }}>Let's build something.</p>
+          <p className="text__title" style={{ color: "#BA55D3" }}>Need a web developer?</p>
+          <p className="text__title" style={{ color: "#BA55D3" }}>Let's build something.</p>
           <button type="button"
             className="btn__contact" onClick={() => handleClick()}>
             Get In Touch
@@ -87,33 +87,32 @@ const Wrapper = styled.div`
   .contact__container {
     margin-top: 3rem;
     display: flex;
+    flex-direction: column;
     height: 100%;
     justify-content: space-between;
+    align-items: center;
     padding: 0 3rem;
   }
 
-  .contact__left {
-    flex: 2;
-  }
-
   .contact__right {
-    flex: 0.3;
-  }
-
-  .contact__left p {
-    font-size: 2.5rem;
-    margin: 0; padding: 0;
+    width: 400px;
+    max-width: 400px;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .contact__right h5 {
-    text-align: right;
     cursor: pointer;
     font-size: 1.2rem;
     width: max-content;
-    margin: 0 auto;
+    height: max-content;
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
   }
 
   .contact__right h5 a {
@@ -124,7 +123,7 @@ const Wrapper = styled.div`
     letter-spacing: 0.09rem;
     transition: 0.5s;
     letter-spacing: 0.09rem;
-    text-decoration:underline;
+    text-decoration: underline;
   }
 
   .contact__right h5 a:hover {
@@ -171,26 +170,20 @@ const Wrapper = styled.div`
     border: 0.05rem solid var(--clr-grey-8);
     border-radius: 0.2rem;
     cursor: pointer;
+    margin: 2.5rem auto;
     transition: all 0.3s ease-in-out;
   }
 
-  .icon:hover {
-    transform: scale(1.1);
-    color: var(--clr-title);
+  @media only screen and (max-width: 700px) {
+    .contact__right h5 a {
+      font-size: 1.1rem;
+    }
   }
 
-
   @media only screen and (max-width: 500px) {
-    .contact__container {
-      flex-direction: column;
-    }
     .contact__left,
     .contact__right {
       width: 100%;
-    }
-    .icon {
-    display: block;
-    margin: 0 auto;
     }
     .contact__right {
       margin-top: 2rem;
@@ -203,6 +196,13 @@ const Wrapper = styled.div`
     }
     .contact__right h5 {
       font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 426px) {
+    .contact__right {
+        flex-direction: column;
+        height: 8rem;
     }
   }
 `;

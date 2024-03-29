@@ -23,7 +23,7 @@ function Footer() {
   );
 }
 
-const Wrapper=styled.div`
+const Wrapper=styled.footer`
 height: 5rem;
 background: black;
 width: 100%;
@@ -35,6 +35,7 @@ justify-content: center;
     text-align: center;
     font-size:0.9rem;
     color: var(--clr-grey-8);
+    margin: 0;
 }
 
 .footer a {

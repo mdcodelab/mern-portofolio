@@ -6,12 +6,13 @@ function FormComponent({formElements, onChange, onSubmit, showForm}) {
 
   return (
     <Wrapper className={!showForm ? "displayNone" : ""}>
-      <p>Let's build a thing.</p>
-      <form className="form"
+      <p className="text__title text__primary" style={{ color: "#BA55D3" }}>Let's build a thing.</p>
+      <form
+        className="form"
         action="https://formspree.io/f/mbjvoylv"
         method="POST"
-        onSubmit={()=>onSubmit()}>
-
+        onSubmit={() => onSubmit()}
+      >
         <div className="personal__details">
           <div className="name">
             <label>Name</label>
@@ -69,9 +70,9 @@ function FormComponent({formElements, onChange, onSubmit, showForm}) {
             onChange={onChange}
           ></textarea>
         </div>
-        <button type="submit" className="btn__submit">
+        <button type="submit" className="btn__submit btn__contact">
           <span>Send it</span>
-          <IoIosArrowRoundForward></IoIosArrowRoundForward>
+          <IoIosArrowRoundForward style={{fontSize: "1.8rem"}}></IoIosArrowRoundForward>
         </button>
       </form>
     </Wrapper>
@@ -79,9 +80,15 @@ function FormComponent({formElements, onChange, onSubmit, showForm}) {
 }
 
 const Wrapper = styled.div`
-.displayNone {
+  margin-top: 2rem;
+
+  .displayNone {
     display: none;
-}
+  }
+
+  .text__primary {
+    margin: 1.5rem 0;
+  }
 
   .form {
     width: 100%;
@@ -138,7 +145,7 @@ const Wrapper = styled.div`
     outline: none;
     border-bottom: 1px solid var(--clr-grey-8);
     color: var(--clr-grey-8);
-    color: var(--clr-light-blue-2);
+    color: #BA55D3;
     font-size: 1.1rem;
     letter-spacing: none;
     background: var(--clr-navy-7);
@@ -161,32 +168,14 @@ const Wrapper = styled.div`
     color: transparent;
   }
 
-
   .btn__submit {
-    width: 10rem;
-    height: 2.5rem;
-    border: none;
     margin: 2rem auto;
-    border-radius: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
-    font-size: 1.2rem;
-    background: transparent;
-    color: var(--clr-grey-8);
-    border: 0.08rem solid var(--clr-grey-8);
-    letter-spacing: 0.08rem;
-    transition: all 0.7s ease-in-out;
   }
 
-  .btn__submit:hover {
-    color: var(--clr-grey-1);
-    background: var(--clr-red-light-1);
-    border: 0.08rem solid var(--clr-grey-1);
+  .btn__submit span {
+    display: block;
+    margin-right: 0.5rem;
   }
-
-  
 `;
 
 export default FormComponent

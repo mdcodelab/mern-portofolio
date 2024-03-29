@@ -62,18 +62,18 @@ React.useEffect(() => {
           </button>
         </div>
         <div className="contact__right">
-          <h5>
+          <p>
             +<a href="https://github.com/mdcodelab">GITHUB</a>
-          </h5>
-          <h5>
+          </p>
+          <p>
             +{" "}
             <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">
               LINKEDIN
             </a>
-          </h5>
-          <h5>
+          </p>
+          <p>
             + <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
-          </h5>
+          </p>
         </div>
       </div>
     </Wrapper>
@@ -94,6 +94,12 @@ const Wrapper = styled.div`
     padding: 0 3rem;
   }
 
+  .contact__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .contact__right {
     width: 400px;
     max-width: 400px;
@@ -103,19 +109,18 @@ const Wrapper = styled.div`
     justify-content: space-between;
   }
 
-  .contact__right h5 {
+  .contact__right p {
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     width: max-content;
     height: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
-    padding: 0;
+    color: var(--clr-grey-8);
   }
 
-  .contact__right h5 a {
+  .contact__right p a {
     color: var(--clr-grey-8);
     display: block;
     position: relative;
@@ -123,10 +128,10 @@ const Wrapper = styled.div`
     letter-spacing: 0.09rem;
     transition: 0.5s;
     letter-spacing: 0.09rem;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
-  .contact__right h5 a:hover {
+  .contact__right p a:hover {
     transform: scale(1.1);
     opacity: 1;
     filter: blur(0);
@@ -134,7 +139,7 @@ const Wrapper = styled.div`
     border-radius: 0.3rem;
   }
 
-  .contact__right h5 a:before {
+  .contact__right p a:before {
     content: "";
     position: absolute;
     top: 0;
@@ -149,33 +154,16 @@ const Wrapper = styled.div`
     border-radius: 0.3rem;
   }
 
-  .contact__right h5 a:hover:before {
+  .contact__right p a:hover:before {
     transition: transform 0.5s;
     transform-origin: left;
     transform: scaleX(1);
     border-radius: 0.3rem;
   }
 
-  .btn__contact {
-    width: 10rem;
-    height: 3rem;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.09rem;
-    color: var(--clr-grey-8);
-    border: 0.05rem solid var(--clr-grey-8);
-    border-radius: 0.2rem;
-    cursor: pointer;
-    margin: 2.5rem auto;
-    transition: all 0.3s ease-in-out;
-  }
 
   @media only screen and (max-width: 700px) {
-    .contact__right h5 a {
+    .contact__right p a {
       font-size: 1.1rem;
     }
   }
@@ -194,15 +182,18 @@ const Wrapper = styled.div`
     input::placeholder {
       font-size: 0.9rem;
     }
-    .contact__right h5 {
-      font-size: 1rem;
+    .contact__right p {
+      font-size: 0.9rem;
+    }
+    .contact__right p a {
+      font-size: 0.9rem;
     }
   }
 
   @media only screen and (max-width: 426px) {
     .contact__right {
-        flex-direction: column;
-        height: 8rem;
+      flex-direction: column;
+      height: 7.5rem;
     }
   }
 `;

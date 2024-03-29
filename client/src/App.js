@@ -3,7 +3,7 @@ import React from "react";
 import Home from "./pages/Home";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
-import Contact_bis from "./pages/Contact_bis";
+import Contact_new from "./pages/Contact_new";
 import Footer from "./pages/Footer";
 //components
 import Navbar from "./components/Navbar";
@@ -36,7 +36,7 @@ const App = () => {
           <Home />
           <Experience />
           <Projects />
-          <Contact_bis />
+          <Contact_new />
           <Footer></Footer>
         </div>
       </div>

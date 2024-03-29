@@ -61,7 +61,7 @@ const Projects = () => {
       className="page-100 projects__container section__center"
       id="projects">
       <div className="section__header">
-         <h2 className="title">Projects</h2>
+         <h4 className="title">Projects</h4>
          <hr></hr>
       </div>
       <h4 className="subtitle">Some of my work</h4>

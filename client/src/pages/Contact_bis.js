@@ -27,8 +27,8 @@ e.preventDefault();
   return (
     <Wrapper className="section__center" id="contact">
       <div className="section__header">
-            <h2 className="title">Contact</h2>
-            <hr></hr>
+        <h4 className="title">Contact</h4>
+        <hr></hr>
       </div>
       <div className="contact__container">
         <div className="contact__left">
@@ -39,7 +39,8 @@ e.preventDefault();
           <form
             className={closeForm ? "form displayNone" : "form"}
             action="https://formspree.io/f/mbjvoylv"
-            method="POST" onSubmit={()=>handleSubmit()}
+            method="POST"
+            onSubmit={() => handleSubmit()}
           >
             <div className="btn__close">
               <IoMdClose
@@ -55,6 +56,7 @@ e.preventDefault();
                   placeholder="Name..."
                   value={name}
                   name="name"
+                  required
                   onChange={(e) => setName(e.target.value)}
                 ></input>
               </div>
@@ -65,6 +67,7 @@ e.preventDefault();
                   name="surname"
                   placeholder="Surname..."
                   value={surname}
+                  required
                   onChange={(e) => setSurname(e.target.value)}
                 ></input>
               </div>
@@ -77,6 +80,7 @@ e.preventDefault();
                   name="email"
                   placeholder="E-mail..."
                   value={email}
+                  required
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </div>
@@ -87,6 +91,7 @@ e.preventDefault();
                   name="subject"
                   placeholder="Subject..."
                   value={subject}
+                  required
                   onChange={(e) => setSubject(e.target.value)}
                 ></input>
               </div>
@@ -97,24 +102,19 @@ e.preventDefault();
                 placeholder="Message..."
                 value={message}
                 name="message"
+                required
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className="btn__submit"
-            >
-              <span>Submit</span>
+            <button type="submit" className="btn__submit">
+              <span>Send it</span>
               <IoIosArrowRoundForward></IoIosArrowRoundForward>
             </button>
           </form>
         </div>
         <div className="contact__right">
           <h5>
-            +
-            <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">
-              GITHUB
-            </a>
+            +<a href="https://github.com/mdcodelab">GITHUB</a>
           </h5>
           <h5>
             +{" "}
@@ -143,6 +143,7 @@ const Wrapper = styled.div`
     margin-top: 3rem;
     display: flex;
     height: 100%;
+    justify-content: space-between;
   }
 
   .contact__left {
@@ -150,11 +151,11 @@ const Wrapper = styled.div`
   }
 
   .contact__right {
-    flex: 1;
+    flex: 0.3;
   }
 
   .contact__right h5 {
-    text-align: center;
+    text-align: right;
     cursor: pointer;
     font-size: 1.2rem;
     width: max-content;
@@ -311,17 +312,16 @@ const Wrapper = styled.div`
   }
 
   .btn__submit {
-    width: 8rem;
-    height: 2rem;
+    width: 10rem;
+    height: 2.5rem;
     border: none;
-    display: block;
-    margin: 0 auto;
+    margin: 2rem auto;
     border-radius: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
     background: transparent;
     color: var(--clr-grey-8);
     border: 0.08rem solid var(--clr-grey-8);

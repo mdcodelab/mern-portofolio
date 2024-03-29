@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { IoMdClose } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import FormComponent from '../components/FormComponent';
+import Stars from '../components/Stars';
 
 function Contact_new() {
 
@@ -48,6 +49,7 @@ React.useEffect(() => {
         <p className="section__name">Contact</p>
         <div className="hr" style={{ background: "#BA55D3" }}></div>
       </div>
+      <Stars></Stars>
       <FormComponent formElements={formElements} onSubmit={onSubmit} onChange={onChange}
         showForm={showForm}
       ></FormComponent>

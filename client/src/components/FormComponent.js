@@ -100,6 +100,7 @@ const Wrapper = styled.div`
       0 1px 2px rgba(255, 255, 255, 0.24);
     background: var(--clr-navy-7);
     position: relative;
+    z-index: 100;
   }
 
   .personal__details {

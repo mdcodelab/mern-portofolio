@@ -157,13 +157,11 @@ function Balls() {
   };
 
   const Wrapper = styled.div`
-  position: absolute;
-  top: 3.5rem;
-  bottom: 0;
-  width: 90vw;
-  margin: 0 auto;
-  border: 2px solid white;
-  margin: 0 auto;
+    position: absolute;
+    top: 3.5rem;
+    bottom: 0;
+    width: 90vw;
+    margin: 0 auto;
     .canvas {
       display: block;
       width: 100%;

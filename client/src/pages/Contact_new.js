@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { IoMdClose } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import FormComponent from '../components/FormComponent';
-import Stars from '../components/Stars';
+import Balls from '../components/Balls';
 
 function Contact_new() {
 
@@ -49,35 +49,48 @@ React.useEffect(() => {
         <p className="section__name">Contact</p>
         <div className="hr" style={{ background: "#BA55D3" }}></div>
       </div>
-      <Stars></Stars>
-      <FormComponent formElements={formElements} onSubmit={onSubmit} onChange={onChange}
-        showForm={showForm}
-      ></FormComponent>
+      <Balls></Balls>
 
-      <div className="contact__container">
-        <div className="contact__left">
-          <p className="text__title" style={{ color: "#BA55D3" }}>Need a web developer?</p>
-          <p className="text__title" style={{ color: "#BA55D3" }}>Let's build something.</p>
-          <button type="button"
-            className="btn__contact" onClick={() => handleClick()}>
-            Get In Touch
-          </button>
+      
+        <FormComponent
+          formElements={formElements}
+          onSubmit={onSubmit}
+          onChange={onChange}
+          showForm={showForm}
+        ></FormComponent>
+        <div className="contact__container">
+          <div className="contact__left">
+            <p className="text__title" style={{ color: "#BA55D3" }}>
+              Need a web developer?
+            </p>
+            <p className="text__title" style={{ color: "#BA55D3" }}>
+              Let's build something.
+            </p>
+            <button
+              type="button"
+              className="btn__contact"
+              onClick={() => handleClick()}
+            >
+              Get In Touch
+            </button>
+          </div>
+          <div className="contact__right">
+            <p>
+              +<a href="https://github.com/mdcodelab">GITHUB</a>
+            </p>
+            <p>
+              +{" "}
+              <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">
+                LINKEDIN
+              </a>
+            </p>
+            <p>
+              +{" "}
+              <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
+            </p>
+          </div>
         </div>
-        <div className="contact__right">
-          <p>
-            +<a href="https://github.com/mdcodelab">GITHUB</a>
-          </p>
-          <p>
-            +{" "}
-            <a href="https://www.linkedin.com/in/mihaela-diaconu-5538a3204/">
-              LINKEDIN
-            </a>
-          </p>
-          <p>
-            + <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
-          </p>
-        </div>
-      </div>
+      
     </Wrapper>
   );
 }
@@ -85,6 +98,15 @@ React.useEffect(() => {
 const Wrapper = styled.div`
   background: var(--clr-navy-7);
   padding: 3rem;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  .contact__content {
+    position: absolute;
+    top: 3.5rem;
+    z-index: 100;
+  }
 
   .contact__container {
     margin-top: 3rem;

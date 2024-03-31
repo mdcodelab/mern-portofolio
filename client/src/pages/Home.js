@@ -72,6 +72,7 @@ const Wrapper = styled.div`
   background-size: cover;
   background-position: center;
   position: relative;
+  border: 2px solid white;
 
   .title {
     margin: 0;

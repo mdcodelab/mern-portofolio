@@ -125,10 +125,10 @@ html {
       flex-direction: column;
       margin: 0 auto;
     }
-
     .hr {
-      width: 80px;
+      width: 120px;
       margin: 0 auto;
+      margin-top: 0.3rem;
     }
   }
 
@@ -145,12 +145,14 @@ html {
       width: 100%;
       line-height: 2rem;
     }
-
   }
   
   @media only screen and (max-width: 506px) {
     .text__title {
       font-size: 1.5rem;
+    }
+    .section__name {
+      font-size: 1rem;
     }
   }
 
@@ -286,7 +288,7 @@ button {
     transition: all 0.3s ease-in-out;
   }
   
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 992px) {
     .room__container {
       width: 100%;
       left: 50%;
@@ -334,10 +336,11 @@ button {
   }
 
   .chat__message {
-    margin-bottom: 0.75rem;
-    background: var(--clr-grey-8);
-    border-radius: 0.4rem;
+    margin-bottom: 0.70rem;
+    /* background: var(--clr-grey-8); */
+    border-radius: 0.2rem;
     padding: 0.25rem;
+    border-bottom: 1px dashed black;
   }
 
   .chat__content {
@@ -362,7 +365,6 @@ button {
   }
 
   .body__empty p {
-    margin: 0; padding: 0;
     margin-top: 0.5rem;
     font-size: 1.1rem;
     color: var(--clr-grey-5);
@@ -373,12 +375,12 @@ button {
   .chat__submit {
     height: 2.5rem;
     background: #fff;
-    border-radius: 0 0 0.5rem 0.5rem;
+    border-radius: 0 0 0.2rem 0.2rem;
     display: flex;
   }
 
   .chat__submit input {
-    border-radius: 0 0 0 0.5rem;
+    border-radius: 0 0 0 0.2rem;
     border: none;
     outline: none;
     flex: 1;
@@ -387,7 +389,7 @@ button {
   }
 
   .chat__submit button {
-    border-radius: 0 0 0.5rem 0;
+    border-radius: 0 0 0.2rem 0;
     border: none;
     flex: 0.3;
     display: flex;
@@ -404,7 +406,7 @@ button {
     font-size: 1.6rem;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 992px) {
     .chat__entrancer {
       width: 100%;
       margin: 0 auto;

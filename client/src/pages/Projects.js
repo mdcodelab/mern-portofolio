@@ -32,7 +32,7 @@ const customStyles = {
     fontSize: "1.05rem",
     cursor: "pointer",
     textTransform: "capitalize",
-    textAlign: "center",
+    textAlign: "center"
   }),
 };
 
@@ -57,14 +57,12 @@ const Projects = () => {
       : data.filter((project) => project.type === selectedType);
 
   return (
-    <Wrapper
-      className="page-100 projects__container section__center"
-      id="projects">
+    <Wrapper className="projects__container section__center" id="projects">
       <div className="section__header">
-         <h4 className="title">Projects</h4>
-         <hr></hr>
+        <p className="section__name">Projects</p>
+        <div className="hr" style={{ background: "#00CCFF" }}></div>
       </div>
-      <h4 className="subtitle">Some of my work</h4>
+      <p className="text__title" style={{ color: "#00CCFF" }}>Recent projects</p>
       <div className="searchInput">
         <Select
           value={options.find((option) => option.value === selectedType)}
@@ -86,25 +84,15 @@ const Projects = () => {
 const Wrapper = styled.div`
   background: var(--clr-navy-7);
   padding: 3rem;
+  border: 2px solid white;
+
+  .text__title {
+    margin: 2rem 0;
+  }
 
   div.searchInput {
     margin: 0 auto;
     width: max-content;
-  }
-
-  .title {
-    margin-bottom: 0.5rem;
-  }
-
-  .subtitle {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  @media screen and (max-width: 700px) {
-    .title {
-      font-size: 1.5rem;
-    }
   }
 `;
 

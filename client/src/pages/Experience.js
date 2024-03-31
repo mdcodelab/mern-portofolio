@@ -31,10 +31,10 @@ console.log(window.innerWidth);
 
 
   return (
-    <Wrapper className="page-100 section__center" id="experience">
+    <Wrapper className="section__center" id="experience">
       <div className="section__header">
-        <h4 className="title">Experience</h4>
-        <hr></hr>
+        <p className="section__name">Experience</p>
+        <div className="hr" style={{ background: "#f52c57" }}></div>
       </div>
       {window.innerWidth > 1100 && (
         <div className="experience__container">
@@ -108,6 +108,7 @@ console.log(window.innerWidth);
 const Wrapper = styled.div`
 background: var(--clr-navy-7);
   padding: 3rem;
+  border: 2px solid white;
 
   .experience__container {
     display: flex;

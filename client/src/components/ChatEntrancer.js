@@ -4,6 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import { IoSendOutline } from "react-icons/io5";
 import { useGlobalContext } from '../useContext';
 
+
 function ChatEntrancer({showEn, setShowEn}) {
     const{isChat, setIsChat}=useGlobalContext();
     
@@ -19,7 +20,9 @@ function ChatEntrancer({showEn, setShowEn}) {
     >
       <IoMdClose className="close__entrancer"></IoMdClose>
       <div className="chat__entrance__header">
-        <div className="img"></div>
+        <div className="img">
+          <img src="assets/me.jpg" alt="me"></img>
+        </div>
         <p>
           Hey! If you have any questions, you can message me here. I'm usually
           online & will get back to you.
@@ -81,8 +84,12 @@ const Wrapper = styled.div`
   .img {
     width: 3rem;
     height: 3rem;
-    border-radius: 0.3rem;
-    border: 1px solid red;
+  }
+
+  .img img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.15rem;
   }
 
   .chat__entrance__header p {

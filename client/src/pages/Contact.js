@@ -98,12 +98,7 @@ const Wrapper = styled.div`
   height: 100%;
   min-height: 100vh;
   position: relative;
-
-  .contact__content {
-    position: absolute;
-    top: 3.5rem;
-    z-index: 100;
-  }
+  border: 2px solid white;
 
   .contact__container {
     display: flex;
@@ -115,7 +110,8 @@ const Wrapper = styled.div`
     position: relative;
     z-index: 100;
     width: max-content;
-    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%);
     margin-top: 3rem;
     background: var(--clr-navy-7);
   }

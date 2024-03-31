@@ -152,17 +152,19 @@ const Wrapper = styled.div`
 
   .project__description {
     color: var(--clr-grey-6);
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: justify;
     margin-bottom: 0.5rem;
     text-align: center;
+    line-height: 2rem;
   }
 
   .project__technologies {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .project__technologies span {
@@ -229,7 +231,6 @@ const Wrapper = styled.div`
       width: 100%;
       height: auto;
     }
-
     .left {
       order: 1;
     }
@@ -293,11 +294,17 @@ const Wrapper = styled.div`
       width: 10rem;
     }
     .project__watch a {
-      font-size: 1rem;
+      font-size: 0.85rem;
     }
     .project__watch a span {
       width: 1.5rem;
       height: 1.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .project__description {
+      line-height: 1.5rem;
     }
   }
 

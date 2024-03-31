@@ -28,13 +28,14 @@ const Navbar = () => {
           : "navbar section__center"
       }
     >
-      <div className="logo">
+
+      <Link className="logo" to="home" smooth={true} offset={-50}>
         <div className="logo__initial">M</div>
         <div className="logo__name">
           <h5 className="logo__full__name">MIHAELA DIACONU</h5>
           <p>WEB DEVELOPER</p>
         </div>
-      </div>
+      </Link>
       <div className="nav-links">
         <ul className="links">
           <li>
@@ -82,24 +83,24 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        </div>
-        <button
-          type="button"
-          className="icon__btn button"
-          onClick={() => setSidebar(!isSidebar)}
-        >
-          {!isSidebar ? (
-            <HiMenuAlt3
-              style={{ color: "var(--clr-grey-8)" }}
-              className="icon__sidebar"
-            ></HiMenuAlt3>
-          ) : (
-            <IoCloseOutline
-              style={{ color: "var(--clr-grey-8)" }}
-              className="icon__sidebar"
-            ></IoCloseOutline>
-          )}
-        </button>
+      </div>
+      <button
+        type="button"
+        className="icon__btn button"
+        onClick={() => setSidebar(!isSidebar)}
+      >
+        {!isSidebar ? (
+          <HiMenuAlt3
+            style={{ color: "var(--clr-grey-8)" }}
+            className="icon__sidebar"
+          ></HiMenuAlt3>
+        ) : (
+          <IoCloseOutline
+            style={{ color: "var(--clr-grey-8)" }}
+            className="icon__sidebar"
+          ></IoCloseOutline>
+        )}
+      </button>
     </Wrapper>
   );
 };
@@ -132,15 +133,16 @@ const Wrapper = styled.nav`
       }
     }
 
-  div.logo {
+  .logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: max-content;
     height: 100%;
+    cursor: pointer;
   }
 
-  div.logo .logo__initial {
+  .logo .logo__initial {
     border: 0.08px solid var(--clr-green-light-1);
     width: 2rem;
     height: 2rem;
@@ -172,18 +174,18 @@ const Wrapper = styled.nav`
     text-align: center;
   }
 
-  div.nav-links {
+  .nav-links {
     display: flex;
     flex: 4;
     align-items: center;
     justify-content: flex-end;
   }
 
-  div.nav-links ul.links {
+  .nav-links ul.links {
     display: flex;
   }
 
-  div.nav-links ul.links a {
+  .nav-links ul.links a {
     font-size: 0.9rem;
     letter-spacing: 0.06rem;
     display: inline-block;
@@ -197,7 +199,7 @@ const Wrapper = styled.nav`
   }
 
   @media only screen and (max-width: 992px) {
-    div.nav-links ul.links a {
+    .nav-links ul.links a {
       display: none;
     }
     button {
@@ -208,7 +210,7 @@ const Wrapper = styled.nav`
   }
 
   @media only screen and (max-width: 732px) {
-    div.nav-links ul.links a {
+    .nav-links ul.links a {
       display: none;
     }
   }

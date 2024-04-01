@@ -2,6 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FiGithub } from "react-icons/fi";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 function New({project}) {
   const {
@@ -60,10 +62,10 @@ function New({project}) {
             </div>
             <div className="project__watch">
               <a href={urlGit}>
-                Code <span>{icon_1}</span>
+                Code <FiGithub className="git"></FiGithub>
               </a>
               <a href={urlDemo}>
-                View project<span className="view">{icon_2}</span>
+                View project <MdOutlineKeyboardArrowRight className="arrow"></MdOutlineKeyboardArrowRight>
               </a>
             </div>
           </div>
@@ -132,13 +134,13 @@ const Wrapper = styled.div`
     margin-left: 1rem;
     display: block;
     font-size: 1.2rem;
-    width: 2rem;
-    height: 2rem;
+    width: 2.1rem;
+    height: 2.1rem;
     border-radius: 5px;
     padding: 0.3rem !important;
-    color: var(--clr-red-light-1);
+    color: #00CCFF;
     background: var(--clr-navy-7);
-    border: 0.07rem solid lightgrey;
+    border: 0.07rem solid var(--clr-grey-8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,34 +192,35 @@ const Wrapper = styled.div`
     font-size: 1rem !important;
   }
 
-  .project__watch span {
+  .project__watch a .git,
+  .project__watch a .arrow {
     display: block;
     margin-left: 0.5rem;
-    font-size: 1.2rem;
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 50%;
-    padding: 0.3rem !important;
+    padding: 0.3rem;
     color: var(--clr-grey-8);
-    border: 0.07rem solid lightgrey;
+    border: 0.07rem solid  var(--clr-grey-8);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.7s ease-in-out;
   }
 
-  .project__watch span:hover {
+  .project__watch a .git:hover,
+  .project__watch a .arrow:hover {
     color: var(--clr-navy-7);
     background: var(--clr-grey-8);
   }
 
   .project__watch a,
-  .project__watch span {
+  .project__watch i {
     font-size: 1.2rem;
     color: var(--clr-grey-6);
   }
 
-  .project__watch a .view:hover {
+  .project__watch a .arrow:hover {
     transform: translateX(10px);
   }
 
@@ -242,7 +245,6 @@ const Wrapper = styled.div`
     .right.odd {
       order: unset;
     }
-
     .left.odd,
     .right.even {
       order: unset;
@@ -296,9 +298,10 @@ const Wrapper = styled.div`
     .project__watch a {
       font-size: 0.85rem;
     }
-    .project__watch a span {
-      width: 1.5rem;
-      height: 1.5rem;
+    .project__watch a .git,
+    .project__watch a .arrow {
+      width: 1.8rem;
+      height: 1.8rem;
     }
   }
 

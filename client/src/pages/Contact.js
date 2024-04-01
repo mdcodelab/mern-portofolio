@@ -26,22 +26,25 @@ function Contact() {
     console.log("submitted");
   };
 
-  const [showForm, setShowForm] = React.useState(
-    localStorage.getItem("showForm") === "true" ? true : false
-  );
+  // const [showForm, setShowForm] = React.useState(
+  //   localStorage.getItem("showForm") === "true" ? true : false
+  // );
+
+  const [showForm, setShowForm] = React.useState(false);
+
 
   const handleClick = () => {
     setShowForm(true);
-    localStorage.setItem("showForm", "true");
+    //localStorage.setItem("showForm", "true");
   };
 
-  React.useEffect(() => {
-    if (showForm) {
-      localStorage.setItem("showForm", "true");
-    } else {
-      localStorage.removeItem("showForm");
-    }
-  }, [showForm]);
+  // React.useEffect(() => {
+  //   if (showForm) {
+  //     localStorage.setItem("showForm", "true");
+  //   } else {
+  //     localStorage.removeItem("showForm");
+  //   }
+  // }, [showForm]);
 
   return (
     <Wrapper className="section__center" id="contact">

@@ -91,8 +91,10 @@ const Wrapper = styled.div`
   }
 
   div.searchInput {
-    margin: 0 auto;
+    position: relative;
     width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 

@@ -28,12 +28,9 @@ const Navbar = () => {
           : "navbar section__center"
       }
     >
-
       <Link className="logo" to="home" smooth={true} offset={-50}>
-        <div className="logo__initial">M</div>
-        <div className="logo__name">
-          <h5 className="logo__full__name">MIHAELA DIACONU</h5>
-          <p>WEB DEVELOPER</p>
+        <div className="logo">
+          <img src="assets/logo.png" alt="logo"></img>
         </div>
       </Link>
       <div className="nav-links">
@@ -134,44 +131,14 @@ const Wrapper = styled.nav`
     }
 
   .logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: max-content;
-    height: 100%;
+    width: 2.7rem;
+    height: 2.7rem;
     cursor: pointer;
   }
 
-  .logo .logo__initial {
-    border: 0.08px solid var(--clr-green-light-1);
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.5rem;
-  }
-
-  .logo__name {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.9rem;
-    color: var(--clr-green-light-1);
-    margin-top: 1rem;
-  }
-
-  .logo__full__name {
-    margin: 0;
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.08rem;
-    font-size: 1.05rem;
-  }
-
-  .logo__name p {
-    color: var(--clr-grey-6);
-    font-size: 0.7rem;
-    letter-spacing: var(--spacing);
-    text-align: center;
+  .logo img {
+  width: 100%;
+  height: auto;
   }
 
   .nav-links {

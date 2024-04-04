@@ -6,7 +6,9 @@ function FormComponent({formElements, onChange, onSubmit, showForm}) {
 
   return (
     <Wrapper className={!showForm ? "displayNone" : ""}>
-      <p className="text__title text__primary" style={{ color: "#BA55D3" }}>Let's build a thing.</p>
+      <p className="text__title text__primary" style={{ color: "#BA55D3" }}>
+        Let's build a thing.
+      </p>
       <form
         className="form"
         action="https://formspree.io/f/mbjvoylv"
@@ -71,8 +73,11 @@ function FormComponent({formElements, onChange, onSubmit, showForm}) {
           ></textarea>
         </div>
         <button type="submit" className="btn__submit btn__contact">
-          <span>Send it</span>
-          <IoIosArrowRoundForward style={{fontSize: "1.8rem"}}></IoIosArrowRoundForward>
+          <div><span>SEND IT</span>
+            <IoIosArrowRoundForward
+              style={{ fontSize: "1.8rem" }}
+            ></IoIosArrowRoundForward>
+          </div>
         </button>
       </form>
     </Wrapper>
@@ -171,6 +176,7 @@ const Wrapper = styled.div`
 
   .btn__submit {
     margin: 2rem auto;
+    margin-bottom: 1.5rem;
   }
 
   .btn__submit span {

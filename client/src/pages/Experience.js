@@ -106,7 +106,7 @@ console.log(window.innerWidth);
 };
 
 const Wrapper = styled.div`
-background: var(--clr-navy-7);
+  background: var(--clr-navy-7);
   padding: 3rem;
   border: 2px solid white;
 
@@ -114,7 +114,7 @@ background: var(--clr-navy-7);
     display: flex;
     align-items: center;
     margin-top: 3rem;
-    border-left: 2px solid var(--clr-title);
+    border-left: 2px solid #f52c57;
   }
 
   .items {
@@ -142,7 +142,7 @@ background: var(--clr-navy-7);
       left: 0;
       bottom: 0;
       height: 2px;
-      background-color: var(--clr-title);
+      background-color: #f52c57;
       transition: width 0.7s ease-in-out;
     }
 

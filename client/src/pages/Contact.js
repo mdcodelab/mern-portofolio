@@ -70,9 +70,8 @@ function Contact() {
           <button
             type="button"
             className="btn__contact"
-            onClick={() => handleClick()}
-          >
-            Get In Touch
+            onClick={() => handleClick()}>
+            <div>Get In touch</div>
           </button>
         </div>
         <div className="contact__right">
@@ -89,6 +88,7 @@ function Contact() {
             + <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
           </p>
         </div>
+          <p className="email">d_mihaela@msn.com</p>
       </div>
       <Balls></Balls>
     </Wrapper>
@@ -186,6 +186,12 @@ const Wrapper = styled.div`
     border-radius: 0.3rem;
   }
 
+  .email {
+    margin-top: 2rem;
+    color: #ba55d3;
+    font-size: 1rem;
+  }
+  
   @media only screen and (max-width: 700px) {
     .contact__container {
       padding: 2rem;

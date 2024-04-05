@@ -62,7 +62,7 @@ const Projects = () => {
         <p className="section__name">Projects</p>
         <div className="hr" style={{ background: "#00CCFF" }}></div>
       </div>
-      <p className="text__title" style={{ color: "#00CCFF" }}>Recent projects</p>
+      <p className="text__title" style={{ color: "#00CCFF" }}>Some of my work</p>
       <div className="searchInput">
         <Select
           value={options.find((option) => option.value === selectedType)}
@@ -84,7 +84,6 @@ const Projects = () => {
 const Wrapper = styled.section`
   background: var(--clr-navy-7);
   padding: 3rem;
-  border: 2px solid white;
 
   .text__title {
     margin: 2rem 0;

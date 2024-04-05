@@ -99,7 +99,6 @@ const Wrapper = styled.section`
   height: 100%;
   min-height: 100vh;
   position: relative;
-  border: 2px solid white;
 
   .contact__container {
     display: flex;

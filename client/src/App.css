@@ -464,7 +464,6 @@ button {
 @media only screen and (max-width: 992px) {
   .chat__entrancer {
     width: 100%;
-    margin: 0 auto;
     left: 50%;
     transform: translateX(-50%);
     right: unset;

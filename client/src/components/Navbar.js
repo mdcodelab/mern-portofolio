@@ -28,9 +28,9 @@ const Navbar = () => {
           : "navbar section__center"
       }
     >
-      <Link className="logo" to="home" smooth={true} offset={-50}>
+      <Link className="logo" to="home" smooth={true} offset={-80}>
         <div className="logo">
-          <img src="assets/logo.png" alt="logo"></img>
+          <img src="assets/logo.png" alt="logo" onClick={()=> setSidebar(false)}></img>
         </div>
       </Link>
       <div className="nav-links">

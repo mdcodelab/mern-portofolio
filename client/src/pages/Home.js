@@ -48,52 +48,43 @@ const Wrapper = styled.header`
     background: transparent;
     padding-top: 1.5rem;
     padding-left: 2rem;
-  }
-
-  .btn__contact {
-    margin: 0;
+    width: max-content;
   }
 
   .title {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 2rem;
     letter-spacing: 0.15rem;
-    margin-bottom: 0.5rem;
     color: var(--clr-title);
     transform: translateY(300px);
     opacity: 0;
-    animation: moveTitle 0.5s linear forwards;
+    animation: moveTitle 1s linear forwards;
   }
 
   @keyframes moveTitle {
     0% {
-      transform: translateY(300px);
+      transform: translateX(-300px);
       opacity: 0;
     }
     100% {
-      transform: translateY(0px);
+      transform: translateX(0px);
       opacity: 1;
     }
   }
 
   p {
-    margin: 0;
-    padding: 0;
     color: var(--clr-grey-8);
     letter-spacing: 0.06rem;
     transform: translateY(300px);
     opacity: 0;
-    animation: moveParagraph 0.7s linear forwards;
+    animation: moveParagraph 1s linear forwards;
   }
 
   @keyframes moveParagraph {
     0% {
       opacity: 0;
-      transform: translateY(300px);
+      transform: translateX(300px);
     }
     100% {
-      transform: translateY(0px);
+      transform: translateX(0px);
       opacity: 1;
     }
   }
@@ -104,15 +95,31 @@ const Wrapper = styled.header`
     font-weight: bold;
   }
 
+  .btn__contact {
+    margin: 0;
+    animation: moveButton 1s linear forwards;
+  }
+
+  @keyframes moveButton {
+    0% {
+      opacity: 0;
+      transform: translateY(300px);
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
 
   @media only screen and (max-width: 992px) {
     .home__container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: relative;
     }
     .home__content {
-      padding-left: 0;
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .title {
       text-align: center;
@@ -126,12 +133,20 @@ const Wrapper = styled.header`
     }
   }
 
-  @media (max-width: 350px) {
+  @media (max-width: 380px) {
+    .title {
+      font-size: 1.8rem;
+    }
     .home__container {
       height: 100%;
+    }.home__content {
+      height: 100%;
     }
+
     p {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
+      text-align: center;
+      max-width: 260px;
     }
   }
 `;

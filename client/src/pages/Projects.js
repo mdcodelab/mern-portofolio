@@ -81,7 +81,7 @@ const Projects = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background: var(--clr-navy-7);
   padding: 3rem;
   border: 2px solid white;

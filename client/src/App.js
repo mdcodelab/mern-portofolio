@@ -31,7 +31,9 @@ const App = () => {
         <Navbar />
         <Sidebar></Sidebar>
         <Chat></Chat>
-        {showEn && <ChatEntrancer shoeEn={showEn} setShowEn={setShowEn}></ChatEntrancer>}
+        {showEn && (
+          <ChatEntrancer shoeEn={showEn} setShowEn={setShowEn}></ChatEntrancer>
+        )}
         <div className="container">
           <Home />
           <Experience />

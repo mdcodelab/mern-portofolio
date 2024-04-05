@@ -17,7 +17,7 @@ function Footer() {
     <Wrapper>
       <p className="footer">
             &copy; {new Date().getFullYear()} 
-            <Link to="home" id="home" smooth={true} offset={-60}>
+            <Link to="home" smooth={true} offset={-60}>
               <img src="assets/logo__footer.png" alt="logo"></img>
             </Link>. All
             Rights Reserved.</p>

@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { IoMdClose } from "react-icons/io";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import FormComponent from "../components/FormComponent";
 import Balls from "../components/Balls";
+//import {Link} from "react-scroll";
 
 function Contact() {
   const [formElements, setFormElements] = React.useState({
@@ -59,6 +58,7 @@ function Contact() {
         onChange={onChange}
         showForm={showForm}
       ></FormComponent>
+
       <div className="contact__container">
         <div className="contact__left">
           <p className="text__title" style={{ color: "#BA55D3" }}>
@@ -67,11 +67,9 @@ function Contact() {
           <p className="text__title" style={{ color: "#BA55D3" }}>
             Let's build something.
           </p>
-          <button
-            type="button"
-            className="btn__contact"
-            onClick={() => handleClick()}>
-            <div>Get In touch</div>
+          <button type="button"
+            className="btn__contact" onClick={() => handleClick()}>
+            <div>Get In Touch</div>
           </button>
         </div>
         <div className="contact__right">
@@ -88,14 +86,14 @@ function Contact() {
             + <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
           </p>
         </div>
-          <p className="email">d_mihaela@msn.com</p>
+        <p className="email">d_mihaela@msn.com</p>
       </div>
       <Balls></Balls>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background: var(--clr-navy-7);
   padding: 3rem;
   height: 100%;

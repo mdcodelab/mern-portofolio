@@ -42,9 +42,7 @@ const Navbar = () => {
               smooth={true}
               offset={-80}
               className={activeLink === "home" ? "active" : ""}
-            >
-              Home
-            </Link>
+            ></Link>
           </li>
           <li>
             <Link

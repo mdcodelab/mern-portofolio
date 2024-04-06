@@ -97,7 +97,7 @@ console.log(window.innerWidth);
                   work as a web developer.
                 </p>
                 <p>
-                  My web development roots are in VanillaJS & React. In 2022, I
+                  My web development roots are in VanillaJs & React. In 2022, I
                   started to broaden my knowledge of the Node.js ecosystem.
                   Since then, I fell in love with & have been primarily using
                   React in web applications.
@@ -327,9 +327,10 @@ const Wrapper = styled.div`
 .explanation__about p {
   font-size: 1.05rem;
   padding-left: 0.5rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 1.5rem;
   text-align: justify;
   color: var(--clr-grey-8);
+  line-height: 1.4rem;
 }
 
 //explanation__tech

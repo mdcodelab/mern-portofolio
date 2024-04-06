@@ -3,23 +3,51 @@ import styled from "styled-components";
 import { IoMdClose } from "react-icons/io";
 import { IoSendOutline } from "react-icons/io5";
 import { useGlobalContext } from '../useContext';
+import axios from "axios";
 
 
 function ChatEntrancer({showEn, setShowEn}) {
-    const{isChat, setIsChat}=useGlobalContext();
-    
-    function displayEntrancer () {
-        setShowEn(false);
-        //setIsChat(true);
+  const { isChat, setIsChat, message, setMessage } = useGlobalContext();
+
+  function displayEntrancer() {
+    setShowEn(false);
+    //setIsChat(true);
+  }
+
+  //create message
+  const createMessage = async () => {
+    try {
+      const response = await axios.post("http://localhost:4000/api/v1", {
+        content: message,
+      });
+      setMessage("");
+    } catch (error) {
+      console.log(error);
     }
+  };
+
+  const sendMessage = () => {
+    createMessage();
+    setIsChat(!isChat);
+    setShowEn(false);
+  };
+
+  //button
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      createMessage();
+      setIsChat(!isChat);
+      setShowEn(false);
+    }
+  };
 
   return (
-    <Wrapper
-      className={`chat__entrancer ${!isChat ? "chat__entrancer" : ""}`}
-      onClick={() => displayEntrancer()}
-    >
-      <IoMdClose className="close__entrancer"></IoMdClose>
-      <div className="chat__entrance__header">
+    <Wrapper className={`chat__entrancer ${!isChat ? "chat__entrancer" : ""}`}>
+      <div
+        className="chat__entrance__header"
+        onClick={() => displayEntrancer()}
+      >
+        <IoMdClose className="close__entrancer"></IoMdClose>
         <div className="img">
           <img src="assets/me.jpg" alt="me"></img>
         </div>
@@ -28,10 +56,17 @@ function ChatEntrancer({showEn, setShowEn}) {
           online & will get back to you.
         </p>
       </div>
+
       <div className="chat__entrancer__content">
         <div>
-          <input type="text" placeholder="Reply..."></input>
-          <button>
+          <input
+            type="text"
+            placeholder="Reply..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyPress={handleKeyPress}
+          ></input>
+          <button type="submit" onClick={() => sendMessage()}>
             <IoSendOutline></IoSendOutline>
           </button>
         </div>

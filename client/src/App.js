@@ -9,13 +9,13 @@ import Footer from "./pages/Footer";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-import ScrollIcon from "./components/ScrollIcon";
 import { AppProvider, useGlobalContext } from "./useContext";
 import ChatEntrancer from "./components/ChatEntrancer";
-import ChEn from "./components/ChatEntrancer";
+
+
 
 const App = () => {
-  const [showEn, setShowEn] = React.useState(false);
+const [showEn, setShowEn] = React.useState(false);
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {

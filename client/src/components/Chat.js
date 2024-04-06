@@ -8,14 +8,14 @@ import { useGlobalContext } from "../useContext";
 
 
 function Chat() {
-  const{isChat, setIsChat} = useGlobalContext();
-  const [message, setMessage] = React.useState("");
+  const{isChat, setIsChat, message, setMessage} = useGlobalContext();
+
   const[allMessages, setAllMessages]=React.useState([]);
 
   //get all messages
     const getAllMessages = async ()=> {
     await axios.get("http://localhost:4000/api/v1").
-    then(response => setAllMessages(response.data)).catch(error => console.error("There is an ${error}"));
+    then(response => setAllMessages(response.data)).catch(error => console.error(`There is an ${error}`));
   }
 
   React.useEffect(()=> {

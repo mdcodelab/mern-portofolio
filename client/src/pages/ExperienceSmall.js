@@ -37,7 +37,7 @@ function ExperienceSmall() {
             approaches into my work as a web developer.
           </p>
           <p>
-            My web development roots are in VanillaJS & React. In 2022, I
+            My web development roots are in VanillaJs & React. In 2022, I
             started to broaden my knowledge of the Node.js ecosystem. Since
             then, I fell in love with & have been primarily using React in web
             applications.

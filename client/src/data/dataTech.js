@@ -57,4 +57,6 @@ export const dataAdditional = [
     id: 5,
     tech: "Vegas Pro, Photoshop, Canva",
   },
+  {id: 6,
+  tech: "Expo, Android Studio"}
 ];

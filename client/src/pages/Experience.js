@@ -3,6 +3,8 @@ import styled from "styled-components";
 import ExperienceSmall from "./ExperienceSmall";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { dataSkills } from "../data/dataSkills";
+import { dataLibs, dataAdditional, dataTechLanguages } from "../data/dataTech";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Experience = () => {
@@ -38,7 +40,7 @@ console.log(window.innerWidth);
         <div className="hr" style={{ background: "#f52c57" }}></div>
       </div>
       {window.innerWidth > 1100 && (
-        <div className="experience__container">
+        <section className="experience__container">
           <div className="items" data-aos="fade-up" data-aos-duration={2000}>
             <article
               className={`item ${activeIndex === 1 ? "active" : ""}`}
@@ -118,70 +120,38 @@ console.log(window.innerWidth);
                   <ul>
                     <h4>LANGUAGES</h4>
                     <div className="hr"></div>
-                    <li>
-                      <FaArrowRightLong className="icon"
-                      />{" "}
-                      HTML5
-                    </li>
-                    <li>
-                      <FaArrowRightLong className="icon"/>CSS3
-                    </li>
-                    <li>
-                      <FaArrowRightLong className="icon"/>
-                      JavaScript (ES6)
-                    </li>
-                    <li>
-                      <FaArrowRightLong className="icon"/>GraphQL
-                    </li>
+                    {dataTechLanguages.map((lg) => {
+                      return (
+                        <li key={lg.id}>
+                          <FaArrowRightLong className="icon" />
+                          {lg.tech}
+                        </li>
+                      );
+                    })}
                   </ul>
-                  <ul style={{ margin: "0 2.5rem" }}>
+                  <ul>
                     <h4>FRAMEWORKS & LIBS</h4>
                     <div className="hr"></div>
-                    <li>
-                      <FaArrowRightLong className="icon"/>{" "}
-                      React (Redux, Router, Gatsby, Native)
-                    </li>
-                    <li>
-                      <FaArrowRightLong className="icon"/>{" "}
-                      Node.js (Express, Mongoose, JWT)
-                    </li>
-                    <li>
-                      <FaArrowRightLong className="icon"/>{" "}
-                      Axios, Socket.io, Auth0, JQuery
-                    </li>
-                    <li>
-                      <FaArrowRightLong
-                        className="icon"/>{" "}
-                      Bootstrap, Materialize, Tailwind
-                    </li>
+                    {dataLibs.map((lg) => {
+                      return (
+                        <li key={lg.id}>
+                          <FaArrowRightLong className="icon" />
+                          {lg.tech}
+                        </li>
+                      );
+                    })}
                   </ul>
                   <ul>
                     <h4>ADDITIONAL STUFF</h4>
                     <div className="hr"></div>
-                    <li>
-                      <FaArrowRightLong className="icon"/>{" "}
-                      GitHub
-                    </li>
-                    <li>
-                      <FaArrowRightLong
-                        className="icon"/>{" "}
-                      Postman
-                    </li>
-                    <li>
-                      <FaArrowRightLong
-                        className="icon"/>{" "}
-                      Cloudinary
-                    </li>
-                    <li>
-                      <FaArrowRightLong
-                        className="icon"/>{" "}
-                      Stripe, PayPal
-                    </li>
-                    <li>
-                      <FaArrowRightLong
-                        className="icon"/>{" "}
-                      Vegas Pro, Photoshop, Canva
-                    </li>
+                    {dataAdditional.map((lg) => {
+                      return (
+                        <li key={lg.id}>
+                          <FaArrowRightLong className="icon" />
+                          {lg.tech}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -192,13 +162,17 @@ console.log(window.innerWidth);
               }`}
             >
               <div className="explanation__skills">
-                <ul>
-                  <li> <FaArrowRightLong className="icon"/></li>
-                </ul>
+                <div className="details details__skills">
+                  <ul>
+                    {dataSkills.map(skill => {
+                      return <li key={skill.id}><FaArrowRightLong className="icon"/>{skill.skill}</li>
+                    })}
+                  </ul>
+                </div>
               </div>
             </article>
           </div>
-        </div>
+        </section>
       )}
       {window.innerWidth <= 1100 && <ExperienceSmall></ExperienceSmall>}
     </Wrapper>
@@ -208,7 +182,6 @@ console.log(window.innerWidth);
 const Wrapper = styled.div`
   background: var(--clr-navy-7);
   padding: 3rem;
-  border: 2px solid white;
 
   .section__header {
     margin-bottom: 4rem;
@@ -255,7 +228,7 @@ const Wrapper = styled.div`
       bottom: 0;
       height: 2px;
       background-color: #f52c57;
-      transition: width 0.7s ease-in-out;
+      transition: width 0.5s ease-in-out;
     }
 
     &::before {
@@ -279,7 +252,6 @@ const Wrapper = styled.div`
   .explanations {
     flex: 1;
     height: 70vh;
-    border: 2px solid red;
   }
 
   .explanation {
@@ -324,9 +296,9 @@ const Wrapper = styled.div`
       width: 100%;
       justify-content: space-between;
       flex-wrap: wrap;
-      background: var(--clr-millenium-blue);
-      box-shadow: 0 0 1px var(--clr-grey-6);
-      border-radius: 0.2rem;
+      /* background: var(--clr-millenium-blue);
+      box-shadow: 0 0 1px var(--clr-grey-6); */
+      /* border-radius: 0.2rem; */
     }
 
     .details ul {
@@ -351,15 +323,20 @@ const Wrapper = styled.div`
 
     .details ul li {
       margin-bottom: 0.8rem;
+      padding: 0 1.2rem;
       display: flex;
       align-items: center;
-      font-size: 1.02rem;
+      font-size: 1.05rem;
     }
 
     .icon {
       display: block;
-      margin-right: 0.25rem;
+      margin-right: 0.5rem;
       color: #f52c57;
+    }
+
+    .details__skills ul li {
+      font-size: 1.075rem;
     }
 
     p {

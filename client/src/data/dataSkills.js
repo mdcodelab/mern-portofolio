@@ -33,9 +33,9 @@ export const dataSkills = [
       "Strong drive to push boundaries, embrace new challenges, and constantly learn",
   },
   { id: 10, 
-    skill: "•	Team-oriented and open to collaboration" 
+    skill: "Team-oriented and open to collaboration" 
 },
 {id: 11,
-skill: "•	Efficient time management"
+skill: "Efficient time management"
 }
 ];

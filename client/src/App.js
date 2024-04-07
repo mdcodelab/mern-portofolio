@@ -9,7 +9,7 @@ import Footer from "./pages/Footer";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-import { AppProvider, useGlobalContext } from "./useContext";
+import { AppProvider} from "./useContext";
 import ChatEntrancer from "./components/ChatEntrancer";
 
 

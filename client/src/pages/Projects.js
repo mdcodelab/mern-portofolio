@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-import { data } from "../data";
+import { data } from "../data/dataProjects";
 import Project from "../components/Project";
 import styled from "styled-components";
 

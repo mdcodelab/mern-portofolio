@@ -14,8 +14,8 @@ function Chat() {
 
   //get all messages
     const getAllMessages = async ()=> {
-    await axios.get("http://localhost:4000/api/v1").
-    then(response => setAllMessages(response.data)).catch(error => console.error(`There is an ${error}`));
+    await axios.get("http://localhost:4000/api/v1").then(response => 
+    setAllMessages(response.data)).catch(error => console.error(`There is an ${error}`));
   }
 
   React.useEffect(()=> {
@@ -28,7 +28,7 @@ function Chat() {
   //create message
   const createMessage = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/api/v1", {
+      await axios.post("http://localhost:4000/api/v1", {
         content: message
       });
       setMessage("");

@@ -185,7 +185,6 @@ const Wrapper = styled.nav`
       display: none;
     }
     }
-  }
 
   //effects
   a.active {

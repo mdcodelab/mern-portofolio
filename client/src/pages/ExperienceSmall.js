@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+
 function ExperienceSmall() {
   const [activeIndex, setActiveIndex] = React.useState(1);
 
@@ -66,90 +67,57 @@ function ExperienceSmall() {
               <h4>LANGUAGES</h4>
               <div className="hr"></div>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
+                <FaArrowRightLong className="icon" />
                 HTML5
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                CSS3
+                <FaArrowRightLong className="icon" /> CSS3
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                JavaScript (ES6)
+                <FaArrowRightLong className="icon" /> JavaScript (ES6)
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                GraphQL
+                <FaArrowRightLong className="icon" /> GraphQL
               </li>
             </ul>
             <ul>
               <h4>FRAMEWORKS & LIBS</h4>
               <div className="hr"></div>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                React (Redux, Router, Gatsby, Native)
+                <FaArrowRightLong className="icon" /> React (Redux, Router,
+                Gatsby, Native)
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                NodeJS (Express, Mongoose, JWT)
+                <FaArrowRightLong className="icon" /> Node.js (Express,
+                Mongoose, JWT)
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                Axios, Socket.io, Auth0, JQuery
+                <FaArrowRightLong className="icon" /> Axios, Socket.io, Auth0,
+                JQuery
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                Bootstrap, Materialize, Tailwind
+                <FaArrowRightLong className="icon" /> Bootstrap, Materialize,
+                Tailwind
               </li>
             </ul>
             <ul>
               <h4>ADDITIONAL STUFF</h4>
               <div className="hr"></div>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                GitHub
+                <FaArrowRightLong className="icon" /> GitHub
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                Postman
+                <FaArrowRightLong className="icon" /> Postman
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                Cloudinary
+                <FaArrowRightLong className="icon" /> Cloudinary
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                Stripe, PayPal
+                <FaArrowRightLong className="icon" /> Stripe, PayPal
               </li>
               <li>
-                <FaArrowRightLong
-                  style={{ display: "block", marginRight: "0.25rem" }}
-                />{" "}
-                Vegas Pro, Photoshop, Canva
+                <FaArrowRightLong className="icon" /> Vegas Pro, Photoshop,
+                Canva
               </li>
             </ul>
           </div>
@@ -215,16 +183,22 @@ const Wrapper = styled.section`
     color: var(--clr-grey-8);
   }
 
-//about - content__1
-.content__1 p {
-  font-weight: normal;
-  font-size: 1.05rem;
-  text-align: justify;
-  padding-left: 0;
-}
+  //about - content__1
+  .content__1 p {
+    font-weight: normal;
+    font-size: 1.05rem;
+    text-align: justify;
+    padding-left: 0;
+  }
+
+  .icon {
+  display: block;
+  margin-right: 0.25rem;
+  color: #f52c57;
+  }
 
   /* tect stack - content__2 */
-  
+
   .content__2 p {
     text-align: center;
     padding-bottom: 1.5rem;

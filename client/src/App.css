@@ -333,7 +333,7 @@ button {
   right: 3em;
   bottom: 1.1rem;
   cursor: pointer;
-  z-index: 100;
+  z-index: 2000;
   border-radius: 0.5rem;
   background: black;
   border: 1px solid var(--clr-grey-6);

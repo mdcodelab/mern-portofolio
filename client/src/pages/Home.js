@@ -20,12 +20,12 @@ const Home = () => {
       } id="home">
       <article className="home__content">
         <h1 className="title">Full Stack</h1>
-        <h1 className="title">Web Developer</h1>
+        <h1 className="title" style={{paddingBottom: "1rem"}}>Web Developer</h1>
         <p style={{ paddingTop: "1.5rem", paddingBottom: "1rem" }}>
           Hi, I'm <span className="name">Mihaela</span>
         </p>
-        <p style={{ paddingBottom: "2rem" }}>
-          a passionate web developer & content writer.
+        <p style={{ paddingBottom: "2.5rem" }}>
+          a dedicated Web Developer & Designer.
         </p>
         <Link to="contact" smooth={true} className="btn__contact" offset={-80}>
           <div>Get In Touch</div>
@@ -43,16 +43,17 @@ const Wrapper = styled.header`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 
   .home__content {
     background: transparent;
     padding-top: 1.5rem;
-    padding-left: 2rem;
+    padding-left: 5rem;
     width: max-content;
   }
 
   .title {
-    letter-spacing: 0.15rem;
+    letter-spacing: 0.18rem;
     color: var(--clr-title);
     transform: translateY(300px);
     opacity: 0;
@@ -72,7 +73,7 @@ const Wrapper = styled.header`
 
   p {
     color: var(--clr-grey-8);
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.1rem;
     transform: translateY(300px);
     opacity: 0;
     animation: moveParagraph 1s linear forwards;

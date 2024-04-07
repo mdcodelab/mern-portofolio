@@ -17,7 +17,7 @@ function ChatEntrancer({showEn, setShowEn}) {
   //create message
   const createMessage = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/api/v1", {
+      await axios.post("http://localhost:4000/api/v1", {
         content: message,
       });
       setMessage("");
@@ -75,7 +75,7 @@ function ChatEntrancer({showEn, setShowEn}) {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   width: 300px;
   height: 12rem;
   background: black;

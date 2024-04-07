@@ -56,13 +56,7 @@ console.log(window.innerWidth);
               className={`item ${activeIndex === 3 ? "active" : ""}`}
               onClick={() => handleClick(3)}
             >
-              <p>My Projects</p>
-            </article>
-            <article
-              className={`item ${activeIndex === 4 ? "active" : ""}`}
-              onClick={() => handleClick(4)}
-            >
-              <p>Other</p>
+              <p>Core Skills</p>
             </article>
           </div>
 
@@ -120,60 +114,44 @@ console.log(window.innerWidth);
                   Here is a selection of relevant technologies that I have
                   experience width
                 </p>
-                <div className="details">
+                <div className="details details__tech">
                   <ul>
                     <h4>LANGUAGES</h4>
                     <div className="hr"></div>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
+                      <FaArrowRightLong className="icon"
                       />{" "}
                       HTML5
                     </li>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
-                      CSS3
+                      <FaArrowRightLong className="icon"/>CSS3
                     </li>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                      <FaArrowRightLong className="icon"/>
                       JavaScript (ES6)
                     </li>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
-                      GraphQL
+                      <FaArrowRightLong className="icon"/>GraphQL
                     </li>
                   </ul>
                   <ul style={{ margin: "0 2.5rem" }}>
                     <h4>FRAMEWORKS & LIBS</h4>
                     <div className="hr"></div>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                      <FaArrowRightLong className="icon"/>{" "}
                       React (Redux, Router, Gatsby, Native)
                     </li>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
-                      NodeJS (Express, Mongoose, JWT)
+                      <FaArrowRightLong className="icon"/>{" "}
+                      Node.js (Express, Mongoose, JWT)
                     </li>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                      <FaArrowRightLong className="icon"/>{" "}
                       Axios, Socket.io, Auth0, JQuery
                     </li>
                     <li>
                       <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                        className="icon"/>{" "}
                       Bootstrap, Materialize, Tailwind
                     </li>
                   </ul>
@@ -181,33 +159,27 @@ console.log(window.innerWidth);
                     <h4>ADDITIONAL STUFF</h4>
                     <div className="hr"></div>
                     <li>
-                      <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                      <FaArrowRightLong className="icon"/>{" "}
                       GitHub
                     </li>
                     <li>
                       <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                        className="icon"/>{" "}
                       Postman
                     </li>
                     <li>
                       <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                        className="icon"/>{" "}
                       Cloudinary
                     </li>
                     <li>
                       <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                        className="icon"/>{" "}
                       Stripe, PayPal
                     </li>
                     <li>
                       <FaArrowRightLong
-                        style={{ display: "block", marginRight: "0.25rem" }}
-                      />{" "}
+                        className="icon"/>{" "}
                       Vegas Pro, Photoshop, Canva
                     </li>
                   </ul>
@@ -219,14 +191,11 @@ console.log(window.innerWidth);
                 activeIndex === 3 ? "active" : "inactive"
               }`}
             >
-              <p>Exp3</p>
-            </article>
-            <article
-              className={`explanation ${
-                activeIndex === 4 ? "active" : "inactive"
-              }`}
-            >
-              <p>Exp4</p>
+              <div className="explanation__skills">
+                <ul>
+                  <li> <FaArrowRightLong className="icon"/></li>
+                </ul>
+              </div>
             </article>
           </div>
         </div>
@@ -250,12 +219,12 @@ const Wrapper = styled.div`
     align-items: center;
     margin-top: 3rem;
     border-left: 2px solid #f52c57;
-    height: 70vh;
+    height: 100%;
   }
 
   .items {
     flex: 0.35;
-    height: 100%;
+    height: 70vh;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -266,6 +235,9 @@ const Wrapper = styled.div`
     cursor: pointer;
     color: var(--clr-grey-8);
     position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
     overflow: hidden;
 
     p {
@@ -306,7 +278,7 @@ const Wrapper = styled.div`
 
   .explanations {
     flex: 1;
-    height: 100%;
+    height: 70vh;
     border: 2px solid red;
   }
 
@@ -323,26 +295,30 @@ const Wrapper = styled.div`
       max-height: 0;
     }
 
-//explanation__about
-.explanation__about p {
-  font-size: 1.05rem;
-  padding-left: 0.5rem;
-  padding-bottom: 1.5rem;
-  text-align: justify;
-  color: var(--clr-grey-8);
-  line-height: 1.4rem;
-}
+    //explanation__about
+    .explanation__about {
+      padding: 0.5rem;
+      padding-top: 1rem;
+    }
 
-//explanation__tech
-.explanation__tech {
-  padding: 0;
-}
+    .explanation__about p {
+      font-size: 1.05rem;
+      padding-bottom: 1.5rem;
+      text-align: justify;
+      color: var(--clr-grey-8);
+      line-height: 1.4rem;
+    }
 
-.explanation__tech p {
-  text-align: center;
-  padding-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
+    //explanation__tech
+    .explanation__tech {
+      padding: 0;
+    }
+
+    .explanation__tech p {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
     .details {
       display: flex;
       width: 100%;
@@ -380,6 +356,11 @@ const Wrapper = styled.div`
       font-size: 1.02rem;
     }
 
+    .icon {
+      display: block;
+      margin-right: 0.25rem;
+      color: #f52c57;
+    }
 
     p {
       color: var(--clr-grey-8);

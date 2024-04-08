@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong} from "react-icons/fa6";
+import { FaCheckDouble } from "react-icons/fa6";
+import { dataSkills } from "../data/dataSkills";
+import { dataLibs, dataAdditional, dataTechLanguages } from "../data/dataTech";
 
 
 function ExperienceSmall() {
@@ -66,83 +69,60 @@ function ExperienceSmall() {
             <ul>
               <h4>LANGUAGES</h4>
               <div className="hr"></div>
-              <li>
-                <FaArrowRightLong className="icon" />
-                HTML5
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> CSS3
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> JavaScript (ES6)
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> GraphQL
-              </li>
+              {dataTechLanguages.map((lg) => {
+                return (
+                  <li key={lg.id}>
+                    <FaArrowRightLong className="icon" />
+                    {lg.tech}
+                  </li>
+                );
+              })}
             </ul>
             <ul>
               <h4>FRAMEWORKS & LIBS</h4>
               <div className="hr"></div>
-              <li>
-                <FaArrowRightLong className="icon" /> React (Redux, Router,
-                Gatsby, Native)
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> Node.js (Express,
-                Mongoose, JWT)
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> Axios, Socket.io, Auth0,
-                JQuery
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> Bootstrap, Materialize,
-                Tailwind
-              </li>
+              {dataLibs.map((lg) => {
+                return (
+                  <li key={lg.id}>
+                    <FaArrowRightLong className="icon" />
+                    {lg.tech}
+                  </li>
+                );
+              })}
             </ul>
             <ul>
               <h4>ADDITIONAL STUFF</h4>
               <div className="hr"></div>
-              <li>
-                <FaArrowRightLong className="icon" /> GitHub
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> Postman
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> Cloudinary
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> Stripe, PayPal
-              </li>
-              <li>
-                <FaArrowRightLong className="icon" /> Vegas Pro, Photoshop,
-                Canva
-              </li>
+              {dataAdditional.map((lg) => {
+                return (
+                  <li key={lg.id}>
+                    <FaArrowRightLong className="icon" />
+                    {lg.tech}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
       </div>
 
       <div className="container container__3" onClick={() => handleClick(3)}>
-        <p className="heading__3">My projects</p>
+        <p className="heading__3">Core Skills</p>
         <div
           className={`content content__3 ${
             activeIndex === 3 ? "active" : "none"
           }`}
         >
-          Exp3
-        </div>
-      </div>
-
-      <div className="container container__4" onClick={() => handleClick(4)}>
-        <p className="heading__4">Other</p>
-        <div
-          className={`content content__4 ${
-            activeIndex === 4 ? "active" : "none"
-          }`}
-        >
-          Exp4
+          <ul>
+            {dataSkills.map((skill) => {
+              return (
+                <li key={skill.id}>
+                  <FaCheckDouble className="icon" />
+                  {skill.skill}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </Wrapper>
@@ -155,19 +135,19 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: auto;
   border-left: 2px solid #f52c57;
 
   .container {
     height: 100%;
     margin-bottom: 3rem;
-    cursor: pointer;
   }
 
   .container p {
     padding-left: 2rem;
     padding-bottom: 1.75rem;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .active {
@@ -192,26 +172,27 @@ const Wrapper = styled.section`
   }
 
   .icon {
-  display: block;
-  margin-right: 0.25rem;
-  color: #f52c57;
+    display: block;
+    margin-right: 0.25rem;
+    color: #f52c57;
   }
 
-  /* tect stack - content__2 */
+  /* tech stack - content__2 */
 
   .content__2 p {
     text-align: center;
     padding-bottom: 1.5rem;
     font-size: 1.1rem;
   }
-  .details {
+
+  .content__2 .details {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    background: var(--clr-millenium-blue);
+    /* background: var(--clr-millenium-blue);
     box-shadow: 0 0 1px var(--clr-grey-6);
-    border-radius: 0.2rem;
+    border-radius: 0.2rem; */
   }
 
   .details ul {
@@ -241,12 +222,39 @@ const Wrapper = styled.section`
     font-size: 1.02rem;
   }
 
+  //core skills
+  .content__3 {
+    margin-bottom: -50px;
+  }
+
+  .content__3 ul {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .content__3 ul li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.02rem;
+  }
+
   @media only screen and (max-width: 773px) {
-    .details {
-      justify-content: space-evenly;
+    .details ul {
+      margin-bottom: 1.75rem;
     }
-    ul {
-      margin-bottom: 1.5rem;
+    .content__3 ul {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 660px) {
+    .content__1 p {
+      font-size: 0.85rem;
+    }
+
+    .content__3 ul li {
+      font-size: 0.9rem;
     }
   }
 `;

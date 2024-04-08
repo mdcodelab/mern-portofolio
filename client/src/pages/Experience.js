@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { dataSkills } from "../data/dataSkills";
 import { dataLibs, dataAdditional, dataTechLanguages } from "../data/dataTech";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaCheckDouble } from "react-icons/fa6";
 
 const Experience = () => {
   const [activeIndex, setActiveIndex] = React.useState(1);
@@ -165,7 +166,7 @@ console.log(window.innerWidth);
                 <div className="details details__skills">
                   <ul>
                     {dataSkills.map(skill => {
-                      return <li key={skill.id}><FaArrowRightLong className="icon"/>{skill.skill}</li>
+                      return <li key={skill.id}><FaCheckDouble className="icon"/>{skill.skill}</li>
                     })}
                   </ul>
                 </div>
@@ -277,7 +278,7 @@ const Wrapper = styled.div`
       font-size: 1.05rem;
       padding-bottom: 1.5rem;
       text-align: justify;
-      color: var(--clr-grey-8);
+      color: var(--clr-grey-7);
       line-height: 1.4rem;
     }
 

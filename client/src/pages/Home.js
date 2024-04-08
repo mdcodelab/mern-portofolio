@@ -44,6 +44,16 @@ const Wrapper = styled.header`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  /* animation: showImage 0.5s linear forwards;
+
+  @keyframes showImage {
+    from {
+      background-image: none;
+    }
+    to {
+      background-image: url("assets/background.jpg");
+    }
+  } */
 
   .home__content {
     background: transparent;
@@ -140,7 +150,8 @@ const Wrapper = styled.header`
     }
     .home__container {
       height: 100%;
-    }.home__content {
+    }
+    .home__content {
       height: 100%;
     }
 

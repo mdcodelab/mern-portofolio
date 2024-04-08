@@ -93,6 +93,7 @@ const Wrapper = styled.section`
     position: relative;
     width: max-content;
     left: 50%;
+    z-index: 2;
     transform: translateX(-50%);
   }
 `;

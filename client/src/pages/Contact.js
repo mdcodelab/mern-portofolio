@@ -86,7 +86,7 @@ function Contact() {
             + <a href="https://github.com/mdcodelab/react-portofolio">SOURCE</a>
           </p>
         </div>
-        <p className="email">d_mihaela@msn.com</p>
+        <p className="email">E-mail: d_mihaela@msn.com</p>
       </div>
       <Balls></Balls>
     </Wrapper>

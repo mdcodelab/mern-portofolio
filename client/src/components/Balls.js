@@ -94,82 +94,78 @@ function Balls() {
     }
   }
 
-  const Contact = () => {
-    const canvasRef = useRef(null);
-    let balls = [];
+  const canvasRef = useRef(null);
+  let balls = [];
 
-    useEffect(() => {
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-      let animationFrameId;
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
 
-      const handleResize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        balls.forEach((ball) => {
-          ball.x = Math.min(ball.x, canvas.width);
-          ball.y = Math.min(ball.y, canvas.height);
-        });
-      };
-
-      window.addEventListener("resize", handleResize);
+    const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      balls.forEach((ball) => {
+        ball.x = Math.min(ball.x, canvas.width);
+        ball.y = Math.min(ball.y, canvas.height);
+      });
+    };
 
-      const init = () => {
-        balls = [];
-        for (let i = 0; i < 10; i++) {
-          balls.push(new Ball(canvas));
-        }
-      };
+    window.addEventListener("resize", handleResize);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-      const loop = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.globalCompositeOperation = "overlay";
+    const init = () => {
+      balls = [];
+      for (let i = 0; i < 10; i++) {
+        balls.push(new Ball(canvas));
+      }
+    };
 
-        for (let i = 0; i < balls.length; i++) {
-          balls[i].checkBombCollision(balls);
-        }
+    const loop = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "overlay";
 
-        balls = balls.filter((ball) => ball.radius > 0);
-        balls.forEach((ball) => {
-          ball.draw(ctx);
-          ball.update();
-        });
+      for (let i = 0; i < balls.length; i++) {
+        balls[i].checkBombCollision(balls);
+      }
 
-        animationFrameId = requestAnimationFrame(loop);
-      };
+      balls = balls.filter((ball) => ball.radius > 0);
+      balls.forEach((ball) => {
+        ball.draw(ctx);
+        ball.update();
+      });
 
-      init();
-      loop();
+      animationFrameId = requestAnimationFrame(loop);
+    };
 
-      return () => {
-        window.removeEventListener("resize", handleResize);
-        cancelAnimationFrame(animationFrameId);
-      };
-    }, []);
+    init();
+    loop();
 
-    return (
-      <Wrapper>
-        <canvas className="canvas" ref={canvasRef} />
-      </Wrapper>
-    );
-  };
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
-  const Wrapper = styled.div`
-    position: absolute;
-    top: 3.5rem;
-    bottom: 0;
-    width: 90vw;
-    margin: 0 auto;
-    .canvas {
-      display: block;
-      width: 100%;
-      height: 80vh;
-    }
-  `;
-
-  return <Contact />;
+  return (
+    <Wrapper>
+      <canvas className="canvas" ref={canvasRef} />
+    </Wrapper>
+  );
 }
+
+const Wrapper = styled.div`
+  position: absolute;
+  top: 3.5rem;
+  bottom: 0;
+  width: 90vw;
+  margin: 0 auto;
+  .canvas {
+    display: block;
+    width: 100%;
+    height: 80vh;
+  }
+`;
 
 export default Balls;

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useGlobalContext } from "../useContext";
-import {Link} from "react-scroll";
+import { useGlobalContext } from "../useContext"
 // import { FaHtml5, FaNode } from "react-icons/fa";
 // import { FaCss3Alt } from "react-icons/fa";
 // import { SiTailwindcss } from "react-icons/si";
@@ -27,9 +26,9 @@ const Home = () => {
         <p style={{ paddingBottom: "2.5rem" }}>
           a dedicated Web Developer & Designer.
         </p>
-        <Link to="contact" smooth={true} className="btn__contact" offset={-80}>
+        <a href="#contact" className="btn__contact">
           <div>Get In Touch</div>
-        </Link>
+        </a>
       </article>
     </Wrapper>
   );

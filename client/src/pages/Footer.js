@@ -1,55 +1,61 @@
-import React from 'react';
-import { Link } from "react-scroll";
+import React from "react";
 import styled from "styled-components";
 
 function Footer() {
-    const [scroll, setScroll] = React.useState(false);
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY);
-    };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+  const handleClickImage = () => {
+    scrollToTop();
+    window.history.replaceState({}, document.title, window.location.pathname); //delete old irl
+  };
 
   return (
     <Wrapper>
       <p className="footer">
-            &copy; {new Date().getFullYear()} 
-            <Link to="home" smooth={true} offset={-80}>
-              <img src="assets/logo__footer.png" alt="logo"></img>
-            </Link>. All
-            Rights Reserved.</p>
+        &copy; {new Date().getFullYear()}
+        <button onClick={()=> handleClickImage()}>
+          <img src="assets/logo__footer.png" alt="logo"></img>
+        </button>
+        . All Rights Reserved.
+      </p>
     </Wrapper>
   );
 }
 
-const Wrapper=styled.footer`
-height: 5rem;
-background: black;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
+const Wrapper = styled.footer`
+  height: 5rem;
+  background: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.footer {
+  .footer {
     display: flex;
     align-items: center;
     width: 14rem;
     justify-content: space-between;
-    font-size:0.9rem;
+    font-size: 0.9rem;
     color: var(--clr-grey-8);
-}
+  }
 
-.footer a {
+  .footer button {
+    background: none;
+    border: none;
     color: var(--clr-grey-8);
     cursor: pointer;
-}
-.footer a img {
-  width: 1.5rem;
-  height: 1.5rem;
-}
+  }
+
+  .footer button img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 `;
 
 export default Footer;

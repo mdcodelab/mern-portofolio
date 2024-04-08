@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-scroll";
 import styled from "styled-components";
 import { useGlobalContext } from "../useContext";
 
@@ -18,6 +17,18 @@ React.useEffect(() => {
   });
 });
 
+//for the links
+const handleClick = (e, id) => {
+  e.preventDefault();
+  window.location.hash = id;
+  const element = document.getElementById(id);
+  const y = element.getBoundingClientRect().top + window.pageYOffset;
+
+  window.scrollTo({ top: y - 10, behavior: "smooth" }); // Aplicăm offset-ul de înălțime aici
+  setSidebar(false);
+};
+
+
   return (
     <Wrapper
       className={`
@@ -25,15 +36,15 @@ React.useEffect(() => {
           ? "close section__center"
           : "open section__center sidebar"}`}>
       <div className="links__container">
-        <Link to="experience" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
+        <a href="#experience" onClick={(e)=> handleClick(e, "experience")}>
         Experience
-      </Link>
-      <Link to="projects" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
+      </a>
+      <a href="#projects" onClick={(e)=>handleClick(e, "projects")}>
         Projects
-      </Link>
-      <Link to="contact" smooth={true} offset={0} onClick={()=>setSidebar(!isSidebar)}>
+      </a>
+      <a href="#contact" onClick={(e) => handleClick(e, "contact")}>
         Contact
-      </Link>
+      </a>
       </div>
     </Wrapper>
   );
@@ -69,8 +80,8 @@ const Wrapper = styled.div`
     font-size: 1.2rem;
     letter-spacing: 0.08rem;
     text-align: center;
-    cursor: pointer;
     width: max-content;
+    color: var(--clr-grey-8);
     transition: all 0.3s ease-in-out;
   }
 

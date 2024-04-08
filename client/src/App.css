@@ -96,10 +96,6 @@ body {
   background: black;
 }
 
-html {
-  scroll-padding-top: 20px;
-}
-
 .section__header {
   width: max-content;
   height: max-content;

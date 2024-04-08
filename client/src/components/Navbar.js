@@ -1,14 +1,11 @@
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { Link } from "react-scroll";
 import { useGlobalContext } from "../useContext";
 import styled from "styled-components";
 
 const Navbar = () => {
   let { isSidebar, setSidebar } = useGlobalContext();
-
-  const [activeLink, setActiveLink] = React.useState("home");
 
   const [scroll, setScroll] = React.useState(false);
 
@@ -20,6 +17,36 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  //for img:
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+
+//for the image
+  const handleClickImage = () => {
+    scrollToTop();
+    window.history.replaceState({}, document.title, window.location.pathname); //replace old url
+    setSidebar(false);
+  };
+
+//for the rest of links
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    window.location.hash = id;
+    const element = document.getElementById(id);
+    const y = element.getBoundingClientRect().top + window.pageYOffset;
+
+    window.scrollTo({ top: y - 80, behavior: "smooth" }); // Aplicăm offset-ul de înălțime aici
+    setSidebar(false);
+  };
+
+
+
+
   return (
     <Wrapper
       className={
@@ -28,54 +55,31 @@ const Navbar = () => {
           : "navbar section__center"
       }
     >
-      <Link className="logo" to="home" smooth={true} offset={-80}>
         <div className="logo">
-          <img src="assets/logo.png" alt="logo" onClick={()=> setSidebar(false)}></img>
+          <img src="assets/logo.png" alt="logo" onClick={()=> handleClickImage()}></img>
         </div>
-      </Link>
       <div className="nav-links">
         <ul className="links">
           <li>
-            <Link
-              to="home"
-              onClick={() => setActiveLink("home")}
-              smooth={true}
-              offset={-80}
-              className={activeLink === "home" ? "active" : ""}
-            ></Link>
+            <a href="#home"></a>
           </li>
           <li>
-            <Link
-              to="experience"
-              onClick={() => setActiveLink("experience")}
-              smooth={true}
-              offset={-80}
-              className={activeLink === "experience" ? "active" : ""}
-            >
+            <a
+              href="#experience" onClick={(e)=> handleClick(e, "experience")}>
               Experience
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              to="projects"
-              onClick={() => setActiveLink("projects")}
-              smooth={true}
-              offset={-80}
-              className={activeLink === "projects" ? "active" : ""}
-            >
+            <a
+              href="#projects" onClick={(e)=> handleClick(e, "projects")}>
               Projects
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              to="contact"
-              onClick={() => setActiveLink("contact")}
-              smooth={true}
-              offset={-80}
-              className={activeLink === "contact" ? "active" : ""}
-            >
+            <a
+              href="#contact" onClick={(e)=> handleClick(e, "contact")}>
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
@@ -187,10 +191,6 @@ const Wrapper = styled.nav`
     }
 
   //effects
-  a.active {
-    color: var(--clr-red-new) !important;
-  }
-
   .icon__btn {
     border: none;
     outline: none;

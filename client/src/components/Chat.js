@@ -8,7 +8,7 @@ import axios from "axios";
 import { useGlobalContext } from "../useContext";
 
 
-function Chat() {
+function Chat({setShowEn}) {
   const{isChat, setIsChat, message, setMessage} = useGlobalContext();
 
   const[allMessages, setAllMessages]=React.useState([]);
@@ -66,14 +66,18 @@ function Chat() {
     createMessage();
     setMessage((prevState) => "");
   }
+
+  const handleLauncher = () => {
+    setIsChat(!isChat);
+    setShowEn(false);
+  }
   
   return isChat ? (
     <div className="room__container">
       <div className="chat__header">
         <h3>How Can I Help You?</h3>
-        <IoMdClose
-          style={{ fontSize: "1.3rem" }}
-          onClick={() => setIsChat(!isChat)}
+        <IoMdClose className="icon__close"
+          onClick={() => handleLauncher()}
         />
       </div>
       <div className="chat__body" ref={ref}>
@@ -111,7 +115,7 @@ function Chat() {
       <div className="chat__submit">
         <input
           type="text"
-          placeholder="Message..."
+          placeholder="Send a message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={handleKeyPress}
@@ -122,7 +126,7 @@ function Chat() {
       </div>
     </div>
   ) : (
-    <div className="launcher__container" onClick={() => setIsChat(!isChat)}>
+    <div className="launcher__container" onClick={() => handleLauncher()}>
       <IoChatbubbleOutline
         className="icon__launcher"
         style={{ fontSize: "2.5rem", color: "var(--clr-grey-8)" }}

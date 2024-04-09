@@ -31,7 +31,7 @@ const [showEn, setShowEn] = React.useState(false);
       <div className="app-container section__center">
         <Navbar />
         <Sidebar></Sidebar>
-        <Chat></Chat>
+        <Chat setShowEn={setShowEn}></Chat>
         {!isChat && showEn && (
           <ChatEntrancer setShowEn={setShowEn}></ChatEntrancer>
         )}

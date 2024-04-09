@@ -9,14 +9,13 @@ import Footer from "./pages/Footer";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-import { AppProvider} from "./useContext";
 import ChatEntrancer from "./components/ChatEntrancer";
 import { useGlobalContext } from "./useContext";
 
 
 
 const App = () => {
-const {isChat, showIsChat}=useGlobalContext();
+const {isChat}=useGlobalContext();
 const [showEn, setShowEn] = React.useState(false);
 
 
@@ -34,7 +33,7 @@ const [showEn, setShowEn] = React.useState(false);
         <Sidebar></Sidebar>
         <Chat></Chat>
         {!isChat && showEn && (
-          <ChatEntrancer showEn={showEn} setShowEn={setShowEn}></ChatEntrancer>
+          <ChatEntrancer setShowEn={setShowEn}></ChatEntrancer>
         )}
         <div className="container">
           <Home />

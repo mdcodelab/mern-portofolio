@@ -6,13 +6,12 @@ import { useGlobalContext } from '../useContext';
 import axios from "axios";
 
 
-function ChatEntrancer({showEn, setShowEn}) {
+function ChatEntrancer({setShowEn}) {
   const { isChat, setIsChat, message, setMessage} = useGlobalContext();
 
   function hideEntrancer() {
     setShowEn(false);
     //setIsChat(true);
-    console.log(showEn);
   }
   
 

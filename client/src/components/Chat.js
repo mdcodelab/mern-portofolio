@@ -52,15 +52,14 @@ function Chat() {
 
   const ref=useRef();
   const scrollToBottom = () => {
-    ref.current.scrollIntoView({
+    ref.current.firstChild.scrollIntoView({
       block: "end"
     })
   }
 
-  // React.useEffect(() => {
-  //   console.log(ref);
-  //   if(ref.current) scrollToBottom();
-  // }, [allMessages])
+  React.useEffect(() => {
+    if(ref.current) scrollToBottom();
+  }, [allMessages])
 
 
   const handleClick = () => {

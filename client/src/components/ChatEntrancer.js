@@ -7,12 +7,14 @@ import axios from "axios";
 
 
 function ChatEntrancer({showEn, setShowEn}) {
-  const { isChat, setIsChat, message, setMessage } = useGlobalContext();
+  const { isChat, setIsChat, message, setMessage} = useGlobalContext();
 
-  function displayEntrancer() {
+  function hideEntrancer() {
     setShowEn(false);
     //setIsChat(true);
+    console.log(showEn);
   }
+  
 
   //create message
   const createMessage = async () => {
@@ -50,7 +52,7 @@ function ChatEntrancer({showEn, setShowEn}) {
     <Wrapper className={`chat__entrancer ${!isChat ? "chat__entrancer" : ""}`}>
       <div
         className="chat__entrance__header"
-        onClick={() => displayEntrancer()}
+        onClick={() => hideEntrancer()}
       >
         <IoMdClose className="close__entrancer"></IoMdClose>
         <div className="img">

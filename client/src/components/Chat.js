@@ -47,54 +47,90 @@ function Chat() {
       createMessage();
       setMessage("");
     }
-    //scrollToBottom();
   };
 
 
   const ref=useRef();
-  React.useEffect(() => {
-    console.log(ref);
-  }, [])
+  const scrollToBottom = () => {
+    ref.current.scrollIntoView({
+      block: "end"
+    })
+  }
+
+  // React.useEffect(() => {
+  //   console.log(ref);
+  //   if(ref.current) scrollToBottom();
+  // }, [allMessages])
 
 
   const handleClick = () => {
     createMessage();
     setMessage((prevState) => "");
-    //scrollToBottom();
   }
   
   return isChat ? (
     <div className="room__container">
-          <div className="chat__header">
+      <div className="chat__header">
         <h3>How Can I Help You?</h3>
-        <IoMdClose style={{fontSize: "1.3rem"}} onClick={()=> setIsChat(!isChat)}></IoMdClose>
+        <IoMdClose
+          style={{ fontSize: "1.3rem" }}
+          onClick={() => setIsChat(!isChat)}
+        />
       </div>
       <div className="chat__body" ref={ref}>
         {allMessages.length > 0 ? (
-          allMessages.map((message) => {
-          const {_id, content, time, author}=message;
-          return <div key={_id} className="chat__message">
-            <p className="chat__content"><strong>{author}:</strong> {content}</p>
-            <p className="chat__time">{time}</p>
+          <div className="chat__body__content">
+            {allMessages.map((message) => {
+              const { _id, content, time, author } = message;
+              return (
+                <div key={_id} className="chat__message">
+                  <p className="chat__content">
+                    <strong>{author}:</strong> {content}
+                  </p>
+                  <p className="chat__time">{time}</p>
+                </div>
+              );
+            })}
           </div>
-        })
-        ) : (<div className="body__empty">
-          <PiChatsCircleLight style={{fontSize: "2rem", display: "block", margin: "0 auto", color: "var(--clr-grey-5)"}}></PiChatsCircleLight>
-          <p>Send a message, I'm usually able to get back to you in a few moments.</p>
-        </div>)}
+        ) : (
+          <div className="body__empty">
+            <PiChatsCircleLight
+              style={{
+                fontSize: "2rem",
+                display: "block",
+                margin: "0 auto",
+                color: "var(--clr-grey-5)",
+              }}
+            />
+            <p>
+              Send a message, I'm usually able to get back to you in a few
+              moments.
+            </p>
+          </div>
+        )}
       </div>
       <div className="chat__submit">
-        <input type="text" placeholder="Message..." value={message} 
-        onChange={(e)=>setMessage(e.target.value)} onKeyPress={handleKeyPress}></input>
-        <button type="submit" onClick={()=> handleClick()}>
-        <IoSendOutline></IoSendOutline>
+        <input
+          type="text"
+          placeholder="Message..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <button type="submit" onClick={handleClick}>
+          <IoSendOutline />
         </button>
       </div>
     </div>
   ) : (
     <div className="launcher__container" onClick={() => setIsChat(!isChat)}>
-      <IoChatbubbleOutline className="icon__launcher" style={{fontSize: "2.5rem", color: "var(--clr-grey-8)"}}></IoChatbubbleOutline></div>
+      <IoChatbubbleOutline
+        className="icon__launcher"
+        style={{ fontSize: "2.5rem", color: "var(--clr-grey-8)" }}
+      />
+    </div>
   );
+
 }
 
 export default Chat;

@@ -11,11 +11,14 @@ import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import { AppProvider} from "./useContext";
 import ChatEntrancer from "./components/ChatEntrancer";
+import { useGlobalContext } from "./useContext";
 
 
 
 const App = () => {
+const {isChat, showIsChat}=useGlobalContext();
 const [showEn, setShowEn] = React.useState(false);
+
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -26,13 +29,12 @@ const [showEn, setShowEn] = React.useState(false);
   }, []);
 
   return (
-    <AppProvider>
       <div className="app-container section__center">
         <Navbar />
         <Sidebar></Sidebar>
         <Chat></Chat>
-        {showEn && (
-          <ChatEntrancer shoeEn={showEn} setShowEn={setShowEn}></ChatEntrancer>
+        {!isChat && showEn && (
+          <ChatEntrancer showEn={showEn} setShowEn={setShowEn}></ChatEntrancer>
         )}
         <div className="container">
           <Home />
@@ -42,7 +44,6 @@ const [showEn, setShowEn] = React.useState(false);
           <Footer></Footer>
         </div>
       </div>
-    </AppProvider>
   );
 };
 

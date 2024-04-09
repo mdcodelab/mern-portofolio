@@ -17,10 +17,13 @@ function ChatEntrancer({showEn, setShowEn}) {
   //create message
   const createMessage = async () => {
     try {
-      await axios.post("http://localhost:4000/api/v1", {
+      const response = await axios.post("http://localhost:4000/api/v1", {
         content: message,
       });
-      setMessage("");
+      let messageCreated = response.data.message;
+      if (messageCreated.content.charAt(0) === "9") {
+        response.content.message = response.content.message.slice(1);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -28,6 +31,7 @@ function ChatEntrancer({showEn, setShowEn}) {
 
   const sendMessage = () => {
     createMessage();
+    setMessage("");
     setIsChat(!isChat);
     setShowEn(false);
   };
@@ -36,6 +40,7 @@ function ChatEntrancer({showEn, setShowEn}) {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       createMessage();
+      setMessage("");
       setIsChat(!isChat);
       setShowEn(false);
     }

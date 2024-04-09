@@ -5,25 +5,21 @@ const messageSchema = new mongoose.Schema({
     type: String,
     required: [true, "content is required"],
   },
+  author: {
+    type: String,
+  },
   time: {
     type: String,
-    default: new Date().toLocaleString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric'})
+    default: new Date().toLocaleString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    }),
   },
 });
 
 const Message = mongoose.model("Message", messageSchema);
 
 module.exports = Message;
-
-
-
-
-
-
-
-

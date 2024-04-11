@@ -86,7 +86,7 @@ const Wrapper = styled.section`
   height: 12rem;
   background: black;
   position: fixed;
-  z-index: 200;
+  z-index: 3000;
   right: -200px;
   bottom: 1.1rem;
   cursor: pointer;

@@ -1,5 +1,5 @@
 import React from "react";
-import {useRef} from "react";
+import { useRef } from "react";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { IoSendOutline } from "react-icons/io5";
@@ -7,39 +7,39 @@ import { PiChatsCircleLight } from "react-icons/pi";
 import axios from "axios";
 import { useGlobalContext } from "../useContext";
 
+function Chat({ setShowEn }) {
+  const { isChat, setIsChat, message, setMessage } = useGlobalContext();
 
-function Chat({setShowEn}) {
-  const{isChat, setIsChat, message, setMessage} = useGlobalContext();
-
-  const[allMessages, setAllMessages]=React.useState([]);
+  const [allMessages, setAllMessages] = React.useState([]);
 
   //get all messages
-    const getAllMessages = async ()=> {
-    await axios.get("http://localhost:4000/api/v1").then(response => 
-    setAllMessages(response.data)).catch(error => console.error(`There is an ${error}`));
-  }
+  const getAllMessages = async () => {
+    await axios
+      .get("http://localhost:4000/api/v1")
+      .then((response) => setAllMessages(response.data))
+      .catch((error) => console.error(`There is an ${error}`));
+  };
 
-  React.useEffect(()=> {
+  React.useEffect(() => {
     getAllMessages();
-    const interval=setInterval(getAllMessages, 2000);
-    return ()=> clearInterval(interval);
+    const interval = setInterval(getAllMessages, 2000);
+    return () => clearInterval(interval);
   }, []);
-
 
   //create message
   const createMessage = async () => {
     try {
       const response = await axios.post("http://localhost:4000/api/v1", {
-        content: message
+        content: message,
       });
-      let messageCreated=response.data.message;
-      if(messageCreated.content.charAt(0) === "9") {
+      let messageCreated = response.data.message;
+      if (messageCreated.content.charAt(0) === "9") {
         response.content.message = response.content.message.slice(1);
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   //button
   const handleKeyPress = (e) => {
@@ -49,36 +49,32 @@ function Chat({setShowEn}) {
     }
   };
 
-
-  const ref=useRef();
+  const ref = useRef();
   const scrollToBottom = () => {
     ref.current.firstChild.scrollIntoView({
-      block: "end"
-    })
-  }
+      block: "end",
+    });
+  };
 
   React.useEffect(() => {
-    if(ref.current) scrollToBottom();
-  }, [allMessages])
-
+    if (ref.current) scrollToBottom();
+  }, [allMessages]);
 
   const handleClick = () => {
     createMessage();
     setMessage((prevState) => "");
-  }
+  };
 
   const handleLauncher = () => {
     setIsChat(!isChat);
     setShowEn(false);
-  }
-  
+  };
+
   return isChat ? (
     <div className="room__container">
       <div className="chat__header">
         <h3>How Can I Help You?</h3>
-        <IoMdClose className="icon__close"
-          onClick={() => handleLauncher()}
-        />
+        <IoMdClose className="icon__close" onClick={() => handleLauncher()} />
       </div>
       <div className="chat__body" ref={ref}>
         {allMessages.length > 0 ? (
@@ -133,7 +129,6 @@ function Chat({setShowEn}) {
       />
     </div>
   );
-
 }
 
 export default Chat;

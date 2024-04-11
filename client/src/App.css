@@ -317,7 +317,7 @@ button {
   right: 2rem;
   bottom: 1.1rem;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1000;
   transition: all 0.3s ease-in-out;
 }
 

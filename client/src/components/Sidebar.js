@@ -4,6 +4,7 @@ import { useGlobalContext } from "../useContext";
 
 function Sidebar() {
   const { isSidebar, setSidebar } = useGlobalContext();
+  const[active, setActive]=React.useState("experience");
   
 
 const [scroll, setScroll] = React.useState(0);
@@ -36,13 +37,17 @@ const handleClick = (e, id) => {
           ? "close section__center"
           : "open section__center sidebar"}`}>
       <div className="links__container">
-        <a href="#experience" onClick={(e)=> handleClick(e, "experience")}>
+        <a href="#experience" onClick={(e)=> handleClick(e, "experience")}
+        style={{transition: isSidebar ? "all 0.5s ease" : "none", cursor: "pointer"}}
+        >
         Experience
       </a>
-      <a href="#projects" onClick={(e)=>handleClick(e, "projects")}>
+      <a href="#projects" onClick={(e)=>handleClick(e, "projects")}
+      style={{transition: isSidebar ? "all 0.5s ease" : "none", cursor: "pointer"}}>
         Projects
       </a>
-      <a href="#contact" onClick={(e) => handleClick(e, "contact")}>
+      <a href="#contact" onClick={(e) => handleClick(e, "contact")}
+      style={{transition: isSidebar ? "all 0.5s ease" : "none", cursor: "pointer"}}>
         Contact
       </a>
       </div>
@@ -73,7 +78,7 @@ const Wrapper = styled.div`
     transition: all 0.5s ease;
   }
 
-  a {
+  .links__container a {
     display: block;
     margin: 0 auto;
     margin-bottom: 3.5rem;
@@ -82,6 +87,7 @@ const Wrapper = styled.div`
     text-align: center;
     width: max-content;
     color: var(--clr-grey-8);
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
 

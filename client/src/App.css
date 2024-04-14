@@ -451,6 +451,14 @@ button {
   padding: 0.5rem;
 }
 
+.chat__submit input::placeholder {
+  transition: 0.5s ease-in-out;
+}
+
+.chat__submit input:hover::placeholder {
+  color: transparent;
+}
+
 .chat__submit button {
   border-radius: 0 0 0.2rem 0;
   border: none;

@@ -168,6 +168,14 @@ const Wrapper = styled.section`
     border-radius: 0 0 0 0.3rem;
   }
 
+  .chat__entrancer__content input::placeholder {
+    transition: 0.5s ease-in-out;
+  }
+
+  .chat__entrancer__content input:hover::placeholder {
+    color: transparent;
+  }
+
   .chat__entrancer__content button {
     display: flex;
     align-items: center;

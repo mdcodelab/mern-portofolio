@@ -20,7 +20,7 @@ export const dataTechLanguages = [
 export const dataLibs = [
   {
     id: 1,
-    tech: "React (Router, Redux, Gatsby, Native)",
+    tech: "React (Router, Redux, Gatsby, Native, Next)",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export const dataLibs = [
   },
   {
     id: 4,
-    tech: "Bootstrap, Materialize, Tailwind",
+    tech: "Styled-Components, Bootstrap, Tailwind",
   },
 ];
 
@@ -47,7 +47,7 @@ export const dataAdditional = [
   },
   {
     id: 3,
-    tech: "Clowdinary",
+    tech: "Cloudinary",
   },
   {
     id: 4,

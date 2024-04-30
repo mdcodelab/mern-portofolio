@@ -51,7 +51,7 @@ export const dataAdditional = [
   },
   {
     id: 4,
-    tech: "Strype, PayPal",
+    tech: "Stripe, PayPal",
   },
   {
     id: 5,

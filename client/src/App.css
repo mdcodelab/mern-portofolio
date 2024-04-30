@@ -78,22 +78,22 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.9rem;
+  width: 0.07rem
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--clr-white);
+  background: var(--clr-navy-7);
 }
 
 ::-webkit-scrollbar-thumb {
   background: lightgrey;
-  border-radius: 35%;
+  border-radius: 10px;
   border: 1px solid darkgrey;
   transition: background 0.4s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: black;
+  background: var(--clr-navy-7);
 }
 
 .section__header {
@@ -256,6 +256,7 @@ input {
 label {
   margin-bottom: 0.5rem;
   letter-spacing: 0.08rem;
+  color: var(--clr-grey-8);
 }
 
 /* === GLOBAL CLASSES === */

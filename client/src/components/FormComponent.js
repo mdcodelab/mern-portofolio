@@ -42,22 +42,12 @@ function FormComponent({formElements, onChange, onSubmit, showForm}) {
         <div className="personal__details">
           <div className="email">
             <label>E-mail</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="E-mail..."
-              value={formElements.email}
-              required
-              onChange={onChange}
-            ></input>
+            <input type="email" name="email" placeholder="E-mail..." value={formElements.email} required 
+               onChange={onChange}></input>
           </div>
           <div className="subject">
             <label>Subject</label>
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject..."
-              value={formElements.subject}
+            <input type="text" name="subject" placeholder="Subject..." value={formElements.subject}
               onChange={onChange}
             ></input>
           </div>
@@ -121,6 +111,10 @@ const Wrapper = styled.div`
   .surname,
   .subject {
     width: 40%;
+  }
+
+  .subject {
+    margin-top: 2rem;
   }
 
   .name input,

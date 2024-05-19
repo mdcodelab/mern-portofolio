@@ -143,7 +143,8 @@ const Wrapper = styled.header`
     }
   }
 
-  @media (max-width: 380px) {
+
+  @media only screen and (max-width: 380px) {
     .title {
       font-size: 1.8rem;
     }

@@ -7,6 +7,7 @@ import {GiWoodCabin} from "react-icons/gi";
 import {IoIosPeople} from "react-icons/io";
 import {GiRose} from "react-icons/gi";
 import {GiCutLemon} from "react-icons/gi";
+import { PiShoppingCartFill } from "react-icons/pi";
 
 export const data = [
   {
@@ -19,10 +20,22 @@ export const data = [
     urlGit: "https://github.com/mdcodelab/WorkWaveHub-jobs-platform-MERN",
     description:
       "The app empowers users to create, read, update, delete their job listings or search for new jobs based on various criteria. It has full and secure authentication with JWT and HTTP cookies, that enables users to login or register and manage their profiles. There is an admin functionality to manage jobs and users.",
-    tech: ["MONGODB", "EXPRESS", "REACT", "NODE", "JWT"],
+    tech: ["MERN", "JWT", "STYLED-COMPONENTS"],
   },
   {
     id: 2,
+    title: "ProShop",
+    type: "full-stack",
+    video: "/assets/videos_projects/proshop.mp4",
+    icon: <PiShoppingCartFill></PiShoppingCartFill>,
+    urlDemo: "https://proshop-electronics.onrender.com",
+    urlGit: "https://github.com/mdcodelab/ProShop-E-commerce-platform-mern",
+    description:
+      "In this e-commerce app, users can browse and search products, add them to their shopping cart, and then go throughout a four steps checkout process to create an order and then pay using PayPal. There is full authentication: users ca register or log in and they can manage their profiles and view their orders. There is also admin functionality where admins can manage products, orders and users, as well as a rating and review system.",
+    tech: ["MERN", "REDUX", "JWT", "BOOTSTRAP"],
+  },
+  {
+    id: 3,
     title: "Love Roses",
     type: "front-end",
     video: "/assets/videos_projects/roses.mp4",
@@ -34,7 +47,7 @@ export const data = [
     tech: ["REACT", "CSS3", "STYLED-COMPONENTS", "AOS", "Tilt.js"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Wooden Wonders",
     type: "front-end",
     video: "/assets/videos_projects/wooden.mp4",
@@ -46,7 +59,7 @@ export const data = [
     tech: ["REACT", "CSS3", "AOS", "AUTH0", "STRIPE"],
   },
   {
-    id: 4,
+    id: 5,
     title: "GitHub Finder",
     type: "w",
     video: "/assets/videos_projects/git.mp4",
@@ -58,7 +71,7 @@ export const data = [
     tech: ["REACT", "CSS3"],
   },
   {
-    id: 5,
+    id: 6,
     title: "The Recipes Room",
     type: "front-end",
     video: "/assets/videos_projects/recipes.mp4",
@@ -70,7 +83,7 @@ export const data = [
     tech: ["GATSBY", "GRAPHQL", "STYLED-COMPONENTS", "CONTENTFUL"],
   },
   {
-    id: 6,
+    id: 7,
     title: "NPV & Risk Assessment",
     type: "w",
     video: "/assets/videos_projects/npv.mp4",
@@ -82,7 +95,7 @@ export const data = [
     tech: ["JavaScript", "CSS3", "HTML5"],
   },
   {
-    id: 7,
+    id: 8,
     title: "Architect Design",
     type: "l",
     video: "/assets/videos_projects/designer.mp4",
@@ -94,7 +107,7 @@ export const data = [
     tech: ["JavaScript", "CSS3", "Tilt.js", "HTML5"],
   },
   {
-    id: 8,
+    id: 9,
     title: "Winter Landing Page",
     type: "l",
     video: "/assets/videos_projects/winter.mp4",

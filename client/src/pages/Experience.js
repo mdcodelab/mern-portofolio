@@ -20,19 +20,18 @@ const Experience = () => {
   }, []);
 
   ///experience_small
-  const[windowWidth, setWindowWidth]=React.useState(window.innerWidth);
-React.useEffect(()=> {
-  function handleResize() {
-    setWindowWidth(window.innerWidth);
-  }
-  window.addEventListener("resize", handleResize);
-return () => {
-      window.removeEventListener('resize', handleResize);
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+  React.useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
-}, []);
+  }, []);
 
-//console.log(window.innerWidth);
-
+  //console.log(window.innerWidth);
 
   return (
     <Wrapper className="section__center" id="experience">
@@ -76,7 +75,7 @@ return () => {
               <div className="explanation__about">
                 <p>
                   My name is Mihaela Diaconu. I’m a freelance full-stack web
-                  developer and designer based in Iasi (Romania). My speciality
+                  developer and designer based in Iasi (Romania). My expertise
                   is full website design and development from start to finish. I
                   love to create smart and beautiful user interfaces and to
                   imagine new ways of building things or solving problems.
@@ -84,20 +83,17 @@ return () => {
                 <p>
                   Despite my academic background as a university professor with
                   a PhD in financial management and extensive experience in the
-                  field of finance, I have developed a profound passion for web
+                  field of finance, I've developed a profound passion for web
                   development and associated technologies. Since 2018, I have
                   been consolidating my knowledge in this field, being involved
-                  in courses and personal projects, as well as projects for
-                  family and friends. This ongoing journey of learning in web
-                  development excites and inspires me, allowing me to integrate
-                  innovative and creative perspectives and approaches into my
-                  work as a web developer.
+                  in courses and personal projects, as well as in projects for
+                  family and friends.
                 </p>
                 <p>
-                  My web development roots are in VanillaJs & React. In 2022, I
-                  started to broaden my knowledge of the Node.js ecosystem.
-                  Since then, I fell in love with & have been primarily using
-                  React in web applications.
+                  My web development roots are in VanillaJs & React. I’ve
+                  started to broaden my knowledge of the Node.js ecosystem in
+                  2022. Since then, I fell in love with & have been primarily
+                  using React in web applications.
                 </p>
                 <p>
                   Whether you're a business owner looking to get started on a
@@ -165,8 +161,13 @@ return () => {
               <div className="explanation__skills">
                 <div className="details details__skills">
                   <ul>
-                    {dataSkills.map(skill => {
-                      return <li key={skill.id}><FaCheckDouble className="icon"/>{skill.skill}</li>
+                    {dataSkills.map((skill) => {
+                      return (
+                        <li key={skill.id}>
+                          <FaCheckDouble className="icon" />
+                          {skill.skill}
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>

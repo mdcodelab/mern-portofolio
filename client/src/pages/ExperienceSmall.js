@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { FaArrowRightLong} from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { FaCheckDouble } from "react-icons/fa6";
 import { dataSkills } from "../data/dataSkills";
 import { dataLibs, dataAdditional, dataTechLanguages } from "../data/dataTech";
-
 
 function ExperienceSmall() {
   const [activeIndex, setActiveIndex] = React.useState(1);
@@ -24,7 +23,7 @@ function ExperienceSmall() {
         >
           <p>
             My name is Mihaela Diaconu. I’m a freelance full-stack web developer
-            and designer based in Iasi (Romania). My speciality is full website
+            and designer based in Iasi (Romania). My expertise is full website
             design and development from start to finish. I love to create smart
             and beautiful user interfaces and to imagine new ways of building
             things or solving problems.
@@ -32,18 +31,15 @@ function ExperienceSmall() {
           <p>
             Despite my academic background as a university professor with a PhD
             in financial management and extensive experience in the field of
-            finance, I have developed a profound passion for web development and
-            associated technologies. Since 2018, I have been consolidating my
+            finance, I've developed a profound passion for web development and
+            associated technologies. Since 2018, I've been consolidating my
             knowledge in this field, being involved in courses and personal
-            projects, as well as projects for family and friends. This ongoing
-            journey of learning in web development excites and inspires me,
-            allowing me to integrate innovative and creative perspectives and
-            approaches into my work as a web developer.
+            projects, as well as in projects for family and friends.
           </p>
           <p>
-            My web development roots are in VanillaJs & React. In 2022, I
-            started to broaden my knowledge of the Node.js ecosystem. Since
-            then, I fell in love with & have been primarily using React in web
+            My web development roots are in VanillaJs & React. I’ve started to
+            broaden my knowledge of the Node.js ecosystem in 2022. Since then, I
+            fell in love with & have been primarily using React in web
             applications.
           </p>
           <p>
